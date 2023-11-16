@@ -5,6 +5,5 @@ class Enemies():
         self.attack = attack
         self.defense = defense
         self.speed = speed
-    
-goblin = Enemies("Goblin",100,1100,100,100)
+goblin = Enemies("Goblin",100,0.4,0.8,100)    
 print(goblin.__dict__)
