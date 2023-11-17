@@ -6,4 +6,6 @@ class Enemies():
         self.defense = defense
         self.speed = speed
 goblin = Enemies("Goblin",100,0.4,0.8,100)    
-print(goblin.__dict__)
+troll = Enemies("Troll", 200, 2, 1, 0.05)
+giant = Enemies("Giant", 1000, 10,1,0)
+wolf = Enemies("Wolf",75,0.5,0.5,100)
