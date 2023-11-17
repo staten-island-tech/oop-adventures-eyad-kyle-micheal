@@ -32,6 +32,7 @@ class Dummy():
 TestDummy = Dummy(100)
 print(TestDummy.__dict__)
 
-
+bleed = Pas.Bleed
+print(bleed.__dict__)
 # Note for future self because I WILL forget:
 # I need to find a way to use get a passive move like bleed or regen to affect an entity
