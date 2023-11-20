@@ -38,13 +38,20 @@ while b == 1:
         if (number < 1 or number > 2):
             print("Incorrect Input, try again")
 
-            if number == random_thing:
+        if number == random_thing:
                 print("You got Heads, you get a weapon")
-            elif number + 1 == random_thing:
+                b = 2
+                if b == 2:
+                      exit()
+        elif number + 1 == random_thing:
                 print("You got Tails, you get a item")
                 b = 2
-            elif number - 1 == random_thing:
+                if b == 2:
+                      exit()
+        elif number - 1 == random_thing:
                 print("You got Tails, you get a item")
                 b = 2
+                if b == 2:
+                      exit()
 
 
