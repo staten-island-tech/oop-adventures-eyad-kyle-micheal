@@ -8,6 +8,17 @@ class TestAttack():
         self.base_damage = base_damage
 quick_attack = TestAttack("quick_attack",120)
 coins = 7
+classes = [archer]
+def class_choice():
+    choose=input("what class are you?:")
+    if choose in classes:
+        global selected_class
+        selected_class = choose
+class_choice()
+print(selected_class)
+
+
+
 def attack(enemy,player):
     while enemy.health > 0:
         x=input("what attack:")
