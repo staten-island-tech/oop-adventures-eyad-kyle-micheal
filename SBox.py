@@ -59,9 +59,31 @@ class Dummy():
 TestDummy = Dummy(100)
 print(TestDummy.__dict__)
 
-bleed = Pas.Bleed
-print(bleed.__dict__)
+def SB():
+    import random
+    change = random.randint(1, 10)
+    print(change)
+    if change < 8 or change == 8:
+        TestDummy.health = TestDummy.health - 10
+    elif change > 8:
+        print('Failed')
+    else:
+        print('Broke lol | Its the code, not you 🤣')
+SB()
 
-float(TestDummy.health) - float(bleed)
+while TestDummy.health != 0:
+    ui = input('Test skill? Y/N ')
+    if ui.lower() == 'y':
+        SB()
+        print(TestDummy.__dict__)
+    elif ui.lower() == 'n':
+        break
+    else:
+        pbaj = input('Y/N')
+        ui = pbaj
+
+
+
 # Note for future self because I WILL forget:
 # I need to find a way to use get a passive move like bleed or regen to affect an entity
+#Bruh
