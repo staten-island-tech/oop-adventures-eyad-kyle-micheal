@@ -5,7 +5,6 @@ class Player():
         self.health = health
         self.melee_attack = melee_attack
         self.ranged_attack =ranged_attack
-
         self.speed = speed
         self.intelligence = intelligence
         self.magic_talent = magic_talent
@@ -19,4 +18,4 @@ class Assasin(Player):
         self.stealth = stealth
 assasin = Assasin
 print(assasin.__dict__)
-print()
+
