@@ -12,7 +12,6 @@ classes = [archer]
 def class_choice():
     choose=input("what class are you?:")
     if choose in classes:
-        global selected_class
         selected_class = choose
 class_choice()
 print(selected_class)
