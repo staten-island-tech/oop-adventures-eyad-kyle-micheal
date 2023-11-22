@@ -31,54 +31,38 @@ sturdy_wooden_bow = weapon("Sturdy Wooden Bow", 35, 3)
 
 sturdy_steel_bow = weapon("Sturdy Steel Bow", 60, 5)
 
-b = 1
-while b == 1:
-    if b == 1:
-        number = int(input("For an item or weapon, please flip a coin, type in 1 or 2? "))
-        if (number < 1 or number > 2):
-            print("Incorrect Input, try again")
 
-        if number == random_thing:
-                print("You got Heads, you get a weapon")
-                b = 2
-                if b == 2:
-                      exit()
-        elif number + 1 == random_thing:
-                print("You got Tails, you get a item")
-                b = 2
-                if b == 2:
-                      exit()
-        elif number - 1 == random_thing:
-                print("You got Tails, you get a item")
-                b = 2
-                if b == 2:
-                      exit()
+def breaking():
+    d = 1
+    while d == 1:
+        flimsy_steel_bow.durability - 1
+print(flimsy_steel_bow)
+if flimsy_steel_bow.durability == 0:
+    print("Your Weapon Broke!")
+    d = 2
+            
+            
 
-b = 1
-while b == 1:
-    if b == 1:
-        number = str(input("For an item or weapon, please flip a coin, type in heads or tails? "))
-        if number == "heads":
-              number = 1
-        if number == "tails":
-              number = 2
-
-        if (number < 1 or number > 2):
-            print("Incorrect Input, try again")
-
-        if number == random_thing:
-                print("You got Heads, you get a weapon")
-                b = 2
-                if b == 2:
-                      exit()
-        elif number + 1 == random_thing:
-                print("You got Tails, you get a item")
-                b = 2
-                if b == 2:
-                      exit()
-        elif number - 1 == random_thing:
-                print("You got Tails, you get a item")
-                b = 2
-                if b == 2:
-                      exit()
+#b = 1
+#while b == 1:
+#    if b == 1:
+#        number = int(input("For an item or weapon, please flip a coin, type in 1 or 2? "))
+#        if (number < 1 or number > 2):
+#            print("Incorrect Input, try again")
+#
+#      if number == random_thing:
+#               print("You got Heads, you get a weapon")
+#          b = 2
+#              if b == 2:
+#                     exit()
+#      elif number + 1 == random_thing:
+#             print("You got Tails, you get a item")
+#             b = 2
+#          if b == 2:
+#                  exit()
+#        elif number - 1 == random_thing:
+#               print("You got Tails, you get a item")
+#          b = 2
+#        if b == 2:
+#              exit()
 
