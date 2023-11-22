@@ -1,17 +1,25 @@
 from enemies import Enemies
 from player import Player
-from weapon import Weapons
 goblin = Enemies("Goblin",100,0.4,0.8,100)    
-archer = ("Archer",90,  .35,  1.3,  0.8,  95,  1.1,  15)
-
+archer = ("Archer",90,  .35,  1.3,  0.8,  95,  1.1,  15) 
+archer = ("archer")
 class TestAttack():
     def __init__(self,name,base_damage):
         self.name = name
         self.base_damage = base_damage
-    
-
 quick_attack = TestAttack("quick_attack",120)
 coins = 7
+classes = [archer]
+def class_choice():
+    choose=input("what class are you?:")
+    if choose in classes:
+        global selected_class
+        selected_class = choose
+class_choice()
+print(selected_class)
+
+
+
 
 def attack(enemy,player):
     while enemy.health > 0:
