@@ -21,6 +21,7 @@ class Pas(PasCommon):
         self.lost = lost
         skill_health = 0.3
         lost = (float(skill_health) * float(srandint))
+        return lost
 
 
 
@@ -59,16 +60,20 @@ class Dummy():
 TestDummy = Dummy(100)
 print(TestDummy.__dict__)
 
+
+bleeddamage = Pas.Bleed()
+
+
 def SB():
     import random
     change = random.randint(1, 10)
     print(change)
     if change < 8 or change == 8:
-        TestDummy.health = TestDummy.health - 10
+        TestDummy.health = TestDummy.health - bleeddamage
     elif change > 8:
         print('Failed')
     else:
-        print('Broke lol | Its the code, not you 🤣')
+        print('Broke lol | Its the code,not you 🤣')
 SB()
 
 while TestDummy.health != 0:
