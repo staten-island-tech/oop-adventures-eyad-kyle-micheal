@@ -53,17 +53,18 @@ class Entity():
 
 class JD(Entity):
     def __init__(self, health, attack):
-        super().c(self, health)
+        super().c(health)
         self.attack = attack
 
 class Dummy(Entity):
     def __init__(self, health):
-        super().c(self, health)
+        super().c(health)
 
 TestDummy = Dummy(100)
 print(TestDummy.__dict__)
 
-TestPlay
+TestPlayer = JD(100, 0.8)
+print(TestPlayer.__dict__)
 
 
 
