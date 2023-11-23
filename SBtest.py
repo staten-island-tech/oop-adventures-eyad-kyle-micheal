@@ -1,3 +1,24 @@
+# Testing below here 😭 👇 |
+class Entity():
+    def c(self, health):
+        self.health = health
+
+class JD(Entity):
+    def __init__(self, health, attack):
+        super().c(health)
+        self.attack = attack
+
+class Dummy(Entity):
+    def __init__(self, health):
+        super().c(health)
+
+TestDummy = Dummy(100)
+print(TestDummy.__dict__)
+
+TestPlayer = JD(100, 0.8)
+print(TestPlayer.__dict__)
+
+
 class PasCommon():
     def c(self, srandint, skill_health):
         import random
@@ -19,7 +40,8 @@ class Pas(PasCommon):
         self.lost = lost
         skill_health = 0.3
         lost = (float(skill_health) * float(srandint))
-        return lost
+        return (TestPlayer.attack * lost)
+
 
 
 
@@ -46,25 +68,7 @@ class ActCommon():
 
 
 
-# Testing below here 😭 👇 |
-class Entity():
-    def c(self, health):
-        self.health = health
 
-class JD(Entity):
-    def __init__(self, health, attack):
-        super().c(health)
-        self.attack = attack
-
-class Dummy(Entity):
-    def __init__(self, health):
-        super().c(health)
-
-TestDummy = Dummy(100)
-print(TestDummy.__dict__)
-
-TestPlayer = JD(100, 0.8)
-print(TestPlayer.__dict__)
 
 
 
@@ -73,7 +77,7 @@ def SB():
     change = random.randint(1, 10)
     print(change)
     if change < 8 or change == 8:
-        TestDummy.health = TestDummy.health - 10
+        TestDummy.health = TestDummy.health - Pas.Bleed
     elif change > 8:
         print('Failed')
     else:
@@ -81,8 +85,8 @@ def SB():
 SB()
 
 while TestDummy.health != 0:
-    ui = input('Test skill? Y/N ')
-    if ui.lower() == 'y':
+    ui = input("Test skill?\n Bleed\n Otherwise put 'N' ")
+    if ui.lower() == 'bleed':
         SB()
         print(TestDummy.__dict__)
     elif ui.lower() == 'n':
