@@ -51,8 +51,10 @@ class Entity():
     def c(self, health):
         self.health = health
 
-class JD():
-    
+class JD(Entity):
+    def __init__(self, health, attack):
+        super().c(self, health)
+        self.attack = attack
 
 class Dummy(Entity):
     def __init__(self, health):
@@ -61,7 +63,7 @@ class Dummy(Entity):
 TestDummy = Dummy(100)
 print(TestDummy.__dict__)
 
-
+TestPlay
 
 
 
