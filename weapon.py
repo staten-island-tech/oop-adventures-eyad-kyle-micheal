@@ -1,6 +1,6 @@
 import random
 random_thing = random.randint(1,2)
-print(random_thing)
+
 
 class weapon():
     def __init__(self, name, damage, durability):
@@ -32,17 +32,16 @@ sturdy_wooden_bow = weapon("Sturdy Wooden Bow", 35, 3)
 sturdy_steel_bow = weapon("Sturdy Steel Bow", 60, 5)
 
 
-def breaking():
-    d = 1
-    while d == 1:
-        flimsy_steel_bow.durability - 1
-print(flimsy_steel_bow)
-if flimsy_steel_bow.durability == 0:
-    print("Your Weapon Broke!")
-    d = 2
-            
-            
-
+def breaking(flimsy_wooden_sword):
+    while flimsy_wooden_sword.durability > 0:
+        move = (input("What would you like to do: "))
+        if move == ("attack"):
+            print("hit")
+        flimsy_wooden_sword.durability - 1
+        print(flimsy_wooden_staff.durability)
+if flimsy_wooden_sword.durability == 0:
+    exit()
+breaking(flimsy_wooden_sword)
 #b = 1
 #while b == 1:
 #    if b == 1:
