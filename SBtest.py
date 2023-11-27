@@ -58,13 +58,14 @@ class Act(ActCommon):
         super().k(self, skill_damage)
         skill_damage = 7
         return (skill_damage)
-    
+
+susl = Act.ss(7)
 def SS():#
     import random
     change = random.randint(1, 10)
     print(change)
     if change < 8 or change == 8:
-        (float(TestDummy.health) - float(Act.ss))
+        TestDummy.health = max(0,TestDummy.health - susl)
     elif change > 8:
         print('Failed')
     else:
