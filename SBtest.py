@@ -49,14 +49,39 @@ class Pas(PasCommon):
 
 #Do Later 👇
 class ActCommon():
-    def k(self,  skill_damage, entity_lost):
+    def k(self,  skill_damage):
         self.skill_damage = skill_damage
-        self.entity_lost = entity_lost
 
-#class Act(ActCommon):
-#    def ss(self, srandint, skill_health, entity_health):
-#        super().k
-#
+
+class Act(ActCommon):
+    def ss(self, skill_damage):
+        super().k(self, skill_damage)
+        skill_damage = 7
+        return (skill_damage)
+    
+def SS():#
+    import random
+    change = random.randint(1, 10)
+    print(change)
+    if change < 8 or change == 8:
+        (float(TestDummy.health) - float(Act.ss))
+    elif change > 8:
+        print('Failed')
+    else:
+        print('Broke lol | Its the code,not you 🤣')
+
+
+while TestDummy.health != 0:
+    ui = input("Test skill?\n Slash\n Otherwise put 'N' ")
+    if ui.lower() == 'slash':
+        SS()
+        print(TestDummy.__dict__)
+    elif ui.lower() == 'n':
+        break
+    else:
+        pbaj = input('Y/N')
+        ui = pbaj
+
 #    def bb(self, srandint, skill_health, entity_health):
 #
 #
@@ -70,30 +95,30 @@ class ActCommon():
 
 
 
+# FROZEN FOR LATER USE
 
-
-def SB():
-    import random
-    change = random.randint(1, 10)
-    print(change)
-    if change < 8 or change == 8:
-        TestDummy.health = TestDummy.health - Pas.Bleed
-    elif change > 8:
-        print('Failed')
-    else:
-        print('Broke lol | Its the code,not you 🤣')
-SB()
-
-while TestDummy.health != 0:
-    ui = input("Test skill?\n Bleed\n Otherwise put 'N' ")
-    if ui.lower() == 'bleed':
-        SB()
-        print(TestDummy.__dict__)
-    elif ui.lower() == 'n':
+#def SB():#
+#    import random
+#    change = random.randint(1, 10)
+#    print(change)
+#    if change < 8 or change == 8:
+#        (float(TestDummy.health) - float(Pas.Bleed))
+#    elif change > 8:
+#        print('Failed')
+#    else:
+#        print('Broke lol | Its the code,not you 🤣')
+#SB()
+#
+#while TestDummy.health != 0:
+#    ui = input("Test skill?\n Bleed\n Otherwise put 'N' ")
+#    if ui.lower() == 'bleed':
+#        SB()
+#        print(TestDummy.__dict__)
+#    elif ui.lower() == 'n':
         break
-    else:
-        pbaj = input('Y/N')
-        ui = pbaj
+#    else:
+#        pbaj = input('Y/N')
+#        ui = pbaj
 
 
 
