@@ -48,18 +48,14 @@ class Pas(PasCommon):
 
 
 #Do Later 👇
-class ActCommon():
-    def k(self,  skill_damage):
-        self.skill_damage = skill_damage
 
-
-class Act(ActCommon):
-    def ss(self, skill_damage):
-        super().k(self, skill_damage)
-        skill_damage = 7
+class Act():
+    def ss(name, skill_damage):
         return (skill_damage)
 
-susl = Act.ss(7)
+susl = Act.ss('Saboom', 8)
+print(susl)
+
 def SS():#
     import random
     change = random.randint(1, 10)

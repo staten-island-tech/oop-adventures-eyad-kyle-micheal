@@ -8,9 +8,9 @@ class Merchant:
         print(f'you have purchased {item}')
         print(self.products)
         return item
-@staticmethod
-def greeting():
-    print('Welcome to my shop')
+    @staticmethod
+    def greeting():
+        print('Welcome to my shop')
 
 
 

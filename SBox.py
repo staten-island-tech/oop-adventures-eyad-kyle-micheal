@@ -1,3 +1,5 @@
+# Put Certified Tested Code THAT WORKS inside green text like this!
+
 
 
 class PasCommon():
@@ -27,24 +29,16 @@ class Pas(PasCommon):
 
 
 
-# Do Later 👇
-#class ActCommon():
-#    def k(self, srandint, skill_health, entity_health):
-#        import random
-#        srandint = random.randint(1, 5)
-#        self.srandint = srandint
-#        self.skill_health = skill_health
-#        self.entity_health = entity_health
 
-#class Act(ActCommon):
-#    def ss(self, srandint, skill_health, entity_health):
-#        super().k
-#
-#    def bb(self, srandint, skill_health, entity_health):
-#
-#
-#    def usa(self, srandint, skill_health, entity_health):
 
+class Active():
+    def BaseActive(name, skill_damage):
+        return (skill_damage)
+    
+    def NumberedActive(name, sd, count):
+        return (sd * (count))
+
+Piercing_Slash = Active.BaseActive('Piercing Slash', 12)
 
 
 
