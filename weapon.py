@@ -31,10 +31,14 @@ sturdy_wooden_bow = weapon("Sturdy Wooden Bow", 35, 3)
 
 sturdy_steel_bow = weapon("Sturdy Steel Bow", 60, 5)
 
+durability_decrease = 1
 
 def breaking():
     while flimsy_wooden_sword.durability > 0:
-        flimsy_wooden_sword.durability == flimsy_wooden_sword.durability - 1
+        move = (input("What would you like to do: "))
+        if move == ("attack"):
+            print("hit")
+        flimsy_wooden_sword.durability = (flimsy_wooden_sword.durability - durability_decrease)
         print(flimsy_wooden_staff.durability)
 if flimsy_wooden_sword.durability == 0:
     exit()
