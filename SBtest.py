@@ -55,13 +55,14 @@ class Act():
 
 susl = Act.ss('Saboom', 8)
 print(susl)
-
+attack_stat_multiple = (TestPlayer.attack + 1)
+print(attack_stat_multiple)
 def SS():#
     import random
     change = random.randint(1, 10)
     print(change)
     if change < 8 or change == 8:
-        TestDummy.health = max(0,TestDummy.health - susl)
+        TestDummy.health = max(0,TestDummy.health - (susl * attack_stat_multiple))
     elif change > 8:
         print('Failed')
     else:
@@ -112,7 +113,7 @@ while TestDummy.health != 0:
 #        SB()
 #        print(TestDummy.__dict__)
 #    elif ui.lower() == 'n':
-        break
+#        break
 #    else:
 #        pbaj = input('Y/N')
 #        ui = pbaj
