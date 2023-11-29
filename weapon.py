@@ -33,16 +33,25 @@ sturdy_steel_bow = weapon("Sturdy Steel Bow", 60, 5)
 
 durability_decrease = 1
 
-def breaking():
-    while flimsy_wooden_sword.durability > 0:
-        move = (input("What would you like to do: "))
-        if move == ("attack"):
-            print("hit")
-        flimsy_wooden_sword.durability = (flimsy_wooden_sword.durability - durability_decrease)
-        print(flimsy_wooden_staff.durability)
-if flimsy_wooden_sword.durability == 0:
-    exit()
-breaking()
+choice = 1
+
+
+
+
+#all inactive code below works, but tweeks can be made. subject to change
+
+#def breaking():
+    #while flimsy_wooden_sword.durability > 0:
+        #move = (input("What would you like to do: "))
+        #if move == ("attack"):
+            #print("hit")
+            #flimsy_wooden_sword.durability = (flimsy_wooden_sword.durability - durability_decrease)
+            #print(flimsy_wooden_sword.durability)
+        #else:
+            #print("Incorrect Input, Please try again: ")
+        #if flimsy_wooden_sword.durability == 0:
+            #print("Your Weapon Broke!")
+#breaking()
 #b = 1
 #while b == 1:
 #    if b == 1:
@@ -66,3 +75,37 @@ breaking()
 #        if b == 2:
 #              exit()
 
+def breaking_flimsy_wooden_sword():
+    while flimsy_wooden_sword.durability > 0:
+        move = (input("What would you like to do: "))
+        if move == ("attack"):
+            print("hit")
+            flimsy_wooden_sword.durability = (flimsy_wooden_sword.durability - durability_decrease)
+            print(flimsy_wooden_sword.durability)
+        else:
+            print("Incorrect Input, Please try again: ")
+        if flimsy_wooden_sword.durability == 0:
+            print("Your Weapon Broke!")
+
+def breaking_flimsy_wooden_bow():
+    while flimsy_wooden_bow.durability > 0:
+        move = (input("What would you like to do: "))
+        if move == ("attack"):
+            print("hit")
+            flimsy_wooden_bow.durability = (flimsy_wooden_bow.durability - durability_decrease)
+            print(flimsy_wooden_bow.durability)
+        else:
+            print("Incorrect Input, Please try again: ")
+        if flimsy_wooden_bow.durability == 0:
+            print("Your Weapon Broke!")
+
+def weapon_thing():
+    while 1:
+        weapon_choice = input("What weapon will you choose?: ")
+        if weapon_choice == ("Flimsy Wooden Sword"):
+            breaking_flimsy_wooden_sword()
+        if weapon_choice == ("Flimsy Wooden Bow"):
+            breaking_flimsy_wooden_bow()
+        else:
+            print("Incorrect Input, Please try again")
+weapon_thing()
