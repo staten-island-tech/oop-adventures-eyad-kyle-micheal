@@ -1,3 +1,4 @@
+from SBox import PasCommon
 from SBox import Pas
 
 
