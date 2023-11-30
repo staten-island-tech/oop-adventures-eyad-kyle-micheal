@@ -18,6 +18,7 @@ classes=[archer,assasin]
 def choose_your_class():
     choose = input("what:")
     if choose in classes:
+        chosen = classes
         print(f"youre chosen class is {choose}")
         global chosen
         chosen=choose
