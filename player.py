@@ -11,14 +11,22 @@ class Player():
 class Archer(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money) 
-
 class Assasin(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,stealth ):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.stealth = stealth
-assasin =Assasin("assasin", 100, 90, 90, 150, 100, 25, 0,1000)
-print(assasin.stealth)
 class Warrior(Player):
-    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,):
+    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,honor):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
+        self.honor = honor
+class Berzerker(Player):
+    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,rage):
+        super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
+        self.rage = rage
+class Fighter(Player):
+    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,skillss):
+        super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
+        self.skilss = skillss
+
+
 
