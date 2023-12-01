@@ -18,7 +18,7 @@ class Dummy():
 
 TestDummy = Dummy(100)
 print(TestDummy.__dict__)
-
+mana = 100
 # WHALEN BOSS EXCLUSIVE
 # Boss will activate after 15 - 20 turns or in a 1/100 chance
 def Whailord():
@@ -53,6 +53,7 @@ def SkillPierce():
     Chance = random.randint(1, 10)
     if Chance < 8 or Chance == 8:
         TestDummy.health = TestDummy.health - round(Piercing_Slash)
+        mana - 10
     elif Chance > 8:
         print('Failed')
     else:
