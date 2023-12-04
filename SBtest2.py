@@ -81,7 +81,7 @@ def act():
 # TEST
     else: 
         print('Skill not valid')
-
+warn = 0
 while TestDummy.health > 0:
     ui = input('Test skill? Y/N ')
     if ui.lower() == 'y':
@@ -90,3 +90,7 @@ while TestDummy.health > 0:
         break
     else:
         print('Bro stop breaking the code and follow the instructions')
+        warn += 1
+        print(f"You now have {warn} warnings")
+        if warn >=5:
+            break
