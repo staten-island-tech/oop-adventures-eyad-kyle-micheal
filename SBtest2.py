@@ -3,12 +3,15 @@ from SBox import Active
 
 import random
 passiverandom = random.randint(1, 50)
-Piercing_Slash = Active.BaseActive('Piercing Slash', 12)
 
 Regeneration = PasCommon.c('Regen', 0.2)
 Regained = (Regeneration * passiverandom)
+
 Bleeding = PasCommon.c('Bleed', 0.3)
 Bled = (Bleeding * passiverandom)
+
+
+
 # Bled is Bleed damage, subtract it from health
 # Regained is health healed, add it to health
 
@@ -19,7 +22,7 @@ class Dummy():
 TestDummy = Dummy(100)
 print(TestDummy.__dict__)
 
-
+import random
 # Boss will activate after 15 - 20 turns or in a 1/100 chance
 def Whailord():
     Chance = random.randint(1, 20)
@@ -50,22 +53,46 @@ def SkillHeal():
 # Regen Skill
 
 def SkillPierce():
-    import random
+    Piercing_Slash = Active.BaseActive('Piercing Slash', 12)
     Chance = random.randint(1, 10)
     if Chance < 8 or Chance == 8:
         TestDummy.health = TestDummy.health - round(Piercing_Slash)
+        bleedchance = 7
+        if bleedchance == 7:
+            print('Bonus Bleed Damage!')
+            TestDummy.health = TestDummy.health - Bled
+            print(TestDummy.health)
     elif Chance > 8:
         print('Failed')
     else:
         print('Broke lol | Its the code,not you 🤣')
-# Sword Skill
+# Sword Skill | Warrior
+
+def SkillRain():
+    count = random.randint(3, 7)
+    Rain = Active.NumberedActive('Rain', 3, count)
+    Chance = random.randint(1, 10)
+    if Chance < 8 or Chance == 8:
+        TestDummy.health = TestDummy.health - round(Rain)
+    elif Chance > 8:
+        print('Failed')
+    else:
+        print('Broke lol | Its the code,not you 🤣')
+# Archer
+
+
+# Fighter
 
 def act():
-    x = input('Pierce, Bleed, or Heal: ')
+    x = input('Pierce, Arrow Rain, Bleed, or Heal: ')
     print(x)
     if x.lower() == 'pierce':
         print('Piercing...')
         SkillPierce()
+        print(round(TestDummy.health))
+    elif x.lower() == 'arrow rain':
+        print('Raining...')
+        SkillRain()
         print(round(TestDummy.health))
     elif x.lower() == 'bleed':
         print('Bleeding...')
