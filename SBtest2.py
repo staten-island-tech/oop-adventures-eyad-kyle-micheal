@@ -18,17 +18,15 @@ class Dummy():
 
 TestDummy = Dummy(100)
 print(TestDummy.__dict__)
-# WHALEN BOSS EXCLUSIVE
+
+
 # Boss will activate after 15 - 20 turns or in a 1/100 chance
 def Whailord():
     Chance = random.randint(1, 20)
     if Chance == 20:
         print('Failing your class!')
         TestDummy.health = TestDummy.health - TestDummy.health
-# Damage is pending review
-# WHALEN BOSS EXCLUSIVE
-
-mana = 10
+# Boss Skill
 
 def SkillBleed():
     Chance = random.randint(1, 10)
@@ -38,6 +36,7 @@ def SkillBleed():
         print('Failed')
     else:
         print('Broke lol | Its the code,not you 🤣')
+# Bleed Skill
 
 def SkillHeal():
     import random
@@ -48,21 +47,18 @@ def SkillHeal():
         print('Failed')
     else:
         print('Broke lol | Its the code,not you 🤣')
+# Regen Skill
 
 def SkillPierce():
     import random
     Chance = random.randint(1, 10)
     if Chance < 8 or Chance == 8:
-        print(mana)
         TestDummy.health = TestDummy.health - round(Piercing_Slash)
-        mana - 10
-        print(mana)
     elif Chance > 8:
-        print('Failed')
-    elif mana == 0 or mana < 0:
         print('Failed')
     else:
         print('Broke lol | Its the code,not you 🤣')
+# Sword Skill
 
 def act():
     x = input('Pierce, Bleed, or Heal: ')
@@ -71,8 +67,6 @@ def act():
         print('Piercing...')
         SkillPierce()
         print(round(TestDummy.health))
-        mana + 8
-        print(mana)
     elif x.lower() == 'bleed':
         print('Bleeding...')
         SkillBleed()
@@ -88,6 +82,9 @@ def act():
 # TEST
     else: 
         print('Skill not valid')
+# List of Skill Options
+
+
 warn = 0
 while TestDummy.health > 0:
     ui = input('Test skill? Y/N ')
