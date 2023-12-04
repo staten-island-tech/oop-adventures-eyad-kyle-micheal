@@ -22,6 +22,7 @@ quick_attack = TestAttack("quick_attack",120)
 archer = Archer("Archer",90,  .35,  1.3,  0.8,  95,  1.1,  15)
 assasin=Assasin("assasin", 100, 90, 90, 150, 100, 25, 0,1000)
 warrior=Warrior("warrior",150,.9,.9,.9,.9,.9,.9,90000)
+
 classes=["archer","assasin","warrior"]
 print(whalen.__dict__)
 def choose_your_class():
@@ -31,23 +32,31 @@ def choose_your_class():
             return archer
         elif choose.lower() == ("warrior"):
             return warrior 
-    else:
-        print("invalid")
 chosen = choose_your_class()
+
+
 def adapting():
+    global goblin
     if chosen == archer:
-        goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,99) 
-        print(goblin.__dict__)
+        goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",99,0.4,0.8,99) 
+    elif chosen == warrior:
+        goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",98,0.4,0.8,98)
 adapting()
+
+
 if chosen:
+    print("Here is your class:")
     print(chosen.__dict__)
+
+
+
 def attack(enemy,player,coins):
     while player.health >0:
         if enemy.health > 0:
             x=input("what attack:")
             if x == ("quick attack"):
                 damage = quick_attack.calculate(enemy)
-                enemy.health = max(0,enemy.health - damage)
+                enemy.health = max(0,enemy.health - 0)
                 print(enemy.__dict__)
                 player.health = max(0,player.health - 10)
                 print(player.__dict__)
@@ -56,7 +65,7 @@ def attack(enemy,player,coins):
         elif enemy.health <=0:
             print("youve defeated the enemy,move on")
             print(f"you have gained {coins} coins")
+            break
     if player.health <=0:
         print("youve died")
-    
-attack(goblin,chosen,7)
+attack(goblin,chosen,0)

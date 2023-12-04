@@ -27,6 +27,16 @@ class Fighter(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,skillss):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.skilss = skillss
-
-
+class Wizard(Player):
+    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,magic):
+        super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
+        self.magic=magic
+class Fighter(Player):
+    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,skillss):
+        super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
+        self.skilss = skillss
+class SecretClass(Player):
+    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,secrets):
+        super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
+        self.secrets = secrets
 
