@@ -18,35 +18,70 @@ class TestAttack():
     def calculate(self,enemy): 
         return self.base_damage-(self.base_damage-(self.base_damage*enemy.defense))
 quick_attack = TestAttack("quick_attack",120)
-
-archer = Archer("Archer",90,  .35,  1.3,  0.8,  95,  1.1,  15)
+classes_choice=[
+        Archer("Archer",90,  .35,  1.3,  0.8,  95,  1.1,  15,"infinite"),
+        Assasin("Assasin", 100, 90, 90, 150, 100, 25, 0,1000),
+        Warrior("Warrior",150,125,75,100,100,75,0,1000),
+        Berserker("Berserker",100,150,30,75,100,15,0,1000000),
+        Fighter("Fighter",150,100,1,175,100,10,0,100000),
+        Wizard("Wizard",150,10,100,100,150,300,0,10000000),
+]
+def print_classes():
+    for i, classes in enumerate (classes_choice):
+        print(f'{i+1}. {classes}  ')
+        print()
+    return i
+number_of_classes = print_classes()
+archer = Archer("Archer",90,  .35,  1.3,  0.8,  95,  1.1,  15,"infinite")
 assasin=Assasin("assasin", 100, 90, 90, 150, 100, 25, 0,1000)
 warrior=Warrior("warrior",150,125,75,100,100,75,0,1000)
 b = Berserker("Berserker",100,150,30,75,100,15,0,1000000)
 fighter = Fighter("fighter",150,100,1,175,100,10,0,100000)
 wizard = Wizard("Wizard",150,10,100,100,150,300,0,10000000)
-classes=["archer","assasin","warrior","berserker","fighter"]
-print(whalen.__dict__)
-def choose_your_class():
-    choose = input("what:")
-    if choose.lower() == ("archer"):
-        return archer
-    elif choose.lower() == ("warrior"):
-        return warrior 
-    elif choose.lower() == ("assasin"):
-        return assasin
-    elif choose.lower() == ("b"):
-        return b
-    elif choose.lower() == ("fighter"):
-        return fighter
-    elif choose.lower() == ("wizard"):
-        return wizard
-    else:
-        print("invalid choice.try again")
-        chose = input('what: ')
-        chose = choose
 
-chosen = choose_your_class()
+print(whalen.__dict__)
+#def choose_your_class():
+ #   while True:
+#
+   #     choose = input("whatclass are you interested in:")
+   #     if choose.lower() == ("archer"):
+   #         return archer
+   #     elif choose.lower() == ("warrior"):
+ #           return warrior 
+  #      elif choose.lower() == ("assasin"):
+   #         return assasin
+    #    elif choose.lower() == ("b"):
+    #        return b
+     #   elif choose.lower() == ("fighter"):
+      #      return fighter
+ #       elif choose.lower() == ("wizard"):
+    #        return wizard
+      #  else:
+       #     print("sorry,thats not a class.Try again")
+def better_choose_class():
+    choose = int(input("what class are you interested in"))
+    while True:
+        number_of_classes=6
+        if number_of_classes>=choose>=1:
+            if choose == 1:
+                return archer
+            elif choose == 2:
+                return assasin
+            elif choose==3:
+                return warrior
+            elif choose == 4:
+                return Berserker
+            elif choose== 5:
+                return fighter
+            elif choose == 6:
+                return wizard
+    else:
+        print("sorry,thats not a class")
+            
+chosen = better_choose_class()
+
+
+
 
 
 def adapting():
@@ -65,9 +100,10 @@ if chosen:
 
 
 
-def encounter(enemy,player,coins):
+def encounter(enemy,player):
     while player.health >0:
         if enemy.health > 0:
+            print(enemy.__dict__)
             x=input("what attack:")
             if x == ("quick attack"):
                 damage = quick_attack.calculate(enemy)
@@ -79,8 +115,9 @@ def encounter(enemy,player,coins):
                 print(input("sorry thats not an attack try again "))
         elif enemy.health <=0:
             print("youve defeated the enemy,move on")
-            print(f"you have gained {coins} coins")
+            print(f"you have gained {player.money} coins")
             break
     if player.health <=0:
         print("youve died")
 
+encounter(goblin,chosen)
