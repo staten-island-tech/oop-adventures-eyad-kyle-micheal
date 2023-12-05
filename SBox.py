@@ -1,16 +1,10 @@
-# Put Certified Tested Code THAT WORKS inside green text like this!
-
-
+import random
 
 class PasCommon():
     def c(name, skill_health):
         return (skill_health)
-
-
-
-
-
-
+Bleeding = PasCommon.c('Bleed', 0.3)
+Regeneration = PasCommon.c('Regen', 0.2)
 
 class Active():
     def BaseActive(name, skill_damage):
@@ -18,24 +12,7 @@ class Active():
     
     def NumberedActive(name, sd, count):
         return (sd * (count))
-
-import random
-passiverandom = random.randint(1, 50)
 Piercing_Slash = Active.BaseActive('Piercing Slash', 12)
-Regeneration = PasCommon.c('Regen', 0.2)
-print(Regeneration)
-
-Regained = (Regeneration * passiverandom)
-print(Regained)
-
-
-
-# Testing below here 😭 👇 |
-
-
-
-
-
-# Note for future self because I WILL forget:
-# I need to find a way to use get a passive move like bleed or regen to affect an entity
-#Bruh
+count = random.randint(3, 7)
+Rain = Active.NumberedActive('Rain', 3, count)
+Right_Hook = Active.BaseActive('Right Hook', 12)
