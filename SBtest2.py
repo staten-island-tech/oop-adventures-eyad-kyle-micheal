@@ -29,6 +29,8 @@ def Whailord():
     if Chance == 20:
         print('Failing your class!')
         TestDummy.health = TestDummy.health - TestDummy.health
+    elif Chance < 20:
+        print('...')
 # Boss Skill
 
 def SkillBleed():
@@ -57,7 +59,7 @@ def SkillPierce():
     Chance = random.randint(1, 10)
     if Chance < 8 or Chance == 8:
         TestDummy.health = TestDummy.health - round(Piercing_Slash)
-        bleedchance = 7
+        bleedchance = random.randint(1, 7)
         if bleedchance == 7:
             print('Bonus Bleed Damage!')
             TestDummy.health = TestDummy.health - Bled
@@ -65,7 +67,7 @@ def SkillPierce():
     elif Chance > 8:
         print('Failed')
     else:
-        print('Broke lol | Its the code,not you 🤣')
+        print('Code Error')
 # Sword Skill | Warrior
 
 def SkillRain():
@@ -80,15 +82,32 @@ def SkillRain():
         print('Broke lol | Its the code,not you 🤣')
 # Archer
 
-
+def SkillHook():
+    Right_Hook = Active.BaseActive('Right Hook', 12)
+    Chance = random.randint(1, 10)
+    if Chance < 8 or Chance == 8:
+        TestDummy.health = TestDummy.health - round(Right_Hook)
+        bleedchance = random.randint(1, 14)
+        if bleedchance == 14:
+            print('Bonus bleed damage!')
+            TestDummy.health = TestDummy.health - Bled
+            print(TestDummy.health)
+    elif Chance > 8:
+        print('Failed')
+    else:
+        print('Code Error')
 # Fighter
 
 def act():
-    x = input('Pierce, Arrow Rain, Bleed, or Heal: ')
+    x = input('Pierce, Right Hook, Arrow Rain, Bleed, or Heal: ')
     print(x)
     if x.lower() == 'pierce':
         print('Piercing...')
         SkillPierce()
+        print(round(TestDummy.health))
+    elif x.lower() == 'right hook':
+        print('Smacking...')
+        SkillHook()
         print(round(TestDummy.health))
     elif x.lower() == 'arrow rain':
         print('Raining...')
