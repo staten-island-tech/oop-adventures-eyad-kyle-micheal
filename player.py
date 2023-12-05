@@ -19,7 +19,7 @@ class Warrior(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,honor):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.honor = honor
-class Berzerker(Player):
+class Berserker(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,rage):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.rage = rage
@@ -31,10 +31,6 @@ class Wizard(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,magic):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.magic=magic
-class Fighter(Player):
-    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,skillss):
-        super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
-        self.skilss = skillss
 class SecretClass(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,secrets):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)

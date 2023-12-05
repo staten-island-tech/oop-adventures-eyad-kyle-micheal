@@ -12,4 +12,3 @@ class Whalen(Enemies):
         self.authority = Authority
 whalen = Whalen("Whalen","this is the final boss; you are most definity going to die; you will also fail his class",2000,300,500,100,9999999999999)
 
-print (whalen.__dict__)
