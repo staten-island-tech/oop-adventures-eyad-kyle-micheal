@@ -40,24 +40,7 @@ fighter = Fighter("fighter",150,100,1,175,100,10,0,100000)
 wizard = Wizard("Wizard",150,10,100,100,150,300,0,10000000)
 
 print(whalen.__dict__)
-#def choose_your_class():
- #   while True:
-#
-   #     choose = input("whatclass are you interested in:")
-   #     if choose.lower() == ("archer"):
-   #         return archer
-   #     elif choose.lower() == ("warrior"):
- #           return warrior 
-  #      elif choose.lower() == ("assasin"):
-   #         return assasin
-    #    elif choose.lower() == ("b"):
-    #        return b
-     #   elif choose.lower() == ("fighter"):
-      #      return fighter
- #       elif choose.lower() == ("wizard"):
-    #        return wizard
-      #  else:
-       #     print("sorry,thats not a class.Try again")
+
 def better_choose_class():
     choose = int(input("what class are you interested in"))
     while True:
