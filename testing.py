@@ -76,11 +76,9 @@ def better_choose_class():
             elif choose == 6:
                 return wizard
     else:
-        print("sorry,thats not a class")
+        print("sorry")
             
 chosen = better_choose_class()
-
-
 
 
 
