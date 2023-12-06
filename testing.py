@@ -42,7 +42,7 @@ wizard = Wizard("Wizard",150,10,100,100,150,300,0,10000000)
 print(whalen.__dict__)
 
 def better_choose_class():
-    choose = int(input("what class are you interested in"))
+    choose = int(input("what class are you interested in:"))
     while True:
         number_of_classes=6
         if number_of_classes>=choose>=1:
@@ -58,9 +58,9 @@ def better_choose_class():
                 return fighter
             elif choose == 6:
                 return wizard
-    else:
-        print("sorry")
-            
+        else:
+            print("sorry")
+            better_choose_class()
 chosen = better_choose_class()
 
 
