@@ -1,6 +1,6 @@
 cost_1 = 10
 cost_2 = 30
-amount = 10
+amount = 100
 
 def user_warning(amount):
     if amount < 0:
@@ -46,21 +46,22 @@ def sell_1(amount):
             inventory.append("Health Potion")
             print(inventory)
             print(amount)
-            if amount == 0:
-                print("You ran out of money!")
-                exit()
             sell_2(amount)
         if user_purchase == "Flimsy Wooden Sword":
             amount-=cost_2
             user_warning(amount)
-        print("You have purchased a Flimsy Wooden Sword")
-        print(inventory)
-        print(amount)
-        shop_inventory.remove("Flimsy Wooden Sword")
-        inventory.append("Flimsy Wooden Sword")
+            print("You have purchased a Flimsy Wooden Sword")
+            shop_inventory.remove("Flimsy Wooden Sword")
+            inventory.append("Flimsy Wooden Sword")
+            print("This is your inventory" + (inventory))
+            print(amount)
+            sell_2(amount)
         if amount == 0:
             print("You ran out of money")
             exit()
+        if not shop_inventory:
+            print("There is nothing to buy")
+            leave_shop()
     sell_2(amount)
 sell_1(amount)
 
