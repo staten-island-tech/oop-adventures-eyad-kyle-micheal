@@ -42,9 +42,9 @@ Slash = Active.BaseActive('Slash', 3) #Bleed Chance 2/3 | Poison Chance 4/5
 PStab = Active.BaseActive('Poison Stab', 4) # 1/3 Bleed Chance | Always Poison
 
 
-# Beserker | They dont get to choose skills#
-Baby_Rage = Active.BaseActive('Rage', 23) # 3/5 Bleed Chance to enemies, 1/5 Bleed Chance to self
-Rage_Pound = Active.BaseActive('Pound', 13) # 1/2 Bleed Chance to enemies, 1/4 to self
+# Beserker |
+Rage_Pound = Active.BaseActive('Pound', 13) # 1/2 Bleed Chance to enemies 
+Baby_Rage = Active.BaseActive('Rage', 23) # 3/5 Bleed Chance to enemies, 1/5 Bleed Chance to self 
 Slam = Active.BaseActive('Slammer', 17) # -4 damage to self, 1/2 chance
 jcount = random.randint(3, 6)
 RepeatJab = Active.NumberedActive('Jabathon', 4, jcount) 
@@ -52,7 +52,7 @@ RepeatJab = Active.NumberedActive('Jabathon', 4, jcount)
 
 # Archer
 count = random.randint(3, 7) # Arrow count
-Rain = Active.NumberedActive('Rain', 3, count) #Bleed Chance 1/4
+Rain = Active.NumberedActive('Rain', 3, count) #Bleed Chance 1/4 
 ak = Active.BaseActive('Arrow Kick', 7) # Bleed 1/2
 Ak = Active.NumberedActive('Gun', 2, (PasDam/count)) # drains your mana based off skill damage
 # Special Chain move
