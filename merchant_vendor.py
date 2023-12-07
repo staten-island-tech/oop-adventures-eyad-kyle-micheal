@@ -53,7 +53,7 @@ def sell_1(amount):
             print("You have purchased a Flimsy Wooden Sword")
             shop_inventory.remove("Flimsy Wooden Sword")
             inventory.append("Flimsy Wooden Sword")
-            print("This is your inventory" + (inventory))
+            print(inventory)
             print(amount)
             sell_2(amount)
         if amount == 0:
