@@ -35,11 +35,11 @@ class Berserker(Player):
     def __str__(self):
         return super().__str__() + f",rage {self.rage}"
 class Fighter(Player):
-    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,skillss):
+    def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,fighting_skills):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
-        self.skilss = skillss
+        self.fighting_skills = fighting_skills
     def __str__(self):
-        return super().__str__() + f",fighting skill {self.skilss}"
+        return super().__str__() + f",fighting skill {self.fighting_skills}"
 class Wizard(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,magic):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)

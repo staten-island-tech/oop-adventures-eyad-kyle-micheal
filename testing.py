@@ -53,7 +53,8 @@ def print_classes():
         print(f'{i+1}. {classes}  ')
         print()
     return i
-number_of_classes = print_classes
+
+
 def better_choose_class():
     while True:
         try:
@@ -78,14 +79,21 @@ def better_choose_class():
                 print("It seems this wasn't one of the choices.Please enter a valid number.")
         except ValueError:
             print("Please enter an integer")
+chosen = better_choose_class()
+    
+
+def print_your_Class():
+    if chosen:
+        print("Here is your class:")
+        print(chosen.__dict__)
             
             
-chosen = better_choose_class
+
 def print_skills():
     for i,skillss in enumerate(attacks):
         print(f'{i+1}:{skillss.__dict__}')
         print()
-print_skills()
+
 def choose_skill():
     while True:
         try:
@@ -107,6 +115,7 @@ def choose_skill():
 
 
 
+
 def adapting():
     global goblin
     if chosen == archer:
@@ -117,22 +126,28 @@ def adapting():
 adapting
 
 
-if chosen:
-    print("Here is your class:")
-    print(chosen.__dict__)
 
 def enemy_attack(player):
+    global random_skill
     random_skill=random.choice(attacks)
     player.health = player.health - random_skill.base_damage
 
 def encounter(enemy,player):
+
     while player.health >0:
         if enemy.health > 0:
             print(enemy.__dict__)
+            print()
+            print_skills()
             choose_skill()
             enemy.health = enemy.health - chosen_skill.base_damage
-            print(enemy.health)
-
+            print(enemy.__dict__)
+            print()
+            enemy_attack(chosen)
+            player.health = player.health - (0.8*random_skill.base_damage)
+            print(f'Enemy used {random_skill.name} on you!')
+            print()
+            print(player.__dict__)
         elif enemy.health <=0:
             print("youve defeated the enemy,move on")
             print(f"you have gained {player.money} coins")
