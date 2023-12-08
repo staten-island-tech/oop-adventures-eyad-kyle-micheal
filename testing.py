@@ -2,7 +2,7 @@ from enemies import Enemies,Whalen
 from player import Player,Archer,Assasin,Warrior,Berserker,Fighter,Wizard
 import random
 chosen = Player.better_choose_class
-chosen_use=chosen()
+chosen_usable=chosen()
 #all enemies
 goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,100)   
 troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1, 0.05)
@@ -86,17 +86,15 @@ adapting
 def enemy_attack(player):
     global random_skill
     random_skill=random.choice(attacks)
-    player.health = player.health - random_skill.base_damage
-
-def encounter(enemy,player):
-
+chosen_skill=choose_skill()
+def encounter(enemy,player,chosens_skill):
     while player.health >0:
         if enemy.health > 0:
             print(enemy.__dict__)
             print()
             print_skills()
             choose_skill()
-            enemy.health = enemy.health - chosen_skill.base_damage
+            enemy.health = enemy.health - chosens_skill.base_damage
             print(enemy.__dict__)
             print()
             enemy_attack(chosen)
@@ -111,4 +109,3 @@ def encounter(enemy,player):
     if player.health <=0:
         print("youve died")
 chosen_skill=choose_skill()
-encounter(goblin,chosen)

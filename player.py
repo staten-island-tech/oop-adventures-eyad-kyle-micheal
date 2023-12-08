@@ -89,3 +89,19 @@ Player.print_classes()
 chosen_thing = chosen()
 chosen_thing
 print(chosen_thing.__dict__)
+class Enemies():
+    def __init__(self,name,descripton,health,attack,defense, speed):
+        self.name = name
+        self.description = descripton
+        self.health = health
+        self.attack = attack
+        self.defense = defense
+        self.speed = speed
+    def adapting(player,enemy):
+        if player == archer():
+            enemy.attack = enemy.attack * 1.3
+
+
+
+
+
