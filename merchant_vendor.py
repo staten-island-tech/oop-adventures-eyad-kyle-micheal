@@ -189,3 +189,4 @@ def sell_1(amount):
             print("Incorrect Input, Item is not in shop")
             sell_1(amount)
 sell_1(amount)
+
