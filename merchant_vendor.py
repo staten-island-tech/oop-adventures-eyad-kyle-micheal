@@ -131,13 +131,18 @@ stage_1 = 1
 
 def sell_1(amount):
     print("Items for sale:")
-    print(shop_inventory)
+    if "Health Potion" in shop_inventory:
+        print("Health Potion Cost: 10")
+    if "Flimsy Wooden Sword" in shop_inventory:
+        print("Flimsy Wooden Sword Cost: 40")
+    if "Flimsy Steel Sword" in shop_inventory:
+        print("Flimsy Steel Sword Cost: 60")
     while stage_1 == 1:
-        user_purchase = input("What would you like to buy?(Type exit if you want to leave.): ")
+        user_purchase = input("What would you like to buy?(Type Exit if you want to leave.): ")
         if not shop_inventory:
             print("There is nothing to buy")
             exit()
-        if user_purchase.lower == "exit":
+        if user_purchase == "Exit":
             print("You left the shop...")
             exit()
         if user_purchase == "Health Potion":
