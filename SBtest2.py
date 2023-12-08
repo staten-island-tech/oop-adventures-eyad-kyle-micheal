@@ -1,6 +1,9 @@
 from SBox import PasCommon
 from SBox import Active
 
+
+
+
 import random
 passiverandom = random.randint(1, 50)
 
@@ -80,6 +83,46 @@ def SkillRain():
         print('Failed')
     else:
         print('Broke lol | Its the code,not you 🤣')
+
+# Chain move test
+def SpecialAttackA():
+    count = random.randint(3, 7) # Arrow count
+    chain1 = 1
+    chain2 = 2
+    chance = 8
+    Bt = Active.BaseActive('Bow Throw', 4) #Chance to activate chain skill (1/4)
+    btchain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/12
+    btfinal = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
+    if chance < 8 or chance == 8:
+        TestDummy.health = TestDummy.health - Bt # Main Skill
+        print('Hit!')
+        print(TestDummy.health)
+        if chain1 == 1: # If Chain is number, activate
+            TestDummy.health = TestDummy.health - btchain # Chain used
+            print('Chain!')
+            print(TestDummy.health)
+            if count == 4: # if thing is 4
+                TestDummy.health = TestDummy.health - Bled # bleed
+                print('Bleed!')
+                print(TestDummy.health)
+            if chain2 == 2:
+                TestDummy.health = TestDummy.health - btfinal
+                print('Final!')
+                if count == 5:
+                    TestDummy.health = TestDummy - Bled
+                    print('Bleed!')
+    else:
+        print('Failed')
+
+
+
+
+
+
+
+
+
+
 # Archer
 
 def SkillHook():
@@ -91,7 +134,6 @@ def SkillHook():
         if bleedchance == 14:
             print('Bonus bleed damage!')
             TestDummy.health = TestDummy.health - Bled
-            print(TestDummy.health)
     elif Chance > 8:
         print('Failed')
     else:
@@ -99,7 +141,7 @@ def SkillHook():
 # Fighter
 
 def act():
-    x = input('Pierce, Right Hook, Arrow Rain, Bleed, or Heal: ')
+    x = input('Pierce, Right Hook, Arrow Rain, Special Chain, Bleed, or Heal: ')
     print(x)
     if x.lower() == 'pierce':
         print('Piercing...')
@@ -120,7 +162,10 @@ def act():
     elif x.lower() =='heal':
         print('Healing...')
         SkillHeal()
-        print(round(TestDummy.health)) 
+        print(round(TestDummy.health))
+    elif x.lower()== 'special chain':
+        SpecialAttackA()
+        print(round(TestDummy.health))
 # BOSS EXCLUSIVE TEST
     elif x.lower() == 'lol':
         Whailord()
