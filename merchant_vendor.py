@@ -97,7 +97,7 @@
 cost_1 = 10
 cost_2 = 40
 cost_3 = 60
-amount = 20
+amount = 100
 
 def user_warning_1(amount):
     if amount < 0:
@@ -128,8 +128,9 @@ class mooney():
     Flimsy_Steel_Sword = ("Flimsy Steel Sword", 60)
 
 stage_1 = 1
-
 def sell_1(amount):
+    print("This is the amount of money you have:")
+    print(amount)
     print("Items for sale:")
     if "Health Potion" in shop_inventory:
         print("Health Potion Cost: 10")
@@ -146,10 +147,6 @@ def sell_1(amount):
             print("You left the shop...")
             exit()
         if user_purchase == "Health Potion":
-            if amount == 0:
-                print("You ran out of money")
-                print(inventory)
-                exit()
             amount-=cost_1
             user_warning_1(amount)
             print("You have purchased a Heath Potion")
@@ -157,8 +154,6 @@ def sell_1(amount):
             inventory.append("Health Potion")
             print("This is your inventory:")
             print(inventory)
-            print("This is the amount of money you have:")
-            print(amount)
             if amount == 0:
                 print("You ran out of money")
                 print("You left the shop...")
@@ -172,10 +167,9 @@ def sell_1(amount):
             inventory.append("Flimsy Wooden Sword")
             print("This is your inventory:")
             print(inventory)
-            print("This is the amount of money you have:")
-            print(amount)
             if amount == 0:
                 print("You ran out of money")
+                print("You left the shop...")
                 exit()
             sell_1(amount)
         if user_purchase == "Flimsy Steel Sword":
@@ -186,10 +180,9 @@ def sell_1(amount):
             inventory.append("Flimsy Steel Sword")
             print("This is your inventory:")
             print(inventory)
-            print("This is the amount of money you have:")
-            print(amount)
             if amount == 0:
                 print("You ran out of money")
+                print("You left the shop...")
                 exit()
             sell_1(amount)
         else:
