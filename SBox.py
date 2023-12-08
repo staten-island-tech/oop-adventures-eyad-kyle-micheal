@@ -84,3 +84,4 @@ Shalababang = Active.adhominum('Rick Roll', 3, count, PasDam, (count * PasDam))
 
 # Secret Skills?? | Classified as General |
 Sh = Active.adhominum('Status Hell', 2, Burnt, Bled, Poison)
+st = Active.NumberedActive('Stabathon', 6, count)
