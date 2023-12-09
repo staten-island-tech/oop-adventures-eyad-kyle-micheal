@@ -1,4 +1,4 @@
-
+#remember to call methods after everything is defined
 class Player():
     classes_choice=[]
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money):
@@ -16,19 +16,30 @@ class Player():
         for i, classes in enumerate (Player.classes_choice):
             print(f'{i+1}. {classes}  ')
             print()
-    def better_choose_class():
+    @classmethod
+    def better_choose_class(cls):
         while True:
             try:
                 choose = int(input("what class are you interested in(put the corresponding number):"))
                 number_of_classes=6
                 if number_of_classes>=choose>=1:
-                    return Player.classes_choice[choose-1]
+                    if choose == 1:
+                        return archer
+                    elif choose == 2:
+                        return assasin
+                    elif choose == 3:
+                        return warrior
+                    elif choose == 4:
+                        return b
+                    elif choose == 5:
+                        return fighter
+                    elif choose ==6:
+                        return wizard
                 else:
                     print("It seems this wasn't one of the choices.Please enter a valid number.")
             except ValueError:
                 print("Please enter an integer")
-            
-chosen = Player.better_choose_class
+
 class Archer(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,suuper):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money) 
@@ -79,16 +90,13 @@ Player.classes_choice=[
         Fighter("Fighter",150,100,1,175,100,10,0,100000),
         Wizard("Wizard",150,10,100,100,150,300,0,10000000),
 ]
-archer = Archer("Archer",90,  .35,  1.3,  0.8,  95,  1.1,  15,"infinite")
+archer_thing = Archer("Archer",90,  .35,  1.3,  0.8,  95,  1.1,  15,"infinite")
 assasin=Assasin("assasin", 100, 90, 90, 150, 100, 25, 0,1000)
 warrior=Warrior("warrior",150,125,75,100,100,75,0,1000)
 b = Berserker("Berserker",100,150,30,75,100,15,0,1000000)
 fighter = Fighter("fighter",150,100,1,175,100,10,0,100000)
 wizard = Wizard("Wizard",150,10,100,100,150,300,0,10000000)
-Player.print_classes()
-chosen_thing = chosen()
-chosen_thing
-print(chosen_thing.__dict__)
+
 class Enemies():
     def __init__(self,name,descripton,health,attack,defense, speed):
         self.name = name
@@ -98,10 +106,24 @@ class Enemies():
         self.defense = defense
         self.speed = speed
     def adapting(player,enemy):
-        if player == archer():
+        if player == archer_thing():
             enemy.attack = enemy.attack * 1.3
+goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,100)   
+troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1, 0.05)
+giant = Enemies("Giant", "this is a big boy",1000, 10,1,0)
+wolf = Enemies("Wolf","...its a wolf",75,0.5,0.5,100)
+ogre = Enemies("ogre","this is a very very very big thing",210,1.9,1.2,0.1)
+a_british_person =Enemies("a british person","horrible teeth",15,0.8,0.1,90)
+a_french_person =Enemies("A french man","dont let it near you government",20,0.9,0.1,100)
+slime = Enemies("slime","sliiiiime",10,5,0.1,100)
+Dragon = Enemies("dragon","breathes fire and stuff",250,0.2,0.8,90)
 
-
-
-
+Enemies.adapting(archer_thing,goblin)
+print(goblin)
+class Floors():
+    def __init__(self,number_of_enemies,order_of_enemies):
+        self.number_of_enemies = number_of_enemies
+        self.order_of_enemies = order_of_enemies
+    def checking():
+        print(Player.classes_choice.__dict__)
 

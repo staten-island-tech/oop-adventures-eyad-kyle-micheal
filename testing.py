@@ -1,15 +1,15 @@
-from enemies import Enemies,Whalen
-from player import Player,Archer,Assasin,Warrior,Berserker,Fighter,Wizard
+from stuff import Player,Archer,Assasin,Warrior,Berserker,Fighter,Wizard,Enemies
 import random
+#defining the choose class method to be reusable
 chosen = Player.better_choose_class
 chosen_usable=chosen()
+
 #all enemies
 goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,100)   
 troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1, 0.05)
 giant = Enemies("Giant", "this is a big boy",1000, 10,1,0)
 wolf = Enemies("Wolf","...its a wolf",75,0.5,0.5,100)
 ogre = Enemies("ogre","this is a very very very big thing",210,1.9,1.2,0.1)
-whalen = Whalen("Whalen","this is the final boss; you are most definity going to die; you will also fail his class",2000,300,500,100,9999999999999)
 a_british_person =Enemies("a british person","horrible teeth",15,0.8,0.1,90)
 a_french_person =Enemies("A french man","dont let it near you government",20,0.9,0.1,100)
 slime = Enemies("slime","sliiiiime",10,5,0.1,100)
@@ -22,6 +22,7 @@ warrior=Warrior("warrior",150,125,75,100,100,75,0,1000)
 b = Berserker("Berserker",100,150,30,75,100,15,0,1000000)
 fighter = Fighter("fighter",150,100,1,175,100,10,0,100000)
 wizard = Wizard("Wizard",150,10,100,100,150,300,0,10000000)
+#testing
 class TestAttack():
     def __init__(self,name,base_damage):
         self.name = name
@@ -72,14 +73,7 @@ def choose_skill():
 
 
 
-def adapting():
-    global goblin
-    if chosen == archer:
-        goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",99,0.4,0.8,99) 
-        
-    elif chosen == warrior:
-        goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",98,0.4,0.8,98)
-adapting
+
 
 
 
@@ -87,6 +81,8 @@ def enemy_attack(player):
     global random_skill
     random_skill=random.choice(attacks)
 chosen_skill=choose_skill()
+
+
 def encounter(enemy,player,chosens_skill):
     while player.health >0:
         if enemy.health > 0:
@@ -108,4 +104,4 @@ def encounter(enemy,player,chosens_skill):
             break
     if player.health <=0:
         print("youve died")
-chosen_skill=choose_skill()
+
