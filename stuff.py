@@ -111,9 +111,9 @@ warrior=Warrior("warrior",150,125,75,100,100,75,0,1000)
 b = Berserker("Berserker",100,150,30,75,100,15,0,1000000)
 fighter = Fighter("fighter",150,100,1,175,100,10,0,100000)
 wizard = Wizard("Wizard",150,10,100,100,150,300,0,10000000)
-chosen = Player.better_choose_class
-Player.better_choose_class()
-print(chosen.__dict__)
+
+
+
 class Enemies():
     def __init__(self,name,descripton,health,attack,defense, speed):
         self.name = name
@@ -132,15 +132,7 @@ Defense:{self.defense},
 Speed:{self.speed}'''
     @staticmethod
     def adapting(player,enemy):
-        if (archer,Archer):
-            for enemy in enemies_list:
-                enemy.attack = enemy.attack * 1.3
-        elif isinstance(assasin,Assasin):
-            for enemy in enemies_list:
-                enemy.defense = enemy.defense *1.5
-        elif isinstance(warrior,Warrior):
-            pass
-
+        pass
 
 goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,100)   
 troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1, 0.05)
@@ -160,5 +152,11 @@ class Floors():
     def checking():
         print(Player.classes_choice.__dict__)
 
-Enemies.adapting(assasin,enemies_list)
+
 print(goblin.__dict__)
+
+def tes():
+    print("hi")
+    return 2 
+x = tes()
+print(x+5)

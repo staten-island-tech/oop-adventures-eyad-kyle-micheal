@@ -104,4 +104,4 @@ def encounter(enemy,player,chosens_skill):
             break
     if player.health <=0:
         print("youve died")
-
+encounter(goblin,chosen,chosen_skill)
