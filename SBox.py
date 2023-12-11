@@ -83,5 +83,5 @@ btfinal = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison
 Shalababang = Active.adhominum('Rick Roll', 3, count, PasDam, (count * PasDam))
 
 # Secret Skills?? | Classified as General |
-Sh = Active.adhominum('Status Hell', 2, Burnt, Bled, Poison) # If R.S.N is 5 | Input [] to use
-st = Active.NumberedActive('Stabathon', 6, count) # IF R.S.N is 82 | Input [s3] to use
+Sh = Active.adhominum('Status Hell', 2, Burnt, Bled, Poison) # If R.S.N is 5 | Input [s3cret] to use
+st = Active.NumberedActive('Stabathon', 6, count) # IF R.S.N is 82 | Input [s3cret] to use
