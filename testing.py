@@ -1,8 +1,7 @@
 from stuff import Player,Archer,Assasin,Warrior,Berserker,Fighter,Wizard,Enemies
 import random
 #defining the choose class method to be reusable
-chosen = Player.better_choose_class
-chosen_usable=chosen()
+
 
 #all enemies
 goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,100)   
@@ -23,6 +22,7 @@ b = Berserker("Berserker",100,150,30,75,100,15,0,1000000)
 fighter = Fighter("fighter",150,100,1,175,100,10,0,100000)
 wizard = Wizard("Wizard",150,10,100,100,150,300,0,10000000)
 #testing
+chosen = Player.better_choose_class()
 class TestAttack():
     def __init__(self,name,base_damage):
         self.name = name
