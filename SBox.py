@@ -5,7 +5,7 @@ class PasCommon():
         return (skill_health)
 PasDam = random.randint(3, 50)
 
-# Passive Skills
+# Passive Skills | More can be added when documents are merged
 Bleeding = PasCommon.c('Bleed', 0.3)
 Regeneration = PasCommon.c('Heal', 0.2)
 Poisoned = PasCommon.c('Poison', 0.6)
@@ -76,7 +76,11 @@ Ak = Active.NumberedActive('Gun', 2, (PasDam/count)) # Side effects maybe?
 # Special Chain move
 Bt = Active.BaseActive('Bow Throw', 4) #Chance to activate chain skill (1/4)
 btchain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/12
-btfinal = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
+btfinal = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison
+
+
+#Wizard
+
 
 
 # Troll | Not Actually a thing (Yet) | Ignore this:
