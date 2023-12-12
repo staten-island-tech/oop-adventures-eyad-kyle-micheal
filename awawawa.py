@@ -1,11 +1,7 @@
 class mooney():
-    def __init__(self, amount):
+    def __init__(self, name, amount):
         self.amount = amount
+        self.name = name
+awawa = mooney("awawa", 10)
 
-
-amount = 100
-
-def thing(amount):
-    amount-=20
-    print(amount)
-thing(amount)
+print(awawa.amount)
