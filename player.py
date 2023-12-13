@@ -85,7 +85,59 @@ warrior=Warrior("warrior",150,125,75,100,100,75,0,1000)
 b = Berserker("Berserker",100,150,30,75,100,15,0,1000000)
 fighter = Fighter("fighter",150,100,1,175,100,10,0,100000)
 wizard = Wizard("Wizard",150,10,100,100,150,300,0,10000000)
+<<<<<<< Updated upstream:player.py
 Player.print_classes()
 chosen_thing = chosen()
 chosen_thing
 print(chosen_thing.__dict__)
+=======
+
+
+
+class Enemies():
+    def __init__(self,name,descripton,health,attack,defense, speed):
+        self.name = name
+        self.description = descripton
+        self.health = health
+        self.attack = attack
+        self.defense = defense
+        self.speed = speed
+    
+    def __str__(self):
+        return f'''Name:{self.name},
+Description:{self.description},
+Health:{self.health},
+Attack:{self.attack},
+Defense:{self.defense},
+Speed:{self.speed}'''
+    @staticmethod
+    def adapting(player,enemy):
+        pass
+
+goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,100)   
+troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1, 0.05)
+giant = Enemies("Giant", "this is a big boy",1000, 10,1,0)
+wolf = Enemies("Wolf","...its a wolf",75,0.5,0.5,100)
+ogre = Enemies("ogre","this is a very very very big thing",210,1.9,1.2,0.1)
+a_british_person =Enemies("a british person","horrible teeth",15,0.8,0.1,90)
+a_french_person =Enemies("A french man","dont let it near you government",20,0.9,0.1,100)
+slime = Enemies("slime","sliiiiime",10,5,0.1,100)
+Dragon = Enemies("dragon","breathes fire and stuff",250,0.2,0.8,90)
+enemies_list=[goblin,troll,giant,wolf,ogre,a_british_person,a_french_person,slime,Dragon]
+
+class Floors():
+    def __init__(self,number_of_enemies,order_of_enemies):
+        self.number_of_enemies = number_of_enemies
+        self.order_of_enemies = order_of_enemies
+    def checking():
+        print(Player.classes_choice.__dict__)
+
+
+Player.print_classes()
+Player.better_choose_class()
+
+def tes():
+    return 2 
+x = tes
+print(x+5)
+>>>>>>> Stashed changes:stuff.py
