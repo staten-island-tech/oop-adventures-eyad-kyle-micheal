@@ -38,29 +38,30 @@ jcount = random.randint(3, 6) # Berserker Jabs
 
 # Warrior
 Piercing_Slash = Active.BaseActive('Piercing Slash', 12) #Bleed Chance 1/7
-i = Active.BaseActive('Impale', 8) # Bleed Always
-di = Active.BaseActive('Divider', 17) #Bleed 1/7
-sl = Active.BaseActive('Slash', 13) # Bleed 1/2
+impale = Active.BaseActive('Impale', 8) # Bleed Always
+
+divider = Active.BaseActive('Divider', 17) #Bleed 1/7
+slash = Active.BaseActive('Slash', 13) # Bleed 1/2
 #Secret Skill | Warrior | Must input specific number to activate
-sa = Active.BaseActive('Self Sacrafice', 0) # Halfs health of opponent and subtracts 1/4 of your health
+self_sacrifice= Active.BaseActive('Self Sacrafice', 0) # Halfs health of opponent and subtracts 1/4 of your health
 
 # Fighter
 Right_Hook = Active.BaseActive('Right Hook', 12) #Bleed Chance 1/10
-Bp = Active.BaseActive('Brass punch', 9) # Always Bleed
+Brass_punch = Active.BaseActive('Brass punch', 9) # Always Bleed
 # Chain Skill
-u = Active.BaseActive('Uppercut', 11) # 1/18 bleed | always chain
-u2 = Active.BaseActive('Kick', 14) # 1/20 bleed | 1/3 chain
-u3 = Active.BaseActive('Slammer', 7) # 1/8 bleed | 1/7 chain
-uf = Active.NumberedActive('Repeated Kicks', 5, jcount)
+uppercut = Active.BaseActive('Uppercut', 11) # 1/18 bleed | always chain
+kick = Active.BaseActive('Kick', 14) # 1/20 bleed | 1/3 chain
+slammer = Active.BaseActive('Slammer', 7) # 1/8 bleed | 1/7 chain
+repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
 
 # Assassin
 Slash = Active.BaseActive('Slash', 3) #Bleed Chance 2/3 | Poison Chance 4/5
 PStab = Active.BaseActive('Poison Stab', 4) # 1/3 Bleed Chance | Always Poison
-Dt = Active.BaseActive('Dagger Throw', 12) # Always Bleed | 1/3 Poison
+dagger_throw = Active.BaseActive('Dagger Throw', 12) # Always Bleed | 1/3 Poison
 # Chain Skill
-Ss = Active.BaseActive('Shadow Step', 4) # 1/2 Poison | Chain chance 1/3
-Bd = Active.NumberedActive('Blow Darts', 2, count) # Always Poison | Final chain 1/15
-Si = Active.adhominum('Silencer', 7, PasDam, count, jcount) # Always Poison | 1/8 Bleed
+shadow_step = Active.BaseActive('Shadow Step', 4) # 1/2 Poison | Chain chance 1/3
+blow_dart = Active.NumberedActive('Blow Darts', 2, count) # Always Poison | Final chain 1/15
+silencer = Active.adhominum('Silencer', 7, PasDam, count, jcount) # Always Poison | 1/8 Bleed
 
 # Berserker 
 Rage_Pound = Active.BaseActive('Pound', 13) # 1/2 Bleed Chance to enemies 
@@ -71,17 +72,17 @@ RepeatJab = Active.NumberedActive('Jabathon', 4, jcount)
 
 # Archer
 Rain = Active.NumberedActive('Rain', 3, count) #Bleed Chance 1/4 
-ak = Active.BaseActive('Arrow Kick', 7) # Bleed 1/2
-Ak = Active.NumberedActive('Gun', 2, (PasDam/count)) # Side effects maybe?
+arrow_kick = Active.BaseActive('Arrow Kick', 7) # Bleed 1/2
+gun = Active.NumberedActive('Gun', 2, (PasDam/count)) # Side effects maybe?
 # Special Chain move
-Bt = Active.BaseActive('Bow Throw', 4) #Chance to activate chain skill (1/4)
-btchain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/12
-btfinal = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
+bow_throw = Active.BaseActive('Bow Throw', 4) #Chance to activate chain skill (1/4)
+bow_chain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/12
+hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
 
 
 # Troll | Not Actually a thing (Yet) | Ignore this:
-Shalababang = Active.adhominum('Rick Roll', 3, count, PasDam, (count * PasDam))
+rick_roll = Active.adhominum('Rick Roll', 3, count, PasDam, (count * PasDam))
 
 # Secret Skills?? | Classified as General |
-Sh = Active.adhominum('Status Hell', 2, Burnt, Bled, Poison)
-st = Active.NumberedActive('Stabathon', 6, count)
+status_hell = Active.adhominum('Status Hell', 2, Burnt, Bled, Poison)
+stabathon = Active.NumberedActive('Stabathon', 6, count)
