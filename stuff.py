@@ -117,6 +117,7 @@ wizard = Wizard("Wizard",150,10,100,100,150,300,0,10000000)
 
 
 class Enemies():
+    enemies_list=[]
     def __init__(self,name,descripton,health,attack,defense, speed):
         self.name = name
         self.description = descripton
@@ -133,17 +134,39 @@ Attack:{self.attack},
 Defense:{self.defense},
 Speed:{self.speed}'''
     def adapting(player,enemy):
-        if player == archer:
-            enemy.attack *= 1.5
-            round(enemy.attack,1)
-        elif player == assasin:
-            enemy.
+        for enemy in Enemies.enemies_list: 
+            if player == archer:
+                enemy.attack *= 1.5
+                enemy.attack = round(enemy.attack,2)
+            elif player == assasin:
+                enemy.health *= 1.5
+                enemy.health = round(enemy.health,2)
+            elif player == warrior:
+                enemy.speed *= 3
+                enemy.speed =  round(enemy.speed,2)
+            elif player == b:
+                enemy.defense *= 2
+                enemy.defense = round(enemy.defense,2)
+            elif player == fighter:
+                enemy.defense *=1.4
+                enemy.defense=round(enemy.defense,2)
+                enemy.speed*=1.8
+                enemy.speed=round(enemy.speed,2)
+            else:
+                enemy.attack *=1.5
+                enemy.attack=round(enemy.attack,2)
+                enemy.defense*=1.1
+                enemy.defense=round(enemy.defense,2)
     def donig_adapting(chosen):
-        for i in range(len(enemies_list)):
-                Enemies.adapting(chosen,enemies_list[i])
+        for i in range(len(Enemies.enemies_list)):
+                Enemies.adapting(chosen,Enemies.enemies_list[i])
+    def test_print_enemy():
+        for i,enemy in enumerate(Enemies.enemies_list):
+            print(f'{i+1}. {enemy.__dict__}')
 
 
-goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,100)   
+
+goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100.9999,0.4,0.8,100)   
 troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1, 0.05)
 giant = Enemies("Giant", "this is a big boy",1000, 10,1,0)
 wolf = Enemies("Wolf","...its a wolf",75,0.5,0.5,100)
@@ -152,13 +175,16 @@ a_british_person =Enemies("a british person","horrible teeth",15,0.8,0.1,90)
 a_french_person =Enemies("A french man","dont let it near you government",20,0.9,0.1,100)
 slime = Enemies("slime","sliiiiime",10,5,0.1,100)
 Dragon = Enemies("dragon","breathes fire and stuff",250,0.2,0.8,90)
-enemies_list=[goblin,troll,giant,wolf,ogre,a_british_person,a_french_person,slime,Dragon]
+Enemies.enemies_list=[goblin,troll,giant,wolf,ogre,a_british_person,a_french_person,slime,Dragon]
 
 class Floors():
     def __init__(self,number_of_enemies,order_of_enemies):
         self.number_of_enemies = number_of_enemies
         self.order_of_enemies = order_of_enemies
-    def checking():
-        print(Player.classes_choice.__dict__)
 
 
+
+chosen = Player.better_choose_class()
+Enemies.adapting(chosen,Enemies.enemies_list)
+Enemies.donig_adapting(chosen)
+Enemies.test_print_enemy()
