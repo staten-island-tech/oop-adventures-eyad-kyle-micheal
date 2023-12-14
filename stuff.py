@@ -1,5 +1,6 @@
 #remember to call methods after everything is defined
 class Player():
+    
     classes_choice=[]
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money):
         self.name = name
@@ -47,6 +48,7 @@ money:{self.money}'''
                     print("It seems this wasn't one of the choices.Please enter a valid number.")
             except ValueError:
                 print("Please enter an integer")
+    
 
 class Archer(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,suuper):
@@ -130,9 +132,16 @@ Health:{self.health},
 Attack:{self.attack},
 Defense:{self.defense},
 Speed:{self.speed}'''
-    @staticmethod
     def adapting(player,enemy):
-        pass
+        if player == archer:
+            enemy.attack *= 1.5
+            round(enemy.attack,1)
+        elif player == assasin:
+            enemy.
+    def donig_adapting(chosen):
+        for i in range(len(enemies_list)):
+                Enemies.adapting(chosen,enemies_list[i])
+
 
 goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,100)   
 troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1, 0.05)
@@ -153,10 +162,3 @@ class Floors():
         print(Player.classes_choice.__dict__)
 
 
-Player.print_classes()
-Player.better_choose_class()
-
-def tes():
-    return 2 
-x = tes
-print()

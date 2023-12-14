@@ -1,5 +1,4 @@
-from SBox import PasCommon
-from SBox import Active
+from SBox import PasCommon,Active
 
 
 
