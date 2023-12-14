@@ -89,3 +89,25 @@ Shalababang = Active.adhominum('Rick Roll', 3, count, PasDam, (count * PasDam))
 # Secret Skills?? | Classified as General |
 Sh = Active.adhominum('Status Hell', 2, Burnt, Bled, Poison) # If R.S.N is 5 | Input [s3cret] to use
 st = Active.NumberedActive('Stabathon', 6, count) # IF R.S.N is 82 | Input [s3cret] to use
+
+
+
+
+
+attacks=[
+    TestAttack("fireball",10),
+    TestAttack("quick attack",20),
+    TestAttack("heavy attack",30)
+]
+
+fireball = TestAttack("fireball",10)
+quick_attack=TestAttack("quick attack",20)
+heavy_attack = TestAttack("heavy attack",30)
+
+
+
+
+def print_skills():
+    for i,skillss in enumerate(attacks):
+        print(f'{i+1}:{skillss.__dict__}')
+        print()
