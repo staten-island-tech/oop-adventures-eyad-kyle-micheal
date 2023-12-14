@@ -26,20 +26,19 @@ class mooney():
 Health_Potion = mooney("Health Potion", 10)
 Flimsy_Wooden_Sword = mooney("Flimsy Wooden Sword", 40)
 Flimsy_Steel_Sword = mooney("Flimsy Steel Sword", 60)
-i=str(Health_Potion.name+Health_Potion.amount)
+
+strhealth_potion = str(Health_Potion.amount)
+strflimsy_wooden_sword = str(Flimsy_Wooden_Sword.amount)
+strflimsy_steel_sword = str(Flimsy_Steel_Sword.amount)
 stage_1 = 1
 def sell_1(coins):
     print("Items for sale:")
     if "Health Potion" in shop_inventory:
-        print(Health_Potion.name)
-        print(Health_Potion.amount)
-        print(i)
+        print(Health_Potion.name+":"+strhealth_potion)
     if "Flimsy Wooden Sword" in shop_inventory:
-        print(Flimsy_Wooden_Sword.name)
-        print(Flimsy_Wooden_Sword.amount)
+        print(Flimsy_Wooden_Sword.name+":"+strflimsy_wooden_sword)
     if "Flimsy Steel Sword" in shop_inventory:
-        print(Flimsy_Steel_Sword.name)
-        print(Flimsy_Steel_Sword.amount)
+        print(Flimsy_Steel_Sword.name+":"+strflimsy_steel_sword)
     while stage_1 == 1:
         print("This is the amount of money you have:")
         print(coins)
