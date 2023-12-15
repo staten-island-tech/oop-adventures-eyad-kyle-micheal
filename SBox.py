@@ -84,8 +84,7 @@ hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 po
 # rick_roll = Active.adhominum('Rick Roll', 3, count, PasDam, (count * PasDam))
 
 # Secret Skills?? | Classified as General |
-status_hell = Active.adhominum('Status Hell', 2, Burnt, Bled, Poison)
-stabathon = Active.NumberedActive('Stabathon', 6, count)
+
 
 
 # # Save for later
@@ -94,10 +93,26 @@ stabathon = Active.NumberedActive('Stabathon', 6, count)
 # ]
 
 
-
 # def print_skills():
 #     for i,skillss in enumerate(attacks):
 #         print(f'{i+1}:{skillss.__dict__}')
 #         print()
 
 #Whalen will demonstrate storing skills
+
+Secretattacks ={
+    "status_hell":Active.adhominum('Status Hell', 2, Burnt, Bled, Poison),
+    "stabathon":Active.NumberedActive('Stabathon', 6, count) 
+}
+
+Archerattacks ={
+    "rain":Active.NumberedActive('Rain', 3, count),
+    "arrow_kick":Active.NumberedActive('Rain', 3, count),
+    "gun":Active.NumberedActive('Gun', 2, (PasDam/count)),
+#chain
+    "bow_throw":Active.BaseActive('Bow Throw', 4),
+    "bow_chain":Active.NumberedActive('Bow Chain', 4, count),
+    "hells_arrow":Active.NumberedActive("Hell's arrow", 8, count),
+
+}
+
