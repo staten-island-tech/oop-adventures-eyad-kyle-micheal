@@ -142,7 +142,7 @@ Speed:{self.speed}'''
                 enemy.health *= 1.5
                 enemy.health = round(enemy.health,2)
             elif player == warrior:
-                enemy.speed *= 3
+                enemy.speed *= 4
                 enemy.speed =  round(enemy.speed,2)
             elif player == b:
                 enemy.defense *= 2
@@ -158,7 +158,7 @@ Speed:{self.speed}'''
                 enemy.defense*=1.1
                 enemy.defense=round(enemy.defense,2)
     def donig_adapting(chosen):
-        for i in range(len(Enemies.enemies_list)):
+        for i in range(1):
                 Enemies.adapting(chosen,Enemies.enemies_list[i])
     def test_print_enemy():
         for i,enemy in enumerate(Enemies.enemies_list):
