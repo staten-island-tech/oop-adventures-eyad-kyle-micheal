@@ -80,9 +80,24 @@ bow_chain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/1
 hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
 
 
-# Troll | Not Actually a thing (Yet) | Ignore this:
-rick_roll = Active.adhominum('Rick Roll', 3, count, PasDam, (count * PasDam))
+# # Troll | Not Actually a thing (Yet) | Ignore this:
+# rick_roll = Active.adhominum('Rick Roll', 3, count, PasDam, (count * PasDam))
 
 # Secret Skills?? | Classified as General |
 status_hell = Active.adhominum('Status Hell', 2, Burnt, Bled, Poison)
 stabathon = Active.NumberedActive('Stabathon', 6, count)
+
+
+# # Save for later
+# attacks=[
+
+# ]
+
+
+
+# def print_skills():
+#     for i,skillss in enumerate(attacks):
+#         print(f'{i+1}:{skillss.__dict__}')
+#         print()
+
+#Whalen will demonstrate storing skills
