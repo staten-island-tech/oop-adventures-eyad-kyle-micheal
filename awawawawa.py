@@ -1,5 +1,13 @@
-class Merchant_shop():
-    coins = 100
+class Health_Potion:
+    def health_potion_sell():
+        coins-=Health_Potion.amount
+        user_warning_1(coins)
+        print("You have purchased a Heath Potion")
+        shop_inventory.remove("Health Potion")
+        inventory.append("Health Potion")
+        print(f"This is your inventory: {inventory}")
+print(Health_Potion)
+coins = 100
 def user_warning_1(coins):
     if coins < 0:
         print("You do not have enough money to afford this")
@@ -85,4 +93,3 @@ def sell_1(coins):
         else:
             print("Incorrect Input, Item is not in shop")
             sell_1(coins)
-
