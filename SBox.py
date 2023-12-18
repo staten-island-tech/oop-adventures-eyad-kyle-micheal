@@ -18,8 +18,8 @@ Poison = (Poisoned * PasDam)
 Burnt = (Burn * PasDam)
 
 class Active():
-    def BaseActive(name, skill_damage):
-        return (skill_damage)
+    def BaseActive(name, sd):
+        return (sd)
     
     def NumberedActive(name, sd, count):
         return (sd * (count))
@@ -135,3 +135,4 @@ Warriorattacks ={
     "slash":Active.BaseActive('Slash', 13),
     "Big_Sword":Active.BaseActive('big_sword', 25)
 }
+
