@@ -43,7 +43,7 @@ impale = Active.BaseActive('Impale', 8) # Bleed Always
 divider = Active.BaseActive('Divider', 17) #Bleed 1/7
 slash = Active.BaseActive('Slash', 13) # Bleed 1/2
 #Secret Skill | Warrior | Must input specific number to activate
-self_sacrifice= Active.BaseActive('Self Sacrafice', 0) # Halfs health of opponent and subtracts 1/4 of your health
+big_sword= Active.BaseActive('Big Sword', 25)
 
 # Fighter
 Right_Hook = Active.BaseActive('Right Hook', 12) #Bleed Chance 1/10
@@ -69,7 +69,6 @@ Baby_Rage = Active.BaseActive('Rage', 23) # 3/5 Bleed Chance to enemies, 1/5 Ble
 Slam = Active.BaseActive('Slammer', 17) # -4 damage to self, 1/2 chance
 RepeatJab = Active.NumberedActive('Jabathon', 4, jcount) 
 
-
 # Archer
 Rain = Active.NumberedActive('Rain', 3, count) #Bleed Chance 1/4 
 arrow_kick = Active.BaseActive('Arrow Kick', 7) # Bleed 1/2
@@ -80,39 +79,59 @@ bow_chain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/1
 hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
 
 
-# # Troll | Not Actually a thing (Yet) | Ignore this:
-# rick_roll = Active.adhominum('Rick Roll', 3, count, PasDam, (count * PasDam))
-
-# Secret Skills?? | Classified as General |
-
-
-
-# # Save for later
-# attacks=[
-
-# ]
-
-
-# def print_skills():
-#     for i,skillss in enumerate(attacks):
-#         print(f'{i+1}:{skillss.__dict__}')
-#         print()
-
-#Whalen will demonstrate storing skills
 
 Secretattacks ={
     "status_hell":Active.adhominum('Status Hell', 2, Burnt, Bled, Poison),
     "stabathon":Active.NumberedActive('Stabathon', 6, count) 
 }
 
+Wizardattacks ={
+    "Fireball":Active.NumberedActive('Fireball', 7, Burnt),
+    "Poison_Mist":Active.NumberedActive('Poison Fog', 7, Poisoned),
+    "Staff_Yeet":Active.BaseActive('Staff_Throw', 7)
+}
+
 Archerattacks ={
     "rain":Active.NumberedActive('Rain', 3, count),
     "arrow_kick":Active.NumberedActive('Rain', 3, count),
     "gun":Active.NumberedActive('Gun', 2, (PasDam/count)),
-#chain
-    "bow_throw":Active.BaseActive('Bow Throw', 4),
-    "bow_chain":Active.NumberedActive('Bow Chain', 4, count),
-    "hells_arrow":Active.NumberedActive("Hell's arrow", 8, count),
-
+    #chain
+    "cs-bow_throw":Active.BaseActive('Bow Throw', 4),
+    "c1-bow_chain":Active.NumberedActive('Bow Chain', 4, count),
+    "cf-hells_arrow":Active.NumberedActive("Hell's arrow", 8, count)
 }
 
+Berserkerattacks ={
+    "Rage_Pound":Active.BaseActive('Pound', 13),
+    "Baby_Rage":Active.BaseActive('Rage', 23),
+    "Slam":Active.BaseActive('Slammer', 17),
+    "RepeatJab":Active.NumberedActive('Jabathon', 4, jcount)
+}
+
+Assassinattacks ={
+    "Slash":Active.BaseActive('Slash', 3),
+    "Poison_Stab":Active.BaseActive('Poison Stab', 4),
+    "Dagger_Throw":Active.BaseActive('Dagger Throw', 12),
+    #chain
+    "cs-Shadow_Step":Active.BaseActive('Shadow Step', 4),
+    "c1-Blow_Dart":Active.NumberedActive('Blow Darts', 2, count),
+    "cf-Silencer":Active.adhominum('Silencer', 7, PasDam, count, jcount)
+}
+
+Fighterattacks ={
+    "Right_Hook":Active.BaseActive('Right Hook', 12),
+    "Brass_punch":Active.BaseActive('Brass punch', 9),
+    # Chain Skill
+    "cs-uppercut":Active.BaseActive('Uppercut', 11),
+    "c1-kick":Active.BaseActive('Kick', 14),
+    "c2-slammer":Active.BaseActive('Slammer', 7),
+    "cf-repeated":Active.NumberedActive('Repeated Kicks', 5, jcount)
+}
+
+Warriorattacks ={
+    "Piercing_Slash":Active.BaseActive('Piercing Slash', 12),
+    "impale":Active.BaseActive('Impale', 8),
+    "divider":Active.BaseActive('Divider', 17),
+    "slash":Active.BaseActive('Slash', 13),
+    "Big_Sword":Active.BaseActive('big_sword', 25)
+}
