@@ -10,6 +10,7 @@ class TestAttack():
 class Player():
     classes_choice=[]
     potential_classes=[]
+    has_skills=[]
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money):
         self.name = name
         self.health = health
@@ -20,15 +21,7 @@ class Player():
         self.magic_talent = magic_talent
         self.money = money
     def __str__(self):
-        return f'''
-{self.name},
-Health:{self.health},
-melee attack:{self.melee_attack},
-ranged attack:{self.ranged_attack},
-speed:{self.speed},
-intelligense:{self.intelligence},
-magic talent:{self.magic_talent},
-money:{self.money}'''
+        return f'''{self.name},Health:{self.health},melee attack:{self.melee_attack},ranged attack:{self.ranged_attack},speed:{self.speed},intelligense:{self.intelligence},magic talent:{self.magic_talent},money:{self.money}'''
     def print_classes():
         for i, classes in enumerate (Player.classes_choice):
             print(f'{i+1}. {classes}  ')
@@ -56,64 +49,66 @@ money:{self.money}'''
                     print("It seems this wasn't one of the choices.Please enter a valid number.")
             except ValueError:
                 print("Please enter an integer")
-    def choosing_skill():
-        potential_skills=[
-            TestAttack("fireball",10),
-            TestAttack("quick attack",25)
-        ]
-        for i,skills in enumerate(Player.potential_classes):
-            print(f'{i+1},{skills}')
-Player.choosing_skill()
+    def print_skills():
+        for i, skills in enumerate (Player.has_skiils):
+            print(f'{i+1}. {skills}  ')
+            print()
+    def choose_skill():
+        Player.print_skills()
+        try:
+            choice = int(input("Choose a skill by entering its number: "))
+            if 1 <= choice <= len(Player.has_skills):
+                return Player.has_skills[choice - 1]
+            else:
+                print("Invalid choice. Please enter a valid skill number.")
+                return None
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            return None
+
 
 class Archer(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,suuper):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money) 
         self.suuper = suuper
     def __str__(self):
-        return super().__str__() + f''',
-Ranged:{self.suuper}'''
+        return super().__str__() + f''',Ranged:{self.suuper}'''
 class Assasin(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,stealth ):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.stealth = stealth
     def __str__(self):
-        return super().__str__() + f'''
-Stealth: {self.stealth}'''
+        return super().__str__() + f'''Stealth: {self.stealth}'''
 class Warrior(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,honor):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.honor = honor
     def __str__(self):
-        return super().__str__() + f'''
-Honor: {self.honor}'''
+        return super().__str__() + f'''Honor: {self.honor}'''
 class Berserker(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,rage):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.rage = rage
     def __str__(self):
-        return super().__str__() + f'''
-Rage: {self.rage}'''
+        return super().__str__() + f'''Rage: {self.rage}'''
 class Fighter(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,fighting_skills):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.fighting_skills = fighting_skills
     def __str__(self):
-        return super().__str__() + f'''
-Fighting Skill: {self.fighting_skills}'''
+        return super().__str__() + f'''Fighting Skill: {self.fighting_skills}'''
 class Wizard(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,magic):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.magic=magic
     def __str__(self):
-        return super().__str__() + f'''
-Mastery of Magic: {self.magic}'''
+        return super().__str__() + f'''Mastery of Magic: {self.magic}'''
 class SecretClass(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,secrets):
         super().__init__(name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money)
         self.secrets = secrets
     def __str__(self):
-        return super().__str__() + f''',
-Secrets:{self.secrets}'''
+        return super().__str__() + f''',Secrets:{self.secrets}'''
 Player.classes_choice=[
         Archer("Archer",90,  .35,  1.3,  0.8,  95,  1.1,  15,"infinite"),
         Assasin("Assasin", 100, 90, 90, 150, 100, 25, 0,1000),
@@ -208,6 +203,8 @@ class Floors():
                 if enemy.health > 0:
                     print(enemy.__dict__)
                     print()
+                    Player.print_skills()
+                    Player.choose_skiil()
 
 
                 elif enemy.health <=0:
