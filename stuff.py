@@ -127,6 +127,8 @@ Speed:{self.speed}'''
                 enemy.health *= 1.5
                 enemy.health = round(enemy.health,2)
             elif player == warrior:
+                enemy.speed *= 2
+                enemy.speed =  round(enemy.speed,1)
                 enemy.speed *= 4
                 enemy.speed =  round(enemy.speed,2)
             elif player == b:
