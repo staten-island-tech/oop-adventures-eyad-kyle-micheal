@@ -1,6 +1,15 @@
 #remember to call methods after everything is defined
+class TestAttack():
+    def __init__(self,name,base_damage):
+        self.name = name
+        self.base_damage = base_damage
+    def calculate(self,enemy): 
+        return self.base_damage-(self.base_damage-(self.base_damage*enemy.defense))
+    def __str__(self):
+        return (f'name:{self.name};damage:{self.base_damage}')
 class Player():
     classes_choice=[]
+    potential_classes=[]
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money):
         self.name = name
         self.health = health
@@ -47,6 +56,14 @@ money:{self.money}'''
                     print("It seems this wasn't one of the choices.Please enter a valid number.")
             except ValueError:
                 print("Please enter an integer")
+    def choosing_skill():
+        potential_skills=[
+            TestAttack("fireball",10),
+            TestAttack("quick attack",25)
+        ]
+        for i,skills in enumerate(Player.potential_classes):
+            print(f'{i+1},{skills}')
+Player.choosing_skill()
 
 class Archer(Player):
     def __init__(self,name,health,melee_attack,ranged_attack,speed,intelligence,magic_talent,money,suuper):
@@ -129,12 +146,42 @@ Description:{self.description},
 Health:{self.health},
 Attack:{self.attack},
 Defense:{self.defense},
-Speed:{self.speed}'''
-    @staticmethod
-    def adapting(player,enemy):
-        pass
+speed:{self.speed}'''
 
-goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",100,0.4,0.8,100)   
+    def adapting(player,enemy):
+        for enemy in Enemies.enemies_list: 
+            if player == archer:
+                enemy.attack *= 1.5
+                enemy.attack = round(enemy.attack,2)
+            elif player == assasin:
+                enemy.health *= 1.5
+                enemy.health = round(enemy.health,2)
+            elif player == warrior:
+                enemy.speed *= 2
+                enemy.speed =  round(enemy.speed,1)
+            elif player == b:
+                enemy.defense *= 2
+                enemy.defense = round(enemy.defense,2)
+            elif player == fighter:
+                enemy.defense *=1.4
+                enemy.defense=round(enemy.defense,2)
+                enemy.speed*=1.8
+                enemy.speed=round(enemy.speed,2)
+            else:
+                enemy.attack *=1.5
+                enemy.attack=round(enemy.attack,2)
+                enemy.defense*=1.1
+                enemy.defense=round(enemy.defense,2)
+    def donig_adapting(chosen):
+        for i in range(1):
+                Enemies.adapting(chosen,Enemies.enemies_list[i])
+    def test_print_enemy():
+        for i,enemy in enumerate(Enemies.enemies_list):
+            print(f'{i+1}. {enemy.__dict__}')
+
+
+
+goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",0,0.4,0.8,100)   
 troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1, 0.05)
 giant = Enemies("Giant", "this is a big boy",1000, 10,1,0)
 wolf = Enemies("Wolf","...its a wolf",75,0.5,0.5,100)
@@ -143,20 +190,32 @@ a_british_person =Enemies("a british person","horrible teeth",15,0.8,0.1,90)
 a_french_person =Enemies("A french man","dont let it near you government",20,0.9,0.1,100)
 slime = Enemies("slime","sliiiiime",10,5,0.1,100)
 Dragon = Enemies("dragon","breathes fire and stuff",250,0.2,0.8,90)
-enemies_list=[goblin,troll,giant,wolf,ogre,a_british_person,a_french_person,slime,Dragon]
+Enemies.enemies_list=[goblin,troll,giant,wolf,ogre,a_british_person,a_french_person,slime,Dragon]
 
 class Floors():
     def __init__(self,number_of_enemies,order_of_enemies):
         self.number_of_enemies = number_of_enemies
         self.order_of_enemies = order_of_enemies
-    def checking():
-        print(Player.classes_choice.__dict__)
+    def floor_over(floor):
+        if floor.number_of_enemies >= 1:
+            print("works")
+        else:
+            print("floors over!")
+    def fighting():
+        pass
+    def encounter(enemy,player,coins_recieved):
+            while player.health >0:
+                if enemy.health > 0:
+                    print(enemy.__dict__)
+                    print()
 
 
-print(goblin.__dict__)
+                elif enemy.health <=0:
+                    print("youve defeated the enemy,move on")
+                    print(f"you have gained {coins_recieved} coins")
+                    print(f"your balance is now {player.money+coins_recieved}")
+                    break
+            if player.health <=0:
+                print("youve died")
 
-def tes():
-    print("hi")
-    return 2 
-x = tes()
-print(x+5)
+Floors.encounter(goblin,archer,3)

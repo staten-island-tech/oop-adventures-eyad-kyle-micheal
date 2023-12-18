@@ -25,7 +25,15 @@ import random
 
 
 
+<<<<<<< Updated upstream
 
+=======
+Player.better_choose_class()
+def enemy_attack(player):
+    global random_skill
+    random_skill=random.choice(attacks)
+    player.health = player.health - random_skill.base_damage
+>>>>>>> Stashed changes
 
 
 
