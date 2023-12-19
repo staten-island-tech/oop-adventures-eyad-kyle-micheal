@@ -136,3 +136,9 @@ Warriorattacks ={
     "Big_Sword":Active.BaseActive('big_sword', 25)
 }
 
+Passive ={
+    "Bleeding":PasCommon.c('Bleed', 0.3),
+    "Regeneration":PasCommon.c('Heal', 0.2),
+    "Poisoned":PasCommon.c('Poison', 0.6),
+    "Burn":PasCommon.c('Burning', 0.4)
+}
