@@ -137,8 +137,25 @@ Warriorattacks ={
 }
 
 Passive ={
-    "Bleeding":PasCommon.c('Bleed', 0.3),
+    "Bleeding":PasCommon.c('Bleed', 0.3), 
     "Regeneration":PasCommon.c('Heal', 0.2),
     "Poisoned":PasCommon.c('Poison', 0.6),
     "Burn":PasCommon.c('Burning', 0.4)
 }
+attacks = {
+    'passive': {
+        'Bleed': {
+        "Bleeding":PasCommon.c('Bleed', 0.3),
+        'Description':'Deals 0.3 bleed damage to target'},
+    "Regeneration":PasCommon.c('Heal', 0.2),
+    "Poisoned":PasCommon.c('Poison', 0.6),
+    "Burn":PasCommon.c('Burning', 0.4)
+}
+
+
+
+}
+
+
+
+print(attacks['passive']['Bleed'])
