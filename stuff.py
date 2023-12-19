@@ -22,6 +22,7 @@ class Player():
         self.money = money
     def __str__(self):
         return f'''{self.name},Health:{self.health},melee attack:{self.melee_attack},ranged attack:{self.ranged_attack},speed:{self.speed},intelligense:{self.intelligence},magic talent:{self.magic_talent},money:{self.money}'''
+    @classmethod
     def print_classes():
         for i, classes in enumerate (Player.classes_choice):
             print(f'{i+1}. {classes}  ')
@@ -55,6 +56,7 @@ class Player():
             print()
     def choose_skill():
         Player.print_skills()
+
         try:
             choice = int(input("Choose a skill by entering its number: "))
             if 1 <= choice <= len(Player.has_skills):
