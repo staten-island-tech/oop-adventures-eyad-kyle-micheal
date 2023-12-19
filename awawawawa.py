@@ -1,12 +1,3 @@
-class Health_Potion:
-    def health_potion_sell():
-        coins-=Health_Potion.amount
-        user_warning_1(coins)
-        print("You have purchased a Heath Potion")
-        shop_inventory.remove("Health Potion")
-        inventory.append("Health Potion")
-        print(f"This is your inventory: {inventory}")
-print(Health_Potion)
 coins = 100
 def user_warning_1(coins):
     if coins < 0:
@@ -57,7 +48,7 @@ def sell_1(coins):
         if user_purchase == "Health Potion":
             coins-=Health_Potion.amount
             user_warning_1(coins)
-            print("You have purchased a Heath Potion")
+            print(f"You have purchased a {Health_Potion.name}")
             shop_inventory.remove("Health Potion")
             inventory.append("Health Potion")
             print(f"This is your inventory: {inventory}")
@@ -93,3 +84,4 @@ def sell_1(coins):
         else:
             print("Incorrect Input, Item is not in shop")
             sell_1(coins)
+sell_1(coins)
