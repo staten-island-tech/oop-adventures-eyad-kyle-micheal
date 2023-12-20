@@ -88,7 +88,8 @@ Secretattacks ={
 Wizardattacks ={
     "Fireball":Active.NumberedActive('Fireball', 7, Burnt),
     "Poison_Mist":Active.NumberedActive('Poison Fog', 7, Poisoned),
-    "Staff_Yeet":Active.BaseActive('Staff_Throw', 7)
+    "Staff_Yeet":Active.BaseActive('Staff_Throw', 7),
+    "Test_Torosion":Active.adhominum('TT', 7, PasDam, PasDam, PasDam) # 1/69 Chance enemy has uno reverse card [Deals damage to you instead] | Secret
 }
 
 Archerattacks ={
@@ -128,13 +129,7 @@ Fighterattacks ={
     "cf-repeated":Active.NumberedActive('Repeated Kicks', 5, jcount)
 }
 
-Warriorattacks ={
-    "Piercing_Slash":Active.BaseActive('Piercing Slash', 12),
-    "impale":Active.BaseActive('Impale', 8),
-    "divider":Active.BaseActive('Divider', 17),
-    "slash":Active.BaseActive('Slash', 13),
-    "Big_Sword":Active.BaseActive('big_sword', 25)
-}
+
 
 
 attacks = {
@@ -142,24 +137,44 @@ attacks = {
     'passive': {
 
         'Bleed': {
-        "Bleeding":PasCommon.c('Bleed', 0.3),
-        'Description':'Deals 0.3 bleed damage to target'},
+        "Bleeding":PasCommon.c('Bleed', 0.3),'Description':'Deals 0.3 bleed damage to target'},
 
         'Regen':{
-        "Regeneration":PasCommon.c('Heal', 0.2),
-        'Description':'Heals 0.2 health to target'},
+        "Regeneration":PasCommon.c('Heal', 0.2),'Description':'Heals 0.2 health to target'},
 
         'Poison':{
-        "Poisoned":PasCommon.c('Poison', 0.6),
-        'Description':'Deals 0.6 damage to target'},
+        "Poisoned":PasCommon.c('Poison', 0.6),'Description':'Deals 0.6 poison damage to target'},
 
         'Burn':{
-        "Burnt":PasCommon.c('Burning', 0.4),
-        'Description':'Deals 0.4 damage to target'}}
+        "Burnt":PasCommon.c('Burning', 0.4),'Description':'Deals 0.4 burn damage to target'}},
 
+
+    'active':{
+
+        'Warrior':{
+
+            'Pierce':{
+            "Piercing_Slash":Active.BaseActive('Piercing Slash', 12), 'Description': 'Deals 12 damage to target | 1/7 Bleed Chance'},
+
+            'Impale':{
+            "Impaler":Active.BaseActive('Impale', 8), 'Description': 'Deals 8 damage to target + Bleed Damage'},
+
+            'Divide':{
+            "Divider":Active.BaseActive('Divider', 17), 'Description': 'Deals 17 damage to target | 1/7 Bleed Chance'},
+
+            'Slash':{
+            "Slash":Active.BaseActive('Slash', 13), 'Description': 'Deals 13 damage to target | 1/2 Bleed Chance'}},
+            
+         
+        "Big_Sword":Active.BaseActive('big_sword', 25)
+
+
+
+    }
 
 
 }
+
 
 
 
