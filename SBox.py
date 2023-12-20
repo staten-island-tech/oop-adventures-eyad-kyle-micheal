@@ -80,10 +80,6 @@ hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 po
 
 
 
-Secretattacks ={
-    "status_hell":Active.adhominum('Status Hell', 2, Burnt, Bled, Poison),
-    "stabathon":Active.NumberedActive('Stabathon', 6, count) 
-}
 
 Wizardattacks ={
     "Fireball":Active.NumberedActive('Fireball', 7, Burnt),
@@ -151,26 +147,45 @@ attacks = {
 
     'active':{
 
+        'General':{
+            'Secret':{
+            'Stabathon':{
+            "Damage":Active.NumberedActive('Stabathon', 6, count), 'Description':'Call me London, deals 6 damage per stab'},
+
+            'Status Hell':{
+            "Damage":Active.adhominum('Status Hell', 2, Burnt, Bled, Poison), 'Description':'Shadow Wizard Money Gang | We love casting spells'}},
+
+
+            'Normal':{
+            'Stab':{
+            "Damage":Active.BaseActive('Stab', 6), "Description":'Deals 6 damage to the opps'},
+
+            'Jab':{
+            "Damage":Active.BaseActive('Jab', 4), "Description":'Deals 4 damage to the opps'},
+            
+            'Stomp':{
+            "Damage":Active.BaseActive('Stomp', 5), "Description":'Deals 5 damage to the opps'}}},
+
+
         'Warrior':{
 
             'Secret':{
-
             'Divine Slash':{
             "Damage":Active.BaseActive('big_sword', 25), 'Description':'Deals 15 damage to target'}},
 
-                'Normal':{
 
-                'Pierce':{
-                "Damage":Active.BaseActive('Piercing Slash', 12), 'Description': 'Deals 12 damage to target | 1/7 Bleed Chance'},
+            'Normal':{
+            'Pierce':{
+            "Damage":Active.BaseActive('Piercing Slash', 12), 'Description': 'Deals 12 damage to target | 1/7 Bleed Chance'},
 
-                'Impale':{
-                "Damage":Active.BaseActive('Impale', 8), 'Description': 'Deals 8 damage to target + Bleed Damage'},
+            'Impale':{
+            "Damage":Active.BaseActive('Impale', 8), 'Description': 'Deals 8 damage to target + Bleed Damage'},
 
-                'Divide':{
-                "Damage":Active.BaseActive('Divider', 17), 'Description': 'Deals 17 damage to target | 1/7 Bleed Chance'},
+            'Divide':{
+            "Damage":Active.BaseActive('Divider', 17), 'Description': 'Deals 17 damage to target | 1/7 Bleed Chance'},
 
-                'Slash':{
-                "Damage":Active.BaseActive('Slash', 13), 'Description': 'Deals 13 damage to target | 1/2 Bleed Chance'}}},
+            'Slash':{
+            "Damage":Active.BaseActive('Slash', 13), 'Description': 'Deals 13 damage to target | 1/2 Bleed Chance'}}},
 
 
 
@@ -184,4 +199,4 @@ attacks = {
 
 
 
-print(attacks['active']['Warrior']['Normal'])
+print(attacks)
