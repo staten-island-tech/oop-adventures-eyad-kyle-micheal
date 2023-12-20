@@ -153,20 +153,25 @@ attacks = {
 
         'Warrior':{
 
-            'Pierce':{
-            "Piercing_Slash":Active.BaseActive('Piercing Slash', 12), 'Description': 'Deals 12 damage to target | 1/7 Bleed Chance'},
+            'Secret':{
 
-            'Impale':{
-            "Impaler":Active.BaseActive('Impale', 8), 'Description': 'Deals 8 damage to target + Bleed Damage'},
+            'Divine Slash':{
+            "Damage":Active.BaseActive('big_sword', 25), 'Description':'Deals 15 damage to target'}},
 
-            'Divide':{
-            "Divider":Active.BaseActive('Divider', 17), 'Description': 'Deals 17 damage to target | 1/7 Bleed Chance'},
+                'Normal':{
 
-            'Slash':{
-            "Slash":Active.BaseActive('Slash', 13), 'Description': 'Deals 13 damage to target | 1/2 Bleed Chance'}},
-            
-         
-        "Big_Sword":Active.BaseActive('big_sword', 25)
+                'Pierce':{
+                "Damage":Active.BaseActive('Piercing Slash', 12), 'Description': 'Deals 12 damage to target | 1/7 Bleed Chance'},
+
+                'Impale':{
+                "Damage":Active.BaseActive('Impale', 8), 'Description': 'Deals 8 damage to target + Bleed Damage'},
+
+                'Divide':{
+                "Damage":Active.BaseActive('Divider', 17), 'Description': 'Deals 17 damage to target | 1/7 Bleed Chance'},
+
+                'Slash':{
+                "Damage":Active.BaseActive('Slash', 13), 'Description': 'Deals 13 damage to target | 1/2 Bleed Chance'}}},
+
 
 
 
@@ -179,3 +184,4 @@ attacks = {
 
 
 
+print(attacks['active']['Warrior']['Normal'])
