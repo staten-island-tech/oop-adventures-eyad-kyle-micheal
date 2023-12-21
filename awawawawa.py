@@ -10,7 +10,7 @@ class mooney:
     def __init__(self, name, amount):
         self.amount = amount
         self.name = name
-Health_Potion = mooney("Health Potion", 10)
+Health_Potion = mooney("Health Potion", 50)
 Flimsy_Wooden_Sword = mooney("Flimsy Wooden Sword", 40)
 Flimsy_Steel_Sword = mooney("Flimsy Steel Sword", 60)
 
@@ -94,4 +94,4 @@ def sell_1(coins):
         else:
             print("Incorrect Input, Item is not in shop")
             sell_1(coins)
-    return(sell_1)
+sell_1(coins)
