@@ -81,12 +81,6 @@ hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 po
 
 
 
-Wizardattacks ={
-    "Fireball":Active.NumberedActive('Fireball', 7, Burnt),
-    "Poison_Mist":Active.NumberedActive('Poison Fog', 7, Poisoned),
-    "Staff_Yeet":Active.BaseActive('Staff_Throw', 7),
-    "Test_Torosion":Active.adhominum('TT', 7, PasDam, PasDam, PasDam) # 1/69 Chance enemy has uno reverse card [Deals damage to you instead] | Secret
-}
 
 Archerattacks ={
     "rain":Active.NumberedActive('Rain', 3, count),
@@ -187,16 +181,24 @@ attacks = {
             'Slash':{
             "Damage":Active.BaseActive('Slash', 13), 'Description': 'Deals 13 damage to target | 1/2 Bleed Chance'}}},
 
-
-
-
+        'Wizard':{
+            'Secret':{
+            'Torosion':{
+            "Damage":Active.adhominum('TT', 7, PasDam, PasDam, PasDam), 'Description': 'Deals massive damage multiplied by 7'}},
+            
+            'Normal':{
+            'Fireball':{
+            "Damage":Active.NumberedActive('Fireball', 7, Burnt), 'Description': 'Deals 7 damage + burn damage to target'},
+            'Poison Mist':{
+            "Damage":Active.NumberedActive('Poison Fog', 7, Poisoned), 'Description': 'Surrounds the enemy in a poison fog, dealing 7 damage + Poison to target'},
+            'Staff Yeet':{
+            "Damage":Active.BaseActive('Staff_Throw', 7), 'Description': 'Throws staff at target at Mach 7, dealing 7 damage'}}},
     }
 
 
 }
+print(attacks['active']['Wizard']['Normal'])
 
 
 
 
-
-print(attacks)
