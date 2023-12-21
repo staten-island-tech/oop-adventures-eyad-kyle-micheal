@@ -1,0 +1,9 @@
+testing={
+    'noraml':{
+        'htig':12,
+        'description':'idk'
+    }
+}
+testing2={}
+testing2.update(testing['noraml'])
+print(testing2['noraml'])
