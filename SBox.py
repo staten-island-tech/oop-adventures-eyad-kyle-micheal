@@ -193,10 +193,15 @@ attacks = {
             "Damage":Active.NumberedActive('Poison Fog', 7, Poisoned), 'Description': 'Surrounds the enemy in a poison fog, dealing 7 damage + Poison to target'},
             'Staff Yeet':{
             "Damage":Active.BaseActive('Staff_Throw', 7), 'Description': 'Throws staff at target at Mach 7, dealing 7 damage'}}},
-    }
-
-
-}
+    
+        'Fighter':{
+            'Chain':{
+            'Uppercut':{
+            "Damage":Active.BaseActive('Uppercut', 11), 'Description':'Deals 11 damage to target | 1/18 Bleed chance'},
+            
+            }
+        }
+    }}
 print(attacks['active']['Wizard']['Normal'])
 
 
