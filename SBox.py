@@ -198,10 +198,22 @@ attacks = {
             'Chain':{
             'Uppercut':{
             "Damage":Active.BaseActive('Uppercut', 11), 'Description':'Deals 11 damage to target | 1/18 Bleed chance'},
+            'Kick':{
+            "Damage":Active.BaseActive('Kick', 14), 'Description':'Deals 14 damage to target | 1/20 Bleed chance, 1/3 continuation chance'},
+            'Slam':{
+            "Damage":Active.BaseActive('Slammer', 7), 'Description':'Deals 7 damage to target | 1/8 Bleed chance, 1/7 continuation chance'},
+            'Combo':{
+            "Damage":Active.NumberedActive('Combo Kicks', 5, jcount), 'Description':'Deals base 5 damage to target'}},
+
+            'Normal':{
+            'Right Hook':{
+            "Damage":Active.BaseActive('Right Hook', 12), 'Description':'Deals 12 damage to target | 1/10 Bleed Chance'},
+            'Brass Punch':{
+            "Damage":Active.BaseActive('Brass Punch', 9), 'Description':'Deals 9 damage to target + Bleed'}}},
             
-            }
-        }
-    }}
+            
+            
+}} #Closes active and attacks
 print(attacks['active']['Wizard']['Normal'])
 
 
