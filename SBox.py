@@ -216,6 +216,6 @@ attacks = {
 }} #Closes active and attacks
 print(attacks['active']['Wizard']['Normal'])
 
-
+print((attacks))
 
 
