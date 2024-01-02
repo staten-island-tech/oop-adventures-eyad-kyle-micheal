@@ -92,6 +92,7 @@ Archerattacks ={
     "cf-hells_arrow":Active.NumberedActive("Hell's arrow", 8, count)
 }
 
+
 Berserkerattacks ={
     "Rage_Pound":Active.BaseActive('Pound', 13),
     "Baby_Rage":Active.BaseActive('Rage', 23),
@@ -118,7 +119,6 @@ Fighterattacks ={
     "c2-slammer":Active.BaseActive('Slammer', 7),
     "cf-repeated":Active.NumberedActive('Repeated Kicks', 5, jcount)
 }
-
 
 
 
@@ -214,7 +214,13 @@ attacks = {
             
             
 }} #Closes active and attacks
-print(attacks['active']['Wizard']['Normal'])
+
+has_kills={}
+has_kills=attacks['active']['Warrior']['Normal']
+
+for values in has_kills.values():
+    print(values)
+
 
 
 
