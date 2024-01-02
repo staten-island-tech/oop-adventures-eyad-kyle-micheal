@@ -222,6 +222,6 @@ for values in has_kills.values():
     print(values)
 
 
-
+print((attacks))
 
 
