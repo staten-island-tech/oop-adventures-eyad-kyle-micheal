@@ -81,12 +81,6 @@ hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 po
 
 
 
-Wizardattacks ={
-    "Fireball":Active.NumberedActive('Fireball', 7, Burnt),
-    "Poison_Mist":Active.NumberedActive('Poison Fog', 7, Poisoned),
-    "Staff_Yeet":Active.BaseActive('Staff_Throw', 7),
-    "Test_Torosion":Active.adhominum('TT', 7, PasDam, PasDam, PasDam) # 1/69 Chance enemy has uno reverse card [Deals damage to you instead] | Secret
-}
 
 Archerattacks ={
     "rain":Active.NumberedActive('Rain', 3, count),
@@ -187,16 +181,41 @@ attacks = {
             'Slash':{
             "Damage":Active.BaseActive('Slash', 13), 'Description': 'Deals 13 damage to target | 1/2 Bleed Chance'}}},
 
+        'Wizard':{
+            'Secret':{
+            'Torosion':{
+            "Damage":Active.adhominum('TT', 7, PasDam, PasDam, PasDam), 'Description': 'Deals massive damage multiplied by 7'}},
+            
+            'Normal':{
+            'Fireball':{
+            "Damage":Active.NumberedActive('Fireball', 7, Burnt), 'Description': 'Deals 7 damage + burn damage to target'},
+            'Poison Mist':{
+            "Damage":Active.NumberedActive('Poison Fog', 7, Poisoned), 'Description': 'Surrounds the enemy in a poison fog, dealing 7 damage + Poison to target'},
+            'Staff Yeet':{
+            "Damage":Active.BaseActive('Staff_Throw', 7), 'Description': 'Throws staff at target at Mach 7, dealing 7 damage'}}},
+    
+        'Fighter':{
+            'Chain':{
+            'Uppercut':{
+            "Damage":Active.BaseActive('Uppercut', 11), 'Description':'Deals 11 damage to target | 1/18 Bleed chance'},
+            'Kick':{
+            "Damage":Active.BaseActive('Kick', 14), 'Description':'Deals 14 damage to target | 1/20 Bleed chance, 1/3 continuation chance'},
+            'Slam':{
+            "Damage":Active.BaseActive('Slammer', 7), 'Description':'Deals 7 damage to target | 1/8 Bleed chance, 1/7 continuation chance'},
+            'Combo':{
+            "Damage":Active.NumberedActive('Combo Kicks', 5, jcount), 'Description':'Deals base 5 damage to target'}},
+
+            'Normal':{
+            'Right Hook':{
+            "Damage":Active.BaseActive('Right Hook', 12), 'Description':'Deals 12 damage to target | 1/10 Bleed Chance'},
+            'Brass Punch':{
+            "Damage":Active.BaseActive('Brass Punch', 9), 'Description':'Deals 9 damage to target + Bleed'}}},
+            
+            
+            
+}} #Closes active and attacks
+print(attacks['active']['Wizard']['Normal'])
 
 
 
-    }
 
-
-}
-
-
-
-
-
-print(attacks)
