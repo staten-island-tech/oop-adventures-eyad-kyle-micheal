@@ -130,3 +130,7 @@ class Floors():
 Player.print_classes()
 Player.better_choose_class()
 
+def tes():
+    return 2 
+x = tes
+print(x+5)
