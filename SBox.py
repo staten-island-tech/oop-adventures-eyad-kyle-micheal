@@ -143,56 +143,56 @@ attacks = {
 
         'General':{
             'Secret':{
-            'Stabathon':{
-            "Damage":Active.NumberedActive('Stabathon', 6, count), 'Description':'Call me London, deals 6 damage per stab'},
+                'Stabathon':{
+                "Damage":Active.NumberedActive('Stabathon', 6, count), 'Description':'Call me London, deals 6 damage per stab'},
 
-            'Status Hell':{
-            "Damage":Active.adhominum('Status Hell', 2, Burnt, Bled, Poison), 'Description':'Shadow Wizard Money Gang | We love casting spells'}},
+                'Status Hell':{
+                "Damage":Active.adhominum('Status Hell', 2, Burnt, Bled, Poison), 'Description':'Shadow Wizard Money Gang | We love casting spells'}},
 
 
             'Normal':{
-            'Stab':{
-            "Damage":Active.BaseActive('Stab', 6), "Description":'Deals 6 damage to the opps'},
+                'Stab':{
+                "Damage":Active.BaseActive('Stab', 6), "Description":'Deals 6 damage to the opps'},
 
-            'Jab':{
-            "Damage":Active.BaseActive('Jab', 4), "Description":'Deals 4 damage to the opps'},
+                'Jab':{
+                "Damage":Active.BaseActive('Jab', 4), "Description":'Deals 4 damage to the opps'},
             
-            'Stomp':{
-            "Damage":Active.BaseActive('Stomp', 5), "Description":'Deals 5 damage to the opps'}}},
+                'Stomp':{
+                "Damage":Active.BaseActive('Stomp', 5), "Description":'Deals 5 damage to the opps'}}},
 
 
         'Warrior':{
 
             'Secret':{
-            'Divine Slash':{
-            "Damage":Active.BaseActive('big_sword', 25), 'Description':'Deals 15 damage to target'}},
+                'Divine Slash':{
+                "Damage":Active.BaseActive('big_sword', 25), 'Description':'Deals 15 damage to target'}},
 
 
             'Normal':{
-            'Pierce':{
-            "Damage":Active.BaseActive('Piercing Slash', 12), 'Description': 'Deals 12 damage to target | 1/7 Bleed Chance'},
+                'Pierce':{
+                "Damage":Active.BaseActive('Piercing Slash', 12), 'Description': 'Deals 12 damage to target | 1/7 Bleed Chance'},
 
-            'Impale':{
-            "Damage":Active.BaseActive('Impale', 8), 'Description': 'Deals 8 damage to target + Bleed Damage'},
+                'Impale':{
+                "Damage":Active.BaseActive('Impale', 8), 'Description': 'Deals 8 damage to target + Bleed Damage'},
 
-            'Divide':{
-            "Damage":Active.BaseActive('Divider', 17), 'Description': 'Deals 17 damage to target | 1/7 Bleed Chance'},
+                'Divide':{
+                "Damage":Active.BaseActive('Divider', 17), 'Description': 'Deals 17 damage to target | 1/7 Bleed Chance'},
 
-            'Slash':{
-            "Damage":Active.BaseActive('Slash', 13), 'Description': 'Deals 13 damage to target | 1/2 Bleed Chance'}}},
+                'Slash':{
+                "Damage":Active.BaseActive('Slash', 13), 'Description': 'Deals 13 damage to target | 1/2 Bleed Chance'}}},
 
         'Wizard':{
             'Secret':{
-            'Torosion':{
-            "Damage":Active.adhominum('TT', 7, PasDam, PasDam, PasDam), 'Description': 'Deals massive damage multiplied by 7'}},
+                'Torosion':{
+                "Damage":Active.adhominum('TT', 7, PasDam, PasDam, PasDam), 'Description': 'Deals massive damage multiplied by 7'}},
             
             'Normal':{
-            'Fireball':{
-            "Damage":Active.NumberedActive('Fireball', 7, Burnt), 'Description': 'Deals 7 damage + burn damage to target'},
-            'Poison Mist':{
-            "Damage":Active.NumberedActive('Poison Fog', 7, Poisoned), 'Description': 'Surrounds the enemy in a poison fog, dealing 7 damage + Poison to target'},
-            'Staff Yeet':{
-            "Damage":Active.BaseActive('Staff_Throw', 7), 'Description': 'Throws staff at target at Mach 7, dealing 7 damage'}}},
+                'Fireball':{
+                "Damage":Active.NumberedActive('Fireball', 7, Burnt), 'Description': 'Deals 7 damage + burn damage to target'},
+                'Poison Mist':{
+                "Damage":Active.NumberedActive('Poison Fog', 7, Poisoned), 'Description': 'Surrounds the enemy in a poison fog, dealing 7 damage + Poison to target'},
+                'Staff Yeet':{
+                "Damage":Active.BaseActive('Staff_Throw', 7), 'Description': 'Throws staff at target at Mach 7, dealing 7 damage'}}},
     
         'Fighter':{
             'Chain':{
@@ -218,10 +218,22 @@ attacks = {
 has_kills={}
 has_kills=attacks['active']['Warrior']['Normal']
 
-for values in has_kills.values():
-    print(values)
+def t():
+    for values in has_kills.items():
+       print(values)
 
 
-print((attacks))
 
 
+a= list(has_kills.items())
+def print_a():
+    for i,skills in enumerate(a):
+        print(f'{i+1}.{skills}')
+def inputs():
+    print_a()
+    x=int(input("testing:"))
+    if x <=len(a):
+        y = a[x-1]
+        return y
+
+z = inputs()
