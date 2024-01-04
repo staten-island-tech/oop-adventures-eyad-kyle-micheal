@@ -227,9 +227,6 @@ attacks = {
 has_kills={}
 has_kills=attacks['active']['Warrior']['Normal']
 
-def t():
-    for values in has_kills.items():
-       print(values)
 
 
 
@@ -238,11 +235,5 @@ a= list(has_kills.items())
 def print_a():
     for i,skills in enumerate(a):
         print(f'{i+1}.{skills}')
-def inputs():
-    print_a()
-    x=int(input("testing:"))
-    if x <=len(a):
-        y = a[x-1]
-        return y
 
-z = inputs()
+print_a()
