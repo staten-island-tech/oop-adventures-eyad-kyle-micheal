@@ -78,7 +78,8 @@ bow_throw = Active.BaseActive('Bow Throw', 4) #Chance to activate chain skill (1
 bow_chain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/12
 hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
 
-
+lists=[Rain]
+print(lists[0])
 
 
 
@@ -91,7 +92,10 @@ Archerattacks ={
     "c1-bow_chain":Active.NumberedActive('Bow Chain', 4, count),
     "cf-hells_arrow":Active.NumberedActive("Hell's arrow", 8, count)
 }
-
+Archer_attacks=[Rain,arrow_kick,gun,bow_throw,bow_chain,hells_arrow]
+def ins():
+    x = input("")
+    if x in 
 
 Berserkerattacks ={
     "Rage_Pound":Active.BaseActive('Pound', 13),
@@ -232,6 +236,9 @@ has_kills=attacks['active']['Warrior']['Normal']
 
 
 a= list(has_kills.items())
+b = list(has_kills.keys())
+pierce = 12
+c=[pierce]
 def print_a():
     for i,skills in enumerate(a):
         print(f'{i+1}.{skills}')
