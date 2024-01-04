@@ -110,15 +110,8 @@ Assassinattacks ={
     "cf-Silencer":Active.adhominum('Silencer', 7, PasDam, count, jcount)
 }
 
-Fighterattacks ={
-    "Right_Hook":Active.BaseActive('Right Hook', 12),
-    "Brass_punch":Active.BaseActive('Brass punch', 9),
-    # Chain Skill
-    "cs-uppercut":Active.BaseActive('Uppercut', 11),
-    "c1-kick":Active.BaseActive('Kick', 14),
-    "c2-slammer":Active.BaseActive('Slammer', 7),
-    "cf-repeated":Active.NumberedActive('Repeated Kicks', 5, jcount)
-}
+
+
 
 
 
@@ -211,7 +204,23 @@ attacks = {
             'Brass Punch':{
             "Damage":Active.BaseActive('Brass Punch', 9), 'Description':'Deals 9 damage to target + Bleed'}}},
             
-            
+        'Assassin':{
+            'Chain':{
+            'Shadow Step':{
+            "Damage":Active.BaseActive('Shadow Step', 4)},
+            'Blow Dart':{
+            "Damage":Active.NumberedActive('Blow Darts', 2, count)},
+            'Silencer':{
+            "Damage":Active.adhominum('Silencer', 7, PasDam, count, jcount)}},
+
+            'Normal':{
+            'Slash':{
+            "Damage":Active.BaseActive('Slash', 3), 'Description':'Deals 3 damage to target, with High Bleed & Poison chance'},
+            'Poison Stab':{
+            "Damage":Active.BaseActive('Poison Stab', 4), 'Description':'Deals 4 damage to target. 1/3 Bleed chance, Always Poisons'},
+            'Dagger Throw':{
+            "Damage":Active.BaseActive('Dagger Throw', 12), 'Description':'Deals 12 damage to target. Always Bleed, 1/3 Poison'}}},
+
             
 }} #Closes active and attacks
 
