@@ -61,12 +61,12 @@ dagger_throw = Active.BaseActive('Dagger Throw', 12) # Always Bleed | 1/3 Poison
 # Chain Skill
 shadow_step = Active.BaseActive('Shadow Step', 4) # 1/2 Poison | Chain chance 1/3
 blow_dart = Active.NumberedActive('Blow Darts', 2, count) # Always Poison | Final chain 1/15
-silencer = Active.adhominum('Silencer', 7, PasDam, count, jcount) # Always Poison | 1/8 Bleed
+silencer = Active.adhominum('Silencer', 7, PasDam, count, jcount)
 
 # Berserker 
 Rage_Pound = Active.BaseActive('Pound', 13) # 1/2 Bleed Chance to enemies 
-Baby_Rage = Active.BaseActive('Rage', 23) # 3/5 Bleed Chance to enemies, 1/5 Bleed Chance to self 
-Slam = Active.BaseActive('Slammer', 17) # -4 damage to self, 1/2 chance
+Baby_Rage = Active.BaseActive('Rage', 23) # 3/5 Bleed Chance to enemies
+Slam = Active.BaseActive('Slammer', 17) 
 RepeatJab = Active.NumberedActive('Jabathon', 4, jcount) 
 
 # Archer
@@ -97,22 +97,7 @@ def ins():
     x = input("")
     if x in 
 
-Berserkerattacks ={
-    "Rage_Pound":Active.BaseActive('Pound', 13),
-    "Baby_Rage":Active.BaseActive('Rage', 23),
-    "Slam":Active.BaseActive('Slammer', 17),
-    "RepeatJab":Active.NumberedActive('Jabathon', 4, jcount)
-}
 
-Assassinattacks ={
-    "Slash":Active.BaseActive('Slash', 3),
-    "Poison_Stab":Active.BaseActive('Poison Stab', 4),
-    "Dagger_Throw":Active.BaseActive('Dagger Throw', 12),
-    #chain
-    "cs-Shadow_Step":Active.BaseActive('Shadow Step', 4),
-    "c1-Blow_Dart":Active.NumberedActive('Blow Darts', 2, count),
-    "cf-Silencer":Active.adhominum('Silencer', 7, PasDam, count, jcount)
-}
 
 
 
@@ -200,7 +185,7 @@ attacks = {
             'Slam':{
             "Damage":Active.BaseActive('Slammer', 7), 'Description':'Deals 7 damage to target | 1/8 Bleed chance, 1/7 continuation chance'},
             'Combo':{
-            "Damage":Active.NumberedActive('Combo Kicks', 5, jcount), 'Description':'Deals base 5 damage to target'}},
+            "Damage":Active.NumberedActive('Combo Kicks', 5, jcount), 'Description':'Deals base 5 damage to target 3-6 times'}},
 
             'Normal':{
             'Right Hook':{
@@ -211,11 +196,11 @@ attacks = {
         'Assassin':{
             'Chain':{
             'Shadow Step':{
-            "Damage":Active.BaseActive('Shadow Step', 4)},
+            "Damage":Active.BaseActive('Shadow Step', 4), 'Description':'Deals 4 damage to target. 1/2 Poison chance'},
             'Blow Dart':{
-            "Damage":Active.NumberedActive('Blow Darts', 2, count)},
+            "Damage":Active.NumberedActive('Blow Darts', 2, count), 'Description':'Deals 2 damage 3-7 times. Always Poisons'},
             'Silencer':{
-            "Damage":Active.adhominum('Silencer', 7, PasDam, count, jcount)}},
+            "Damage":Active.adhominum('Silencer', 7, PasDam, count, jcount), 'Description':'Deals 7 damage a minimum of 27 times'}},
 
             'Normal':{
             'Slash':{
@@ -225,8 +210,33 @@ attacks = {
             'Dagger Throw':{
             "Damage":Active.BaseActive('Dagger Throw', 12), 'Description':'Deals 12 damage to target. Always Bleed, 1/3 Poison'}}},
 
-            
-}} #Closes active and attacks
+        "Berserker":{
+            'Normal':{
+            'Rage Pound':{
+            "Damage":Active.BaseActive('Pound', 13), 'Description':"Deals 13 damage to target. 1/2 Bleed chance"},
+            'Baby Rage':{
+            "Damage":Active.BaseActive('Rage', 23), 'Description':"Deals 23 damage to target. High Bleed chance"},
+            'Slam':{
+            "Damage":Active.BaseActive('Slammer', 17), 'Description':"Deals 17 damage to target"},
+            'Jabs':{
+            "Damage":Active.NumberedActive('Jabathon', 4, jcount), 'Description':"Deals 4 damage to target 3-6 times"}}},
+
+        "Archerattacks" :{
+            'Chain':{
+            'Bow Throw':{
+            "Damage":Active.BaseActive('Bow Throw', 4), 'Description':'Deals 4 damage to target'},
+            'Bow Chain':{
+            "Damage":Active.NumberedActive('Bow Chain', 4, count), 'Description':'Deals 4 damage to target 3-7 times'},
+            'Hells Arrow':{
+            "Damage":Active.NumberedActive("Hell's arrow", 8, count), 'Description':'Deals 8 damage to target 3-7 times. Low Poison & Bleed chance'}},
+
+            'Normal':{
+            'Arrow Rain':{
+            "Damage":Active.NumberedActive('Rain', 3, count), 'Description':'Deals 3 damage to target'},
+            'Arrow Kick':{
+            "Damage":Active.BaseActive('Arrow Kick', 7), 'Description':'Deals 7 damage to target. 1/2 Bleed chance'},
+            'Gun':{
+            "Damage":Active.NumberedActive('Gun', 2, (PasDam/count)), 'Description':'Deals 2 damage to target (Random) times'}}}}}
 
 has_kills={}
 has_kills=attacks['active']['Warrior']['Normal']
