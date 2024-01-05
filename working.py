@@ -1,4 +1,5 @@
 #remember to call methods after everything is defined
+
 class TestAttack():
     def __init__(self,name,base_damage):
         self.name = name
@@ -56,8 +57,8 @@ class Player():
             print()
     def assign_skills(chosen):
         if chosen == archer:
+            Player.has_skills=archer
 
-            print(Player.has_skills['name'])
     def choose_skill():
         Player.print_skills()
 
