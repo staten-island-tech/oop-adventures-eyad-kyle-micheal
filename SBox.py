@@ -39,7 +39,7 @@ jcount = random.randint(3, 6) # Berserker Jabs
 # Warrior
 Piercing_Slash = Active.BaseActive('Piercing Slash', 12) #Bleed Chance 1/7
 impale = Active.BaseActive('Impale', 8) # Bleed Always
-
+print(Piercing_Slash)
 divider = Active.BaseActive('Divider', 17) #Bleed 1/7
 slash = Active.BaseActive('Slash', 13) # Bleed 1/2
 
@@ -80,9 +80,17 @@ bow_throw = Active.BaseActive('Bow Throw', 4) #Chance to activate chain skill (1
 bow_chain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/12
 hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
 
+lists=[Rain]
+print(lists[0])
 
 
-
+# Wizard
+# Secret skills
+Torosion = Active.adhominum('TT', 7, PasDam, PasDam, PasDam)
+# Normal Skills
+Fireball = Active.NumberedActive('Fireball', 7, Burnt)
+Poison_Mist = Active.NumberedActive('Poison Fog', 7, Poisoned)
+Staff_Yeet = Active.BaseActive('Staff_Throw', 7)
 
 
 
@@ -235,21 +243,4 @@ archer_skill = [bow_throw,bow_chain,hells_arrow,arrow_kick ,gun]
 b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
 warrior_skill = [Piercing_Slash,impale,divider,slash]
 
-from working import archer,goblin
-print(archer_skill[0])
-def attacking(x):
-    if x == archer:
-        print(f'{goblin.health}')
 
-a= list(has_kills.items())
-def print_a():
-    for i,skills in enumerate(a):
-        print(f'{i+1}.{skills}')
-
-print_a()
-def attacking(x):
-    if x == archer:
-        y = int(input(":::"))
-
-        print(f'{archer_skill[y-1]}')
-attacking(archer)
