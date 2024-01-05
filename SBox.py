@@ -84,19 +84,14 @@ lists=[Rain]
 print(lists[0])
 
 
+# Wizard
+# Secret skills
+Torosion = Active.adhominum('TT', 7, PasDam, PasDam, PasDam)
+# Normal Skills
+Fireball = Active.NumberedActive('Fireball', 7, Burnt)
+Poison_Mist = Active.NumberedActive('Poison Fog', 7, Poisoned)
+Staff_Yeet = Active.BaseActive('Staff_Throw', 7)
 
-Archerattacks ={
-    "rain":Active.NumberedActive('Rain', 3, count),
-    "arrow_kick":Active.NumberedActive('Rain', 3, count),
-    "gun":Active.NumberedActive('Gun', 2, (PasDam/count)),
-    #chain
-    "cs-bow_throw":Active.BaseActive('Bow Throw', 4),
-    "c1-bow_chain":Active.NumberedActive('Bow Chain', 4, count),
-    "cf-hells_arrow":Active.NumberedActive("Hell's arrow", 8, count)
-}
-Archer_attacks=[Rain,arrow_kick,gun,bow_throw,bow_chain,hells_arrow]
-def ins():
-    x = input("")
 
 
 
