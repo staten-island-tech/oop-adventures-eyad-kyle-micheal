@@ -63,9 +63,17 @@ count = random.randint(3, 7) # Arrow count
 jcount = random.randint(3, 6) # Berserker Jabs
 
 # Warrior
+<<<<<<< HEAD
 Piercing_Slash = (Active.BaseActive('Piercing Slash', 12)) + Bleed4()
 
 impale = Active.BaseActive('Impale', 8) + Bled
+=======
+Piercing_Slash = Active.BaseActive('Piercing Slash', 12) #Bleed Chance 1/7
+impale = Active.BaseActive('Impale', 8) # Bleed Always
+print(Piercing_Slash)
+divider = Active.BaseActive('Divider', 17) #Bleed 1/7
+slash = Active.BaseActive('Slash', 13) # Bleed 1/2
+>>>>>>> 4c16fe1a0baf29e77dc8ab05f2dea1e9e2fed5c0
 
 divider = Active.BaseActive('Divider', 17) + Bleed4
 slash = Active.BaseActive('Slash', 13) + Bleed4
@@ -105,6 +113,8 @@ bow_throw = Active.BaseActive('Bow Throw', 4) #Chance to activate chain skill (1
 bow_chain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/12
 hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
 
+lists=[Rain]
+print(lists[0])
 
 
 # Wizard
@@ -266,3 +276,7 @@ archer_skill = [bow_throw,bow_chain,hells_arrow,arrow_kick ,gun]
 b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
 warrior_skill = [Piercing_Slash,impale,divider,slash]
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c16fe1a0baf29e77dc8ab05f2dea1e9e2fed5c0
