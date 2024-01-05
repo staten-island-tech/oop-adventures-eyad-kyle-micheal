@@ -7,13 +7,11 @@ PasDam = random.randint(3, 50)
 
 # Passive Skills
 Bleeding = PasCommon.c('Bleed', 0.3)
-Regeneration = PasCommon.c('Heal', 0.2)
 Poisoned = PasCommon.c('Poison', 0.6)
 Burn = PasCommon.c('Burning', 0.4)
 
 # Direct Damage from Passive Skills
 Bled = (Bleeding * PasDam)
-Regen = (Regeneration * PasDam)
 Poison = (Poisoned * PasDam)
 Burnt = (Burn * PasDam)
 
@@ -26,6 +24,34 @@ class Active():
     
     def adhominum(name, sd, count, count2, count3):
         return (sd * count * count2 * count3)
+seventh = random.randint(1,7)
+quarter = random.randint(1,4)
+third = random.randint(1,3)
+half = random.randint(1,2)
+def Bleed4():
+    if quarter == 4:
+        return Bled
+    else:
+        return 0
+def Burn2():
+    if half == 2:
+        return Burnt
+    else:
+        return 0
+def Poison3():
+    if third == 3:
+        return Poison
+    else:
+        return 0
+def FighterChain():
+    d = 
+    if third == 3:
+        d = 7 + Bleed4()
+        if seventh == 7:
+            repeated = Active.NumberedActive('Repeated Kicks', 5, jcount) 
+            d = d + repeated
+    else:
+        return d
 
 # GENERAL SKILLS
 Stab = Active.BaseActive('Stab', 6 )
@@ -37,25 +63,24 @@ count = random.randint(3, 7) # Arrow count
 jcount = random.randint(3, 6) # Berserker Jabs
 
 # Warrior
-Piercing_Slash = Active.BaseActive('Piercing Slash', 12) #Bleed Chance 1/7
-impale = Active.BaseActive('Impale', 8) # Bleed Always
+Piercing_Slash = (Active.BaseActive('Piercing Slash', 12)) + Bleed4()
 
-divider = Active.BaseActive('Divider', 17) #Bleed 1/7
-slash = Active.BaseActive('Slash', 13) # Bleed 1/2
+impale = Active.BaseActive('Impale', 8) + Bled
 
+divider = Active.BaseActive('Divider', 17) + Bleed4
+slash = Active.BaseActive('Slash', 13) + Bleed4
 
-#Secret Skill | Warrior | Must input specific number to activate
-big_sword= Active.BaseActive('Big Sword', 25)
+big_sword= Active.BaseActive('Big Sword', 25) + Bled
 
 # Fighter
-Right_Hook = Active.BaseActive('Right Hook', 12) #Bleed Chance 1/10
-Brass_punch = Active.BaseActive('Brass punch', 9) # Always Bleed
+Right_Hook = Active.BaseActive('Right Hook', 12) + Bleed4
+Brass_punch = Active.BaseActive('Brass punch', 9) + Bled
 # Chain Skill
-uppercut = Active.BaseActive('Uppercut', 11) # 1/18 bleed | always chain
+uppercut = Active.BaseActive('Uppercut', 11) + Bleed4
 kick = Active.BaseActive('Kick', 14) # 1/20 bleed | 1/3 chain
 slammer = Active.BaseActive('Slammer', 7) # 1/8 bleed | 1/7 chain
-repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
-fighter_skill = [Right_Hook,Brass_punch,uppercut,kick,slammer,repeated]
+
+fighter_skill = [Right_Hook,Brass_punch,uppercut,kick,slammer]
 # Assassin
 Slash = Active.BaseActive('Slash', 3) #Bleed Chance 2/3 | Poison Chance 4/5
 PStab = Active.BaseActive('Poison Stab', 4) # 1/3 Bleed Chance | Always Poison
@@ -241,21 +266,3 @@ archer_skill = [bow_throw,bow_chain,hells_arrow,arrow_kick ,gun]
 b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
 warrior_skill = [Piercing_Slash,impale,divider,slash]
 
-from working import archer,goblin
-print(archer_skill[0])
-def attacking(x):
-    if x == archer:
-        print(f'{goblin.health}')
-
-a= list(has_kills.items())
-def print_a():
-    for i,skills in enumerate(a):
-        print(f'{i+1}.{skills}')
-
-print_a()
-def attacking(x):
-    if x == archer:
-        y = int(input(":::"))
-
-        print(f'{archer_skill[y-1]}')
-attacking(archer)
