@@ -95,3 +95,17 @@ def sell(coins):
         print("Incorrect Input, Item is not in shop")
         sell(coins)
 sell(coins)
+
+shop = ["Helaht","Damage"]
+inventory=[]
+def printint():
+    for i, it in enumerate(shop):
+        print(f'{i+1},{it}')
+
+def adding():
+    printint()
+    y = int(input(""))
+    if 2>=y<=1:
+        inventory.append(shop[y-1])
+adding()
+print(inventory[0])
