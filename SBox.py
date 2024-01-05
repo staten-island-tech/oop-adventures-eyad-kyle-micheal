@@ -42,6 +42,8 @@ impale = Active.BaseActive('Impale', 8) # Bleed Always
 
 divider = Active.BaseActive('Divider', 17) #Bleed 1/7
 slash = Active.BaseActive('Slash', 13) # Bleed 1/2
+
+
 #Secret Skill | Warrior | Must input specific number to activate
 big_sword= Active.BaseActive('Big Sword', 25)
 
@@ -53,7 +55,7 @@ uppercut = Active.BaseActive('Uppercut', 11) # 1/18 bleed | always chain
 kick = Active.BaseActive('Kick', 14) # 1/20 bleed | 1/3 chain
 slammer = Active.BaseActive('Slammer', 7) # 1/8 bleed | 1/7 chain
 repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
-
+fighter_skill = [Right_Hook,Brass_punch,uppercut,kick,slammer,repeated]
 # Assassin
 Slash = Active.BaseActive('Slash', 3) #Bleed Chance 2/3 | Poison Chance 4/5
 PStab = Active.BaseActive('Poison Stab', 4) # 1/3 Bleed Chance | Always Poison
@@ -96,6 +98,7 @@ Archer_attacks=[Rain,arrow_kick,gun,bow_throw,bow_chain,hells_arrow]
 def ins():
     x = input("")
     if x in 
+
 
 
 
@@ -240,10 +243,16 @@ attacks = {
 
 has_kills={}
 has_kills=attacks['active']['Warrior']['Normal']
+assasin_skill =[shadow_step,blow_dart,silencer,slash,PStab,dagger_throw]
+archer_skill = [bow_throw,bow_chain,hells_arrow,arrow_kick ,gun]
+b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
+warrior_skill = [Piercing_Slash,impale,divider,slash]
 
-
-
-
+from working import archer,goblin
+print(archer_skill[0])
+def attacking(x):
+    if x == archer:
+        print(f'{goblin.health}')
 
 a= list(has_kills.items())
 b = list(has_kills.keys())
@@ -254,3 +263,9 @@ def print_a():
         print(f'{i+1}.{skills}')
 
 print_a()
+def attacking(x):
+    if x == archer:
+        y = int(input(":::"))
+
+        print(f'{archer_skill[y-1]}')
+attacking(archer)

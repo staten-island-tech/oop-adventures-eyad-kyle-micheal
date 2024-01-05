@@ -51,7 +51,7 @@ class Player():
         if chosen:
             print(chosen.__dict__)
     def print_skills():
-        for i, skills in enumerate (Player.has_skiils):
+        for i, skills in enumerate (Player.has_skills):
             print(f'{i+1}. {skills}  ')
             print()
     def assign_skills(chosen):
@@ -172,16 +172,16 @@ class Enemies():
 
 
 
-goblin = Enemies("Goblin","a little green thing;embarrising if you die to it",0,0.4,0.8)   
-troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1)
-giant = Enemies("Giant", "this is a big boy",1000, 10,1)
-wolf = Enemies("Wolf","...its a wolf",75,0.5,0.5)
-ogre = Enemies("ogre","this is a very very very big thing",210,1.9,1.2)
-a_british_person =Enemies("a british person","horrible teeth",15,0.8,0.1)
-a_french_person =Enemies("A french man","dont let it near you government",20,0.9,0.1)
-slime = Enemies("slime","sliiiiime",10,5,0.1)
-Dragon = Enemies("dragon","breathes fire and stuff",250,0.2,0.8)
-Enemies.enemies_list=[goblin,troll,giant,wolf,ogre,a_british_person,a_french_person,slime,Dragon]
+goblin = Enemies("goblin","ewf",100,100,100) 
+# troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 200, 2, 1, )
+# giant = Enemies("Giant", "this is a big boy",1000, 10,1,0)
+# wolf = Enemies("Wolf","...its a wolf",75,0.5,0.5,100)
+# ogre = Enemies("ogre","this is a very very very big thing",210,1.9,1.2,0.1)
+# a_british_person =Enemies("a british person","horrible teeth",15,0.8,0.1,90)
+# a_french_person =Enemies("A french man","dont let it near you government",20,0.9,0.1,100)
+# slime = Enemies("slime","sliiiiime",10,5,0.1,100)
+# Dragon = Enemies("dragon","breathes fire and stuff",250,0.2,0.8,90)
+# Enemies.enemies_list=[goblin,troll,giant,wolf,ogre,a_british_person,a_french_person,slime,Dragon]
 
 class Floors():
     def __init__(self,number_of_enemies,order_of_enemies):
@@ -200,7 +200,7 @@ class Floors():
                     print(enemy.__dict__)
                     print()
                     Player.print_skills()
-                    Player.choose_skiil()
+                    Player.choose_skill()
 
 
                 elif enemy.health <=0:
