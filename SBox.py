@@ -82,7 +82,13 @@ hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 po
 
 
 
-
+# Wizard
+# Secret skills
+Torosion = Active.adhominum('TT', 7, PasDam, PasDam, PasDam)
+# Normal Skills
+Fireball = Active.NumberedActive('Fireball', 7, Burnt)
+Poison_Mist = Active.NumberedActive('Poison Fog', 7, Poisoned)
+Staff_Yeet = Active.BaseActive('Staff_Throw', 7)
 
 
 
