@@ -20,6 +20,11 @@ inventory = []
 #class merchant():
    # def __init__(self, name, products):
    # coins = 100
+def no_money(coins):
+        if coins == 0:
+            print("You ran out of money")
+            print("You left the shop...")
+            exit()
 def money_check(coins):
     if coins == 0:
         print("You ran out of money")
@@ -57,7 +62,7 @@ def shop_checker():
         exit()
 def sell(coins):
     print(f"This is the amount of money you have: {coins}")
-    print(shop_inventory)
+    shop_inventory_check(coins)
     user_purchase = input("What would you like to buy?(Type Exit if you want to leave.): ")
     if user_purchase == "Health Potion":
         coins-=Health_Potion.amount
@@ -67,6 +72,8 @@ def sell(coins):
         inventory.append("Health Potion")
         print(f"This is your inventory: {inventory}")
         money_check(coins)
+        no_money(coins)
+        sell(coins)
     if user_purchase == "Flimsy Wooden Sword":
         coins-=Flimsy_Wooden_Sword.amount
         user_warning_2(coins)
@@ -75,7 +82,8 @@ def sell(coins):
         inventory.append("Flimsy Wooden Sword")
         print(f"This is your inventory: {inventory}")
         money_check(coins)
-    sell(coins)
+        no_money(coins)
+        sell(coins)
     if user_purchase == "Flimsy Steel Sword":
         coins-=Flimsy_Steel_Sword.amount
         user_warning_3(coins)
@@ -84,10 +92,8 @@ def sell(coins):
         inventory.append("Flimsy Steel Sword")
         print(f"This is your inventory: {inventory}")
         money_check(coins)
-    if coins == 0:
-        print("You ran out of money")
-        print("You left the shop...")
-        exit()
+        no_money(coins)
+        sell(coins)
     if user_purchase == "Exit":
         print("You left the shop...")
         exit()
@@ -95,3 +101,7 @@ def sell(coins):
         print("Incorrect Input, Item is not in shop")
         sell(coins)
 sell(coins)
+
+#for importing:
+#from awawawawa import mooney,money_check,sell,no_money,user_warning_1,user_warning_2,user_warning_3,shop_inventory_check
+#sell()

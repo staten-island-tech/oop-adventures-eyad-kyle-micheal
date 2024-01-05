@@ -1,5 +1,4 @@
-class Merchant_shop():
-    coins = 100
+coins = 100
 def user_warning_1(coins):
     if coins < 0:
         print("You do not have enough money to afford this")
@@ -17,7 +16,7 @@ def user_warning_3(coins):
         print("You do not have enough money to afford this")
         coins+=Flimsy_Steel_Sword.amount
         sell_1(coins)
-
+ 
 shop_inventory = ["Health Potion", "Flimsy Wooden Sword", "Flimsy Steel Sword"]
 inventory = []
 class mooney():
@@ -85,4 +84,4 @@ def sell_1(coins):
         else:
             print("Incorrect Input, Item is not in shop")
             sell_1(coins)
-
+sell_1(coins)
