@@ -11,8 +11,6 @@ class TestAttack():
 class Player():
     displayed_skills =[]
     classes_choice=[]
-    potential_classes=[]
-    has_skills={}
     def __init__(self,name,health,attack,defense,money):
         self.name = name
         self.health = health
