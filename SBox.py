@@ -28,12 +28,38 @@ third = random.random(1,3)
 quarter = random.randint(1,4)
 seventh = random.randint(1,7)
 tenth = random.randint(1,10)
+
 def bh():
     if half == 2:
         return Bled
 def bt():
     if third == 3:
         return Bled
+def bq():
+    if quarter == 4:
+        return Bled
+def bs():
+    if seventh == 7:
+        return Bled
+def bte():
+    if tenth == 10:
+        return Bled
+
+def ph():
+    if half == 2:
+        return Poison
+def pt():
+    if third == 3:
+        return Poison
+def pq():
+    if quarter == 4:
+        return Poison
+def ps():
+    if seventh == 7:
+        return Poison
+def pte():
+    if tenth == 10:
+        return Poison
 # test zone
 
 # GENERAL SKILLS
