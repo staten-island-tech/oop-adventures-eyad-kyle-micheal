@@ -3,17 +3,14 @@ import random
 class PasCommon():
     def c(name, skill_health):
         return (skill_health)
+    
 PasDam = random.randint(3, 50)
 
-# Passive Skills
+# Passive things
 Bleeding = PasCommon.c('Bleed', 0.3)
 Poisoned = PasCommon.c('Poison', 0.6)
-Burn = PasCommon.c('Burning', 0.4)
-
-# Direct Damage from Passive Skills
 Bled = (Bleeding * PasDam)
 Poison = (Poisoned * PasDam)
-Burnt = (Burn * PasDam)
 
 class Active():
     def BaseActive(name, sd):
@@ -53,27 +50,92 @@ def FighterChain():
     else:
         return d
 
+# test zone
+half = random.random(1,2)
+third = random.random(1,3)
+quarter = random.randint(1,4)
+seventh = random.randint(1,7)
+tenth = random.randint(1,10)
+
+def bh():
+    if half == 2:
+        return Bled
+    else:
+        return 0
+def bt():
+    if third == 3:
+        return Bled
+    else:
+        return 0
+def bq():
+    if quarter == 4:
+        return Bled
+    else:
+        return 0
+def bs():
+    if seventh == 7:
+        return Bled
+    else:
+        return 0
+def bte():
+    if tenth == 10:
+        return Bled
+    else:
+        return 0
+
+def ph():
+    if half == 2:
+        return Poison
+    else:
+        return 0
+def pt():
+    if third == 3:
+        return Poison
+    else:
+        return 0
+def pq():
+    if quarter == 4:
+        return Poison
+    else:
+        return 0
+def ps():
+    if seventh == 7:
+        return Poison
+    else:
+        return 0
+def pte():
+    if tenth == 10:
+        return Poison
+    else:
+        return 0
+# test zone
+
 # GENERAL SKILLS
 Stab = Active.BaseActive('Stab', 6 )
 Jab = Active.BaseActive('Jab', 4)
 
 #CLASS SKILLS:
-
 count = random.randint(3, 7) # Arrow count
 jcount = random.randint(3, 6) # Berserker Jabs
 
 # Warrior
-<<<<<<< HEAD
+
 Piercing_Slash = (Active.BaseActive('Piercing Slash', 12)) + Bleed4()
 
 impale = Active.BaseActive('Impale', 8) + Bled
-=======
+
 Piercing_Slash = Active.BaseActive('Piercing Slash', 12) #Bleed Chance 1/7
 impale = Active.BaseActive('Impale', 8) # Bleed Always
 print(Piercing_Slash)
 divider = Active.BaseActive('Divider', 17) #Bleed 1/7
 slash = Active.BaseActive('Slash', 13) # Bleed 1/2
->>>>>>> 4c16fe1a0baf29e77dc8ab05f2dea1e9e2fed5c0
+
+
+Piercing_Slash = Active.BaseActive('Piercing Slash', 12) + bs()
+impale = Active.BaseActive('Impale', 8) + Bled
+divider = Active.BaseActive('Divider', 17) + bs()
+slash = Active.BaseActive('Slash', 13) + bh
+
 
 divider = Active.BaseActive('Divider', 17) + Bleed4
 slash = Active.BaseActive('Slash', 13) + Bleed4
@@ -81,33 +143,35 @@ slash = Active.BaseActive('Slash', 13) + Bleed4
 big_sword= Active.BaseActive('Big Sword', 25) + Bled
 
 # Fighter
-Right_Hook = Active.BaseActive('Right Hook', 12) + Bleed4
+Right_Hook = Active.BaseActive('Right Hook', 12) + bte()
 Brass_punch = Active.BaseActive('Brass punch', 9) + Bled
 # Chain Skill
-uppercut = Active.BaseActive('Uppercut', 11) + Bleed4
-kick = Active.BaseActive('Kick', 14) # 1/20 bleed | 1/3 chain
-slammer = Active.BaseActive('Slammer', 7) # 1/8 bleed | 1/7 chain
+uppercut = Active.BaseActive('Uppercut', 11) + Bled + bh() #always chain
+kick = Active.BaseActive('Kick', 14) # 1/3 chain
+slammer = Active.BaseActive('Slammer', 7) #1/7 chain
+repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
+fighter_skill = [Right_Hook,Brass_punch,uppercut,kick,slammer,repeated]
 
-fighter_skill = [Right_Hook,Brass_punch,uppercut,kick,slammer]
+
 # Assassin
-Slash = Active.BaseActive('Slash', 3) #Bleed Chance 2/3 | Poison Chance 4/5
-PStab = Active.BaseActive('Poison Stab', 4) # 1/3 Bleed Chance | Always Poison
-dagger_throw = Active.BaseActive('Dagger Throw', 12) # Always Bleed | 1/3 Poison
+Slash = Active.BaseActive('Slash', 3) + bt() + pq()
+PStab = Active.BaseActive('Poison Stab', 4) + bt() + Poison
+dagger_throw = Active.BaseActive('Dagger Throw', 12) + Bled + pt()
 # Chain Skill
 shadow_step = Active.BaseActive('Shadow Step', 4) # 1/2 Poison | Chain chance 1/3
 blow_dart = Active.NumberedActive('Blow Darts', 2, count) # Always Poison | Final chain 1/15
 silencer = Active.adhominum('Silencer', 7, PasDam, count, jcount)
 
 # Berserker 
-Rage_Pound = Active.BaseActive('Pound', 13) # 1/2 Bleed Chance to enemies 
-Baby_Rage = Active.BaseActive('Rage', 23) # 3/5 Bleed Chance to enemies
+Rage_Pound = Active.BaseActive('Pound', 13) + bh()
+Baby_Rage = Active.BaseActive('Rage', 23) + bh()
 Slam = Active.BaseActive('Slammer', 17) 
 RepeatJab = Active.NumberedActive('Jabathon', 4, jcount) 
 
 # Archer
-Rain = Active.NumberedActive('Rain', 3, count) #Bleed Chance 1/4 
-arrow_kick = Active.BaseActive('Arrow Kick', 7) # Bleed 1/2
-gun = Active.NumberedActive('Gun', 2, (PasDam/count)) # Side effects maybe?
+Rain = Active.NumberedActive('Rain', 3, count) + bq()
+arrow_kick = Active.BaseActive('Arrow Kick', 7) + bh()
+gun = Active.NumberedActive('Gun', 2, (PasDam/count))
 # Special Chain move
 bow_throw = Active.BaseActive('Bow Throw', 4) #Chance to activate chain skill (1/4)
 bow_chain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/12
@@ -116,6 +180,10 @@ hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 po
 lists=[Rain]
 print(lists[0])
 
+
+#used literally once
+Burn = PasCommon.c('Burning', 0.4)
+Burnt = (Burn * PasDam)
 
 # Wizard
 # Secret skills
