@@ -3,19 +3,14 @@ import random
 class PasCommon():
     def c(name, skill_health):
         return (skill_health)
+    
 PasDam = random.randint(3, 50)
 
-# Passive Skills
+# Passive things
 Bleeding = PasCommon.c('Bleed', 0.3)
-Regeneration = PasCommon.c('Heal', 0.2)
 Poisoned = PasCommon.c('Poison', 0.6)
-Burn = PasCommon.c('Burning', 0.4)
-
-# Direct Damage from Passive Skills
 Bled = (Bleeding * PasDam)
-Regen = (Regeneration * PasDam)
 Poison = (Poisoned * PasDam)
-Burnt = (Burn * PasDam)
 
 class Active():
     def BaseActive(name, sd):
@@ -27,19 +22,31 @@ class Active():
     def adhominum(name, sd, count, count2, count3):
         return (sd * count * count2 * count3)
 
+# test zone
+half = random.random(1,2)
+third = random.random(1,3)
+quarter = random.randint(1,4)
+seventh = random.randint(1,7)
+tenth = random.randint(1,10)
+def bh():
+    if half == 2:
+        return Bled
+def bt():
+    if third == 3:
+        return Bled
+# test zone
+
 # GENERAL SKILLS
 Stab = Active.BaseActive('Stab', 6 )
 Jab = Active.BaseActive('Jab', 4)
 
 #CLASS SKILLS:
-
 count = random.randint(3, 7) # Arrow count
 jcount = random.randint(3, 6) # Berserker Jabs
 
 # Warrior
 Piercing_Slash = Active.BaseActive('Piercing Slash', 12) #Bleed Chance 1/7
 impale = Active.BaseActive('Impale', 8) # Bleed Always
-print(Piercing_Slash)
 divider = Active.BaseActive('Divider', 17) #Bleed 1/7
 slash = Active.BaseActive('Slash', 13) # Bleed 1/2
 
@@ -83,6 +90,10 @@ hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 po
 lists=[Rain]
 print(lists[0])
 
+
+#used literally once
+Burn = PasCommon.c('Burning', 0.4)
+Burnt = (Burn * PasDam)
 
 # Wizard
 # Secret skills
