@@ -1,2 +1,20 @@
-from awawawawa import sell
-sell()
+class mooney:
+    def __init__(self, name, amount):
+        self.amount = amount
+        self.name = name
+    def buy(x,item):
+     if begin in a:
+            a.remove(str(begin))
+            player.append(str(begin))
+            coins = x -item.amount
+            print(coins)
+            print(a)
+            print(player)
+Health_Potion = mooney("Health Potion", 10)
+Flimsy_Wooden_Sword = mooney("Flimsy Wooden Sword", 40)
+Flimsy_Steel_Sword = mooney("Flimsy Steel Sword", 60)
+
+a = [Health_Potion.name, Flimsy_Wooden_Sword.name]
+player = []
+begin = input("buy item")
+mooney.buy(100,Health_Potion)
