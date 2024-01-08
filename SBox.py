@@ -91,14 +91,28 @@ count = random.randint(3, 7) # Arrow count
 jcount = random.randint(3, 6) # Berserker Jabs
 
 # Warrior
+
+Piercing_Slash = (Active.BaseActive('Piercing Slash', 12)) + Bleed4()
+
+impale = Active.BaseActive('Impale', 8) + Bled
+
+Piercing_Slash = Active.BaseActive('Piercing Slash', 12) #Bleed Chance 1/7
+impale = Active.BaseActive('Impale', 8) # Bleed Always
+print(Piercing_Slash)
+divider = Active.BaseActive('Divider', 17) #Bleed 1/7
+slash = Active.BaseActive('Slash', 13) # Bleed 1/2
+
+
 Piercing_Slash = Active.BaseActive('Piercing Slash', 12) + bs()
 impale = Active.BaseActive('Impale', 8) + Bled
 divider = Active.BaseActive('Divider', 17) + bs()
 slash = Active.BaseActive('Slash', 13) + bh
 
 
-#Secret Skill | Warrior | Must input specific number to activate
-big_sword= Active.BaseActive('Big Sword', 25)
+divider = Active.BaseActive('Divider', 17) + Bleed4
+slash = Active.BaseActive('Slash', 13) + Bleed4
+
+big_sword= Active.BaseActive('Big Sword', 25) + Bled
 
 # Fighter
 Right_Hook = Active.BaseActive('Right Hook', 12) + bte()
@@ -109,6 +123,7 @@ kick = Active.BaseActive('Kick', 14) # 1/3 chain
 slammer = Active.BaseActive('Slammer', 7) #1/7 chain
 repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
 fighter_skill = [Right_Hook,Brass_punch,uppercut,kick,slammer,repeated]
+
 
 # Assassin
 Slash = Active.BaseActive('Slash', 3) + bt() + pq()
@@ -301,4 +316,7 @@ archer_skill = [bow_throw,bow_chain,hells_arrow,arrow_kick ,gun]
 b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
 warrior_skill = [Piercing_Slash,impale,divider,slash]
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4c16fe1a0baf29e77dc8ab05f2dea1e9e2fed5c0
