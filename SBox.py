@@ -21,34 +21,6 @@ class Active():
     
     def adhominum(name, sd, count, count2, count3):
         return (sd * count * count2 * count3)
-seventh = random.randint(1,7)
-quarter = random.randint(1,4)
-third = random.randint(1,3)
-half = random.randint(1,2)
-def Bleed4():
-    if quarter == 4:
-        return Bled
-    else:
-        return 0
-def Burn2():
-    if half == 2:
-        return Burnt
-    else:
-        return 0
-def Poison3():
-    if third == 3:
-        return Poison
-    else:
-        return 0
-def FighterChain():
-    d = 
-    if third == 3:
-        d = 7 + Bleed4()
-        if seventh == 7:
-            repeated = Active.NumberedActive('Repeated Kicks', 5, jcount) 
-            d = d + repeated
-    else:
-        return d
 
 # test zone
 half = random.random(1,2)
