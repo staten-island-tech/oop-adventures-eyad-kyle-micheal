@@ -102,11 +102,6 @@ def sell(coins):
         sell(coins)
 sell(coins)
 
-<<<<<<< HEAD
-#for importing:
-#from awawawawa import mooney,money_check,sell,no_money,user_warning_1,user_warning_2,user_warning_3,shop_inventory_check
-#sell()
-=======
 shop = ["Helaht","Damage"]
 inventory=[]
 def printint():
@@ -120,4 +115,3 @@ def adding():
         inventory.append(shop[y-1])
 adding()
 print(inventory[0])
->>>>>>> cf0e1fe51f96f9519fade65c76bab2130c24f67e
