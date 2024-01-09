@@ -23,9 +23,9 @@ class Active():
         return (sd * count * count2 * count3)
 
 # test zone
-half = random.random(1,2)
-third = random.random(1,3)
-quarter = random.randint(1,4)
+half = random.random()
+third = random.random()
+quarter = random.randint(1,2)
 seventh = random.randint(1,7)
 tenth = random.randint(1,10)
 
@@ -91,8 +91,8 @@ count = random.randint(3, 7) # Arrow count
 jcount = random.randint(3, 6) # Berserker Jabs
 
 # Warrior
-
-Piercing_Slash = (Active.BaseActive('Piercing Slash', 12)) + Bleed4()
+Bleed4=0
+Piercing_Slash = (Active.BaseActive('Piercing Slash', 12)) + Bleed4
 
 impale = Active.BaseActive('Impale', 8) + Bled
 
@@ -106,7 +106,7 @@ slash = Active.BaseActive('Slash', 13) # Bleed 1/2
 Piercing_Slash = Active.BaseActive('Piercing Slash', 12) + bs()
 impale = Active.BaseActive('Impale', 8) + Bled
 divider = Active.BaseActive('Divider', 17) + bs()
-slash = Active.BaseActive('Slash', 13) + bh
+slash = Active.BaseActive('Slash', 13) + bh()
 
 
 divider = Active.BaseActive('Divider', 17) + Bleed4
@@ -187,13 +187,13 @@ attacks = {
 
                 'Divide:Deals 17 damage to target | 1/7 Bleed Chance',
 
-                'Slash:Deals 13 damage to target | 1/2 Bleed Chance'}}},
+                'Slash:Deals 13 damage to target | 1/2 Bleed Chance'},
 
         'Wizard':{
 
-                'Fireball:Deals 7 damage + burn damage to target'},
-                'Poison Mist: Surrounds the enemy in a poison fog, dealing 7 damage + Poison to target'},
-                'Staff Yeet:Throws staff at target at Mach 7, dealing 7 damage'}}},
+                'Fireball:Deals 7 damage + burn damage to target',
+                'Poison Mist: Surrounds the enemy in a poison fog, dealing 7 damage + Poison to target',
+                'Staff Yeet:Throws staff at target at Mach 7, dealing 7 damage'},
     
         'Fighter':{
 
@@ -202,22 +202,22 @@ attacks = {
             'Slam:Deals 7 damage to target | 1/8 Bleed chance, 1/7 continuation chance',
             'Combo:Deals base 5 damage to target 3-6 times',
             'Right Hook:Deals 12 damage to target | 1/10 Bleed Chance',
-            'Brass Punch:Deals 9 damage to target + Bleed'}}},
+            'Brass Punch:Deals 9 damage to target + Bleed'},
             
         'Assassin':{
 
-            'Shadow Step:Deals 4 damage to target. 1/2 Poison chance'},
-            'Blow DartDeals 2 damage 3-7 times. Always Poisons'},
-            'Silencer:Deals 7 damage a minimum of 27 times'}},
-            'Slash':'Deals 3 damage to target, with High Bleed & Poison chance'},
-            'Poison Stab 4 damage to target. 1/3 Bleed chance, Always Poisons'},
-            'Dagger Throw:Deals 12 damage to target. Always Bleed, 1/3 Poison',
+            'Shadow Step:Deals 4 damage to target. 1/2 Poison chance',
+            'Blow DartDeals 2 damage 3-7 times. Always Poisons',
+            'Silencer:Deals 7 damage a minimum of 27 times',
+            'Slash:Deals 3 damage to target, with High Bleed & Poison chance',
+            'Poison Stab 4 damage to target. 1/3 Bleed chance, Always Poisons',
+            'Dagger Throw:Deals 12 damage to target. Always Bleed, 1/3 Poison'},
 
         "Berserker":{
             'Rage Pound:Deals 13 damage to target. 1/2 Bleed chance',
             'Baby Rage:Deals 23 damage to target. High Bleed chance',
             'Slam:Deals 17 damage to target',
-            'Jabs:Deals 4 damage to target 3-6 times'}
+            'Jabs:Deals 4 damage to target 3-6 times'},
 
         "Archerattacks" :{
 
@@ -226,13 +226,32 @@ attacks = {
             'Hells Arrow:Deals 8 damage to target 3-7 times. Low Poison & Bleed chance',
             'Arrow Rain:Deals 3 damage to target',
             'Arrow Kick:Deals 7 damage to target. 1/2 Bleed chance',
-            'Gun:Deals 2 damage to target (Random) times'}}}
+            'Gun:Deals 2 damage to target (Random) times'}}
 
 
-has_kills=list(attacks['active']['Archerattacks'])
+has_kills=list(attacks['Archerattacks'])
 assasin_skill =[shadow_step,blow_dart,silencer,slash,PStab,dagger_throw]
 archer_skill = [bow_throw,bow_chain,hells_arrow,arrow_kick ,gun]
 b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
 warrior_skill = [Piercing_Slash,impale,divider,slash]
-print(has_kills[0])
+def printing_skills():
+    for i,skill in enumerate(has_kills):
+        print(f'{i+1}.{skill}')
+printing_skills()
+def choice():
+    
+    while True:
+        try:
+            x=(input(":::"))
+            x = int(x)
+            if x <=len(has_kills):
+                print(f'You chose the skill \n{has_kills[x-1]}')
+                return has_kills[x-1]
+            else:
+                print(":(")
+        except ValueError:
+            print("uh oh")
+choice()
+    
+
 
