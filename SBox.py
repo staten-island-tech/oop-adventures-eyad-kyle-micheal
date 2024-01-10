@@ -133,8 +133,11 @@ Staff_Yeet = Active.BaseActive('Staff_Throw', 7)
 
 
 
-
-
+# Whalen Skills
+Hands = Active.BaseActive('Dem Hands', 17) + Statis.calc(3, Bled)
+Fault = Active.BaseActive('Faulty Code', PasDam) + Statis.calc(66, Bled) + Statis.calc(66, Poison) + Statis.calc(66, Burn)
+Fail = Active.adhominum('Failure!', 666, PasDam, PasDam, PasDam)
+whalen_skill =[Hands, Fault, Fail]
 
 
 
