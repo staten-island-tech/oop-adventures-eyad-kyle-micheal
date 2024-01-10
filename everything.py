@@ -24,64 +24,20 @@ class Active():
         return (sd * count * count2 * count3)
 
 # test zone
-half = random.random()
-third = random.random()
-quarter = random.randint(1,2)
+half = random.randint(1,2)
+third = random.randint(1,3)
+quarter = random.randint(1,4)
 seventh = random.randint(1,7)
 tenth = random.randint(1,10)
 
-def bh():
-    if half == 2:
-        return Bled
-    else:
-        return 0
-def bt():
-    if third == 3:
-        return Bled
-    else:
-        return 0
-def bq():
-    if quarter == 4:
-        return Bled
-    else:
-        return 0
-def bs():
-    if seventh == 7:
-        return Bled
-    else:
-        return 0
-def bte():
-    if tenth == 10:
-        return Bled
-    else:
-        return 0
+class Statis():
+    def calc(percentage, name):
+        x = random.randint(1, percentage)
+        if x == percentage:
+            return name
+        else:
+            return 0
 
-def ph():
-    if half == 2:
-        return Poison
-    else:
-        return 0
-def pt():
-    if third == 3:
-        return Poison
-    else:
-        return 0
-def pq():
-    if quarter == 4:
-        return Poison
-    else:
-        return 0
-def ps():
-    if seventh == 7:
-        return Poison
-    else:
-        return 0
-def pte():
-    if tenth == 10:
-        return Poison
-    else:
-        return 0
-# test zone
 
 # GENERAL SKILLS
 Stab = Active.BaseActive('Stab', 6 )
@@ -92,63 +48,57 @@ count = random.randint(3, 7) # Arrow count
 jcount = random.randint(3, 6) # Berserker Jabs
 
 # Warrior
-Bleed4=0
-Piercing_Slash = (Active.BaseActive('Piercing Slash', 12)) + Bleed4
-
+Piercing_Slash = Active.BaseActive('Piercing Slash', 12) + Statis.calc(7, Bled)
 impale = Active.BaseActive('Impale', 8) + Bled
-
-Piercing_Slash = Active.BaseActive('Piercing Slash', 12) #Bleed Chance 1/7
-impale = Active.BaseActive('Impale', 8) # Bleed Always
-print(Piercing_Slash)
-divider = Active.BaseActive('Divider', 17) #Bleed 1/7
-slash = Active.BaseActive('Slash', 13) # Bleed 1/2
-
-
-Piercing_Slash = Active.BaseActive('Piercing Slash', 12) + bs()
-impale = Active.BaseActive('Impale', 8) + Bled
-divider = Active.BaseActive('Divider', 17) + bs()
-slash = Active.BaseActive('Slash', 13) + bh()
-
-
-divider = Active.BaseActive('Divider', 17) + Bleed4
-slash = Active.BaseActive('Slash', 13) + Bleed4
-
+divider = Active.BaseActive('Divider', 17) + Statis.calc(7, Bled)
+slash = Active.BaseActive('Slash', 13) + Statis.calc(2, Bled)
 big_sword= Active.BaseActive('Big Sword', 25) + Bled
 
 # Fighter
-Right_Hook = Active.BaseActive('Right Hook', 12) + bte()
+Right_Hook = Active.BaseActive('Right Hook', 12) + Statis.calc(10, Bled)
 Brass_punch = Active.BaseActive('Brass punch', 9) + Bled
 # Chain Skill
-uppercut = Active.BaseActive('Uppercut', 11) + Bled + bh() #always chain
-kick = Active.BaseActive('Kick', 14) # 1/3 chain
-slammer = Active.BaseActive('Slammer', 7) #1/7 chain
+uppercut = Active.BaseActive('Uppercut', 11) # 1/18 bleed | always chain
+kick = Active.BaseActive('Kick', 14) # 1/20 bleed | 1/3 chain
+slammer = Active.BaseActive('Slammer', 7) # 1/8 bleed | 1/7 chain
 repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
 fighter_skill = [Right_Hook,Brass_punch,uppercut,kick,slammer,repeated]
 
 
 # Assassin
-Slash = Active.BaseActive('Slash', 3) + bt() + pq()
-PStab = Active.BaseActive('Poison Stab', 4) + bt() + Poison
-dagger_throw = Active.BaseActive('Dagger Throw', 12) + Bled + pt()
+Slash = Active.BaseActive('Slash', 3) + Statis.calc(3, Bled) + Statis.calc(4, Poison)
+PStab = Active.BaseActive('Poison Stab', 4) + Statis.calc(3, Bled) + Poison
+dagger_throw = Active.BaseActive('Dagger Throw', 12) + Bled + Statis.calc(3, Poison)
 # Chain Skill
 shadow_step = Active.BaseActive('Shadow Step', 4) # 1/2 Poison | Chain chance 1/3
 blow_dart = Active.NumberedActive('Blow Darts', 2, count) # Always Poison | Final chain 1/15
 silencer = Active.adhominum('Silencer', 7, PasDam, count, jcount)
 
 # Berserker 
-Rage_Pound = Active.BaseActive('Pound', 13) + bh()
-Baby_Rage = Active.BaseActive('Rage', 23) + bh()
+Rage_Pound = Active.BaseActive('Pound', 13) + Statis.calc(2, Bled)
+Baby_Rage = Active.BaseActive('Rage', 23) + Statis.calc(2, Bled)
 Slam = Active.BaseActive('Slammer', 17) 
 RepeatJab = Active.NumberedActive('Jabathon', 4, jcount) 
 
 # Archer
-Rain = Active.NumberedActive('Rain', 3, count) + bq()
-arrow_kick = Active.BaseActive('Arrow Kick', 7) + bh()
+Rain = Active.NumberedActive('Rain', 3, count) + Statis.calc(4, Bled)
+arrow_kick = Active.BaseActive('Arrow Kick', 7) + Statis.calc(2, Bled)
 gun = Active.NumberedActive('Gun', 2, (PasDam/count))
+
 # Special Chain move
-bow_throw = Active.BaseActive('Bow Throw', 4) #Chance to activate chain skill (1/4)
-bow_chain = Active.NumberedActive('Bow Chain', 4, count) #Final skill chance 1/12
-hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) #1/5 bleed, 1/8 poison 
+def archerchain():
+    bow_chain = Active.NumberedActive('Bow Chain', 4, count)
+    hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) + Statis.calc(4, Bled) + Statis.calc(7, Poison)
+    if quarter == 4:
+        if tenth == 10:
+            return hells_arrow
+        else: return bow_chain
+    else:
+        return 0
+bow_throw = Active.BaseActive('Bow Throw', 4) + archerchain()
+
+
+
 
 lists=[Rain]
 print(lists[0])
@@ -165,7 +115,6 @@ Torosion = Active.adhominum('TT', 7, PasDam, PasDam, PasDam)
 Fireball = Active.NumberedActive('Fireball', 7, Burnt)
 Poison_Mist = Active.NumberedActive('Poison Fog', 7, Poisoned)
 Staff_Yeet = Active.BaseActive('Staff_Throw', 7)
-
 
 
 
