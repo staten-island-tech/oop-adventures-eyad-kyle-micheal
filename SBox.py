@@ -126,9 +126,6 @@ Staff_Yeet = Active.BaseActive('Staff_Throw', 7)
 
 
 attacks = {
-
-
-
         'Warrior':{
 
                 'Pierce:Deals 12 damage to target | 1/7 Bleed Chance',
@@ -157,19 +154,19 @@ attacks = {
         'Assassin':{
 
             'Shadow Step:Deals 4 damage to target. 1/2 Poison chance',
-            'Blow DartDeals 2 damage 3-7 times. Always Poisons',
+            'Blow Dart:Deals 2 damage 3-7 times. Always Poisons',
             'Silencer:Deals 7 damage a minimum of 27 times',
             'Slash:Deals 3 damage to target, with High Bleed & Poison chance',
             'Poison Stab 4 damage to target. 1/3 Bleed chance, Always Poisons',
             'Dagger Throw:Deals 12 damage to target. Always Bleed, 1/3 Poison'},
 
-        "Berserker":{
+        'Berserker':{
             'Rage Pound:Deals 13 damage to target. 1/2 Bleed chance',
             'Baby Rage:Deals 23 damage to target. High Bleed chance',
             'Slam:Deals 17 damage to target',
             'Jabs:Deals 4 damage to target 3-6 times'},
 
-        "Archerattacks" :{
+        'Archerattacks' :{
 
             'Bow Throw:Deals 4 damage to target',
             'Bow Chain:Deals 4 damage to target 3-7 times',
@@ -179,8 +176,8 @@ attacks = {
             'Gun:Deals 2 damage to target (Random) times'}}
 
 
-has_kills=list(attacks['Archerattacks'])
+has_kills=list(attacks['active']['Archerattacks'])
 assasin_skill =[shadow_step,blow_dart,silencer,slash,PStab,dagger_throw]
-archer_skill = [bow_throw,bow_chain,hells_arrow,arrow_kick ,gun]
+archer_skill = [bow_throw, Rain, arrow_kick ,gun]
 b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
 warrior_skill = [Piercing_Slash,impale,divider,slash]

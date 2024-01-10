@@ -172,8 +172,6 @@ attacks = {
         "Archerattacks" :{
 
             'Bow Throw:Deals 4 damage to target',
-            'Bow Chain:Deals 4 damage to target 3-7 times',
-            'Hells Arrow:Deals 8 damage to target 3-7 times. Low Poison & Bleed chance',
             'Arrow Rain:Deals 3 damage to target',
             'Arrow Kick:Deals 7 damage to target. 1/2 Bleed chance',
             'Gun:Deals 2 damage to target (Random) times'}}
@@ -181,7 +179,7 @@ attacks = {
 
 has_kills=list(attacks['Archerattacks'])
 assasin_skill =[shadow_step,blow_dart,silencer,slash,PStab,dagger_throw]
-archer_skill = [bow_throw,bow_chain,hells_arrow,arrow_kick ,gun]
+archer_skill = [bow_throw,Rain,arrow_kick ,gun]
 b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
 warrior_skill = [Piercing_Slash,impale,divider,slash]
 
@@ -265,7 +263,7 @@ class Player():
                 x = int(x)
                 if x <=len(has_kills):
                     print(f'You chose the skill \n{has_kills[x-1]}')
-                    return has_kills[x-1]
+                    return chosen_skills[x-1]
                 else:
                     print(":(")
             except ValueError:
@@ -386,7 +384,7 @@ print(type(archer))
 # Enemies.enemies_list=[goblin,troll,giant,wolf,ogre,a_british_person,a_french_person,slime,Dragon]
 
 assasin_skill =[shadow_step,blow_dart,silencer,slash,PStab,dagger_throw]
-archer_skill = [bow_throw,bow_chain,hells_arrow,arrow_kick ,gun]
+archer_skill = [bow_throw,Rain,arrow_kick ,gun]
 b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
 warrior_skill = [Piercing_Slash,impale,divider,slash]
 class Floors():
@@ -406,7 +404,10 @@ class Floors():
                     print(enemy.__dict__)
                     print()
                     Player.print_skills()
-                    Player.choose_skill()
+                    enemy.health-=Player.choice()
+                    print(enemy.__dict__)
+                    player.health-=random.randint(15,20)
+                    print(player.__dict__)
                     
 
 
@@ -417,7 +418,9 @@ class Floors():
                     break
             if player.health <=0:
                 print("youve died")
-
+Player.print_classes()
+Player.better_choose_class()
+Floors.encounter(goblin,archer,7)
 
 
 
