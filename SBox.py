@@ -118,9 +118,9 @@ big_sword= Active.BaseActive('Big Sword', 25) + Bled
 Right_Hook = Active.BaseActive('Right Hook', 12) + bte()
 Brass_punch = Active.BaseActive('Brass punch', 9) + Bled
 # Chain Skill
-uppercut = Active.BaseActive('Uppercut', 11) + Bled + bh() #always chain
-kick = Active.BaseActive('Kick', 14) # 1/3 chain
-slammer = Active.BaseActive('Slammer', 7) #1/7 chain
+uppercut = Active.BaseActive('Uppercut', 11) # 1/18 bleed | always chain
+kick = Active.BaseActive('Kick', 14) # 1/20 bleed | 1/3 chain
+slammer = Active.BaseActive('Slammer', 7) # 1/8 bleed | 1/7 chain
 repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
 fighter_skill = [Right_Hook,Brass_punch,uppercut,kick,slammer,repeated]
 
