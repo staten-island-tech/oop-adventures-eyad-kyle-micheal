@@ -5,15 +5,14 @@ class mooney:
 
     def buy(x,item,item2,item3):
         if begin in shop_invo:
-            shop_invo.remove(str(begin))
-            player.append(str(begin))
+            shop_invo.remove(begin)
+            player.append(begin)
             coins = x -item.amount
             print(coins)
             print(shop_invo)
             print(player)
         else:
             print("no")
-    
 Health_Potion = mooney("Health Potion", 10)
 Flimsy_Wooden_Sword = mooney("Flimsy Wooden Sword", 40)
 Flimsy_Steel_Sword = mooney("Flimsy Steel Sword", 60)
