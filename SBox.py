@@ -36,6 +36,17 @@ class Statis():
             return name
         else:
             return 0
+    def fighterchain():
+        kick = Active.BaseActive('Kick', 14) + Statis.calc(20, Bled)
+        slammer = Active.BaseActive('Slammer', 7) + Statis.calc(8, Bled)
+        repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
+        if third == 3:
+            if seventh == 7:
+                return repeated + slammer + kick
+            else:
+                return slammer + kick
+        else:
+            return kick 
 
 
 # GENERAL SKILLS
@@ -193,9 +204,3 @@ attacks = {
             'Gun:Deals 2 damage to target (Random) times'}}
 
 
-has_kills=list(attacks['Archerattacks'])
-assasin_skill =[shadow_step,slash,PStab,dagger_throw]
-archer_skill = [bow_throw, arrow_kick ,gun, Rain]
-b_skill = [Rage_Pound,Baby_Rage,Slam,RepeatJab]
-warrior_skill = [Piercing_Slash,impale,divider,slash]
-fighter_skill = [Right_Hook,Brass_punch,uppercut]
