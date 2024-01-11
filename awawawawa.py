@@ -100,7 +100,6 @@ def sell(coins):
     else:
         print("Incorrect Input, Item is not in shop")
         sell(coins)
-sell(coins)
 
 shop = ["Helaht","Damage"]
 inventory=[]
