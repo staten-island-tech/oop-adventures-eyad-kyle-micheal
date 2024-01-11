@@ -211,8 +211,8 @@ class Player():
         for i, classes in enumerate (Player.classes_choice):
             print(f'{i+1}. {classes}  ')
             print()
-    @classmethod
-    def better_choose_class(cls):
+
+    def better_choose_class():
         while True:
             try:
                 choose = int(input("what class are you interested in(put the corresponding number):"))
@@ -226,7 +226,7 @@ class Player():
                         return archer
                     elif choose == 2:
                         chosen_skills = assasin_skill
-                        displayed_skills = list(attacks['Archerattacks'])
+                        displayed_skills = list(attacks['Assassin'])
                         return assasin
                     elif choose == 3:
                         chosen_skills = warrior_skill
@@ -261,8 +261,8 @@ class Player():
             try:
                 x=(input(":::"))
                 x = int(x)
-                if x <=len(has_kills):
-                    print(f'You chose the skill \n{has_kills[x-1]}')
+                if x <=len(displayed_skills):
+                    print(f'You chose the skill \n{displayed_skills[x-1]}')
                     return chosen_skills[x-1]
                 else:
                     print(":(")
@@ -400,7 +400,9 @@ class Floors():
         pass
     def encounter(enemy,player,coins_recieved):
             while player.health >0:
+                
                 if enemy.health > 0:
+                    print(f'youve encountered a {enemy.name}. Defeat it to win!')
                     print(enemy.__dict__)
                     print()
                     Player.print_skills()
@@ -408,19 +410,16 @@ class Floors():
                     print(enemy.__dict__)
                     player.health-=random.randint(15,20)
                     print(player.__dict__)
-                    
-
-
                 elif enemy.health <=0:
                     print("youve defeated the enemy,move on")
                     print(f"you have gained {coins_recieved} coins")
                     print(f"your balance is now {player.money+coins_recieved}")
                     break
             if player.health <=0:
-                print("youve died")
-Player.print_classes()
-Player.better_choose_class()
-Floors.encounter(goblin,archer,7)
+                print("youve died. Now you have to restart the game all over again because code is difficult.")                                                               
+
+                
+
 
 
 
