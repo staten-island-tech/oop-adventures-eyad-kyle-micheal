@@ -1,6 +1,4 @@
-from working import Player,Archer,Assasin,Warrior,Berserker,Wizard,Fighter,Enemies,Floors
-from SBox import Active,PasCommon,archer_skill,warrior_skill,b_skill,assasin_skill,fighter_skill
-from merchant_vendor import mooney
+from everything import *
 
 def tutorial_tiny():
     print("Helo adventurer! You have made it to the tower of chellenges Before doing anything else, you will have to learn the basics. First, you'll have to choose your class")
@@ -12,3 +10,4 @@ def actual():
     print(f"Now that you've chosen a class, you should learn how to fight. Here's a goblin to start with")
 
 actual()
+Floors.encounter(goblin,chosen,5)

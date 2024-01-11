@@ -35,10 +35,11 @@ class Player():
                     global displayed_skills
                     if choose == 1:
                         chosen_skills = archer_skill
-                        displayed_skills = list(attacks['active']['Archerattacks']['Normal'])
+                        displayed_skills = list(attacks['Arche'])
                         return archer
                     elif choose == 2:
                         chosen_skills = assasin_skill
+                        displayed_skills = list(attack)
                         return assasin
                     elif choose == 3:
                         chosen_skills = warrior_skill
