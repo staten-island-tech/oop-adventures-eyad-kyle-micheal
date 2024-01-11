@@ -5,7 +5,13 @@ class PasCommon():
         return (skill_health)
     
 PasDam = random.randint(3, 50)
-
+class Statis():
+    def calc(percentage, name):
+        x = random.randint(1, percentage)
+        if x == percentage:
+            return name
+        else:
+            return 0
 # Passive things
 Bleeding = PasCommon.c('Bleed', 0.3)
 Poisoned = PasCommon.c('Poison', 0.6)
@@ -57,16 +63,13 @@ class Active():
             else: return bow_chain
         else:
             return 0
-
-class Statis():
-    def calc(percentage, name):
-        x = random.randint(1, percentage)
-        if x == percentage:
-            return name
-        else:
-            return 0
-
-
+    def whaledown():
+        damage = 0.1
+        time = random.randint(1,100)
+        while time < 90:
+            damage += 0.4
+            time = random.randint(1, 100)
+        return round(damage)
 
 # GENERAL SKILLS
 Stab = Active.BaseActive('Stab', 6 )
@@ -139,8 +142,10 @@ Staff_Yeet = Active.BaseActive('Staff_Throw', 7)
 # Whalen Skills
 Hands = Active.BaseActive('Dem Hands', 17) + Statis.calc(3, Bled)
 Fault = Active.BaseActive('Faulty Code', PasDam) + Statis.calc(66, Bled) + Statis.calc(66, Poison) + Statis.calc(66, Burn)
+slap = Active.BaseActive('Beatdown', 0) + Active.whaledown()
+# Insta Kill
 Fail = Active.adhominum('Failure!', 666, PasDam, PasDam, PasDam)
-whalen_skill =[Hands, Fault, Fail]
+whalen_skill =[Hands, Fault, slap, Fail]
 
 
 
