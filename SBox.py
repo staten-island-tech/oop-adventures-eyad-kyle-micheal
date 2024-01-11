@@ -11,6 +11,11 @@ Bleeding = PasCommon.c('Bleed', 0.3)
 Poisoned = PasCommon.c('Poison', 0.6)
 Bled = (Bleeding * PasDam)
 Poison = (Poisoned * PasDam)
+half = random.randint(1,2)
+third = random.randint(1,3)
+quarter = random.randint(1,4)
+seventh = random.randint(1,7)
+tenth = random.randint(1,10)
 
 class Active():
     def BaseActive(name, sd):
@@ -21,21 +26,7 @@ class Active():
     
     def adhominum(name, sd, count, count2, count3):
         return (sd * count * count2 * count3)
-
-# test zone
-half = random.randint(1,2)
-third = random.randint(1,3)
-quarter = random.randint(1,4)
-seventh = random.randint(1,7)
-tenth = random.randint(1,10)
-
-class Statis():
-    def calc(percentage, name):
-        x = random.randint(1, percentage)
-        if x == percentage:
-            return name
-        else:
-            return 0
+    
     def fighterchain():
         kick = Active.BaseActive('Kick', 14) + Statis.calc(20, Bled)
         slammer = Active.BaseActive('Slammer', 7) + Statis.calc(8, Bled)
@@ -47,6 +38,34 @@ class Statis():
                 return slammer + kick
         else:
             return kick 
+    def assassinchain():
+        blow_dart = Active.NumberedActive('Blow Darts', 2, count) + Poison # Final chain 1/15
+        silencer = Active.adhominum('Silencer', 7, PasDam, count, jcount)
+        if third == 3:
+            if tenth == 10:
+                return silencer + blow_dart
+            else:
+                return silencer
+        else:
+            return 0
+    def archerchain():
+        bow_chain = Active.NumberedActive('Bow Chain', 4, count)
+        hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) + Statis.calc(4, Bled) + Statis.calc(7, Poison)
+        if quarter == 4:
+            if tenth == 10:
+                return hells_arrow
+            else: return bow_chain
+        else:
+            return 0
+
+class Statis():
+    def calc(percentage, name):
+        x = random.randint(1, percentage)
+        if x == percentage:
+            return name
+        else:
+            return 0
+
 
 
 # GENERAL SKILLS
@@ -67,37 +86,18 @@ big_sword= Active.BaseActive('Big Sword', 25) + Bled
 # Fighter
 Right_Hook = Active.BaseActive('Right Hook', 12) + Statis.calc(10, Bled)
 Brass_punch = Active.BaseActive('Brass punch', 9) + Bled
-# Chain Skill
 
-def fighterchain():
-    kick = Active.BaseActive('Kick', 14) + Statis.calc(20, Bled)
-    slammer = Active.BaseActive('Slammer', 7) + Statis.calc(8, Bled)
-    repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
-    if third == 3:
-        if seventh == 7:
-            return repeated + slammer + kick
-        else:
-            return slammer + kick
-    else:
-        return kick
-uppercut = Active.BaseActive('Uppercut', 11) + fighterchain()
+
+
+uppercut = Active.BaseActive('Uppercut', 11) + Active.fighterchain()
 
 # Assassin
 Slash = Active.BaseActive('Slash', 3) + Statis.calc(3, Bled) + Statis.calc(4, Poison)
 PStab = Active.BaseActive('Poison Stab', 4) + Statis.calc(3, Bled) + Poison
 dagger_throw = Active.BaseActive('Dagger Throw', 12) + Bled + Statis.calc(3, Poison)
-# Chain Skill
-def assassinchain():
-    blow_dart = Active.NumberedActive('Blow Darts', 2, count) + Poison # Final chain 1/15
-    silencer = Active.adhominum('Silencer', 7, PasDam, count, jcount)
-    if third == 3:
-        if tenth == 10:
-            return silencer + blow_dart
-        else:
-            return silencer
-    else:
-        return 0
-shadow_step = Active.BaseActive('Shadow Step', 4) + Statis.calc(2, Poison) + assassinchain()
+
+
+shadow_step = Active.BaseActive('Shadow Step', 4) + Statis.calc(2, Poison) + Active.assassinchain()
 
 # Berserker 
 Rage_Pound = Active.BaseActive('Pound', 13) + Statis.calc(2, Bled)
@@ -109,17 +109,9 @@ RepeatJab = Active.NumberedActive('Jabathon', 4, jcount)
 Rain = Active.NumberedActive('Rain', 3, count) + Statis.calc(4, Bled)
 arrow_kick = Active.BaseActive('Arrow Kick', 7) + Statis.calc(2, Bled)
 gun = Active.NumberedActive('Gun', 2, (PasDam/count))
-# Chain Skill
-def archerchain():
-    bow_chain = Active.NumberedActive('Bow Chain', 4, count)
-    hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) + Statis.calc(4, Bled) + Statis.calc(7, Poison)
-    if quarter == 4:
-        if tenth == 10:
-            return hells_arrow
-        else: return bow_chain
-    else:
-        return 0
-bow_throw = Active.BaseActive('Bow Throw', 4) + archerchain()
+
+
+bow_throw = Active.BaseActive('Bow Throw', 4) + Active.archerchain()
 
 
 
