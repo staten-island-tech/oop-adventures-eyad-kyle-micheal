@@ -8,6 +8,9 @@ def actual():
     print(f"""Great! You've sucessfullay chosen a class ! Here aare your stats 
           {chosen.__dict__} """)
     print(f"Now that you've chosen a class, you should learn how to fight. Here's a goblin to start with")
+    Floors.encounter(goblin,chosen,5)
+    
 
 actual()
-Floors.encounter(goblin,chosen,5)
+
+
