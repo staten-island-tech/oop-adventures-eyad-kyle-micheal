@@ -17,12 +17,9 @@ Bleeding = PasCommon.c('Bleed', 0.3)
 Poisoned = PasCommon.c('Poison', 0.6)
 Bled = (Bleeding * PasDam)
 Poison = (Poisoned * PasDam)
-half = random.randint(1,2)
-third = random.randint(1,3)
-quarter = random.randint(1,4)
-seventh = random.randint(1,7)
-tenth = random.randint(1,10)
-twth = random.randint(1,20)
+def chance(chance):
+    x = random.randint(1, chance)
+    return x
 
 class Active():
     def BaseActive(name, sd):
@@ -97,8 +94,6 @@ uppercut = Active.BaseActive('Uppercut', 11) + Active.fighterchain()
 Slash = Active.BaseActive('Slash', 3) + Statis.calc(3, Bled) + Statis.calc(4, Poison)
 PStab = Active.BaseActive('Poison Stab', 4) + Statis.calc(3, Bled) + Poison
 dagger_throw = Active.BaseActive('Dagger Throw', 12) + Bled + Statis.calc(3, Poison)
-
-
 shadow_step = Active.BaseActive('Shadow Step', 4) + Statis.calc(2, Poison) + Active.assassinchain()
 
 # Berserker 
@@ -111,8 +106,6 @@ RepeatJab = Active.NumberedActive('Jabathon', 4, jcount)
 Rain = Active.NumberedActive('Rain', 3, count) + Statis.calc(4, Bled)
 arrow_kick = Active.BaseActive('Arrow Kick', 7) + Statis.calc(2, Bled)
 gun = Active.NumberedActive('Gun', 2, (PasDam/count))
-
-
 bow_throw = Active.BaseActive('Bow Throw', 4) + Active.archerchain()
 
 
