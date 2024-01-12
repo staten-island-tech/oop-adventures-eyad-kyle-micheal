@@ -1,3 +1,4 @@
+#code below works and can be imported
 coins = 100
 class mooney:
     def __init__(self, name, amount):
@@ -14,7 +15,6 @@ class mooney:
         if begin in shop_invo:
             selected_item = next(item_obj for item_obj in [item, item2, item3] if item_obj.name == begin)
             if coins >= selected_item.amount:
-                [item,item2,item3].remove(selected_item)
                 shop_invo.remove(begin)
                 player.append(begin)
                 secret.remove(selected_item)
