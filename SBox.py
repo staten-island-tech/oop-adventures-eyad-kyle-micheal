@@ -170,17 +170,12 @@ attacks = {
         'Fighter':{
 
             'Uppercut:Deals 11 damage to target | 1/18 Bleed chance',
-            'Kick:Deals 14 damage to target | 1/20 Bleed chance, 1/3 continuation chance',
-            'Slam:Deals 7 damage to target | 1/8 Bleed chance, 1/7 continuation chance',
-            'Combo:Deals base 5 damage to target 3-6 times',
             'Right Hook:Deals 12 damage to target | 1/10 Bleed Chance',
             'Brass Punch:Deals 9 damage to target + Bleed'},
             
         'Assassin':{
 
             'Shadow Step:Deals 4 damage to target. 1/2 Poison chance',
-            'Blow Dart:Deals 2 damage 3-7 times. Always Poisons',
-            'Silencer:Deals 7 damage a minimum of 27 times',
             'Slash:Deals 3 damage to target, with High Bleed & Poison chance',
             'Poison Stab 4 damage to target. 1/3 Bleed chance, Always Poisons',
             'Dagger Throw:Deals 12 damage to target. Always Bleed, 1/3 Poison'},
@@ -194,8 +189,6 @@ attacks = {
         'Archerattacks' :{
 
             'Bow Throw:Deals 4 damage to target',
-            'Bow Chain:Deals 4 damage to target 3-7 times',
-            'Hells Arrow:Deals 8 damage to target 3-7 times. Low Poison & Bleed chance',
             'Arrow Rain:Deals 3 damage to target'
             'Arrow Kick:Deals 7 damage to target. 1/2 Bleed chance',
             'Gun:Deals 2 damage to target (Random) times'}}
