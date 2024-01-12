@@ -22,6 +22,7 @@ third = random.randint(1,3)
 quarter = random.randint(1,4)
 seventh = random.randint(1,7)
 tenth = random.randint(1,10)
+twth = random.randint(1,20)
 
 class Active():
     def BaseActive(name, sd):
@@ -48,10 +49,10 @@ class Active():
         blow_dart = Active.NumberedActive('Blow Darts', 2, count) + Poison # Final chain 1/15
         silencer = Active.adhominum('Silencer', 7, PasDam, count, jcount)
         if third == 3:
-            if tenth == 10:
+            if twth == 20:
                 return silencer + blow_dart
             else:
-                return silencer
+                return blow_dart
         else:
             return 0
     def archerchain():
@@ -60,7 +61,8 @@ class Active():
         if quarter == 4:
             if tenth == 10:
                 return hells_arrow
-            else: return bow_chain
+            else: 
+                return bow_chain
         else:
             return 0
     def whaledown():
