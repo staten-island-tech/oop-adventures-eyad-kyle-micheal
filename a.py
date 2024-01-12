@@ -1,44 +1,42 @@
-coins = 20
+coins = 100
 class mooney:
     def __init__(self, name, amount):
         self.amount = amount
         self.name = name
 
     def buy(coins,item,item2,item3):
-        mooney.silly_funny(coins,Health_Potion,Flimsy_Wooden_Sword,Flimsy_Steel_Sword)
         mooney.silly(coins,Health_Potion,Flimsy_Wooden_Sword,Flimsy_Steel_Sword)
-        print(shop_invo)
-        begin = input("buy item: ")
+        print("for sale: ")
+        for shop_item in secret:
+            print(f"{shop_item.name}: {shop_item.amount}")
+        print(f"this is the amount of money you have: {coins}")
+        begin = input("buy item (type exit if you want to leave): ")
         if begin in shop_invo:
-            shop_invo.remove(begin)
-            player.append(begin)
-            coins-=10
-            print(coins)
-            print(player)
+            selected_item = next(item_obj for item_obj in [item, item2, item3] if item_obj.name == begin)
+            if coins >= selected_item.amount:
+                [item,item2,item3].remove(selected_item)
+                shop_invo.remove(begin)
+                player.append(begin)
+                secret.remove(selected_item)
+                coins-=selected_item.amount
+                print(f"this is your inventory: {player}")
             mooney.buy(coins,Health_Potion,Flimsy_Wooden_Sword,Flimsy_Steel_Sword)
         elif begin == "exit":
-            print("bye")
+            print("you left the shop...")
         else:
             print("no")
             mooney.buy(coins,Health_Potion,Flimsy_Wooden_Sword,Flimsy_Steel_Sword)
-            
+        
     def silly(coins,item,item2,item3):
         if not shop_invo:
             print("you left")
             exit()
-
-    def silly_funny(coins,item,item2,item3):
-        if coins<0:
-            print("not enough money")
-            coins+=10
-            print(coins)
-            mooney.buy(coins,Health_Potion,Flimsy_Wooden_Sword,Flimsy_Steel_Sword)
 Health_Potion = mooney("Health Potion", 10)
 Flimsy_Wooden_Sword = mooney("Flimsy Wooden Sword", 40)
-Flimsy_Steel_Sword = mooney("Flimsy Steel Sword", 60)
+Flimsy_Steel_Sword = mooney("Flimsy Steel Sword", 70)
 
 shop_invo = [Health_Potion.name, Flimsy_Wooden_Sword.name, Flimsy_Steel_Sword.name]
-funny_list = [Health_Potion]
+secret = [Health_Potion, Flimsy_Wooden_Sword, Flimsy_Steel_Sword]
 player = []
 
 mooney.buy(coins,Health_Potion,Flimsy_Wooden_Sword,Flimsy_Steel_Sword)
