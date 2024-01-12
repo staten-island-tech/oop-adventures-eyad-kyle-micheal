@@ -91,9 +91,6 @@ big_sword= Active.BaseActive('Big Sword', 25) + Bled
 # Fighter
 Right_Hook = Active.BaseActive('Right Hook', 12) + Statis.calc(10, Bled)
 Brass_punch = Active.BaseActive('Brass punch', 9) + Bled
-
-
-
 uppercut = Active.BaseActive('Uppercut', 11) + Active.fighterchain()
 
 # Assassin
