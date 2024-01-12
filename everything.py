@@ -198,14 +198,16 @@ class TestAttack():
 class Player():
     displayed_skills =[]
     classes_choice=[]
-    def __init__(self,name,health,attack,defense,money):
+    def __init__(self,name,health,attack,defense,mana,exp,money):
         self.name = name
         self.health = health
         self.attack =attack
         self.defense = defense
+        self.mana = mana
+        self.exp = exp
         self.money = money
     def __str__(self):
-        return f'''{self.name},Health:{self.health}, attack:{self.attack},money:{self.money}'''
+        return f'''{self.name},Health:{self.health}, attack:{self.attack},mana : {self.mana}, exp :{self.exp}money:{self.money}'''
 
     def print_classes():
         for i, classes in enumerate (Player.classes_choice):
@@ -268,61 +270,68 @@ class Player():
                     print(":(")
             except ValueError:
                 print("uh oh")
+    def calculate_damage(player,enemy,damage):
+        return player.attack*enemy.defense*damage
 
 
 
 
 class Archer(Player):
-    def __init__(self,name,health,attack,defense,money,ranged):
-        super().__init__(name,health,attack,defense,money) 
+    def __init__(self,name,health,attack,defense,mana,exp,money,ranged):
+        super().__init__(name,health,attack,defense,mana,exp,money) 
         self.ranged = ranged
     def __str__(self):
         return super().__str__() + f''',range:{self.ranged}'''
 class Assasin(Player):
-    def __init__(self,name,health,attack,defense,money,stealth ):
-        super().__init__(name,health,attack,defense,money)
+    def __init__(self,name,health,attack,defense,mana,exp,money,stealth ):
+        super().__init__(name,health,attack,defense,mana,exp,money)
         self.stealth = stealth
     def __str__(self):
         return super().__str__() + f'''Stealth: {self.stealth}'''
 class Warrior(Player):
-    def __init__(self,name,health,attack,defense,money,honor):
-        super().__init__(name,health,attack,defense,money)
+    def __init__(self,name,health,attack,defense,mana,exp,money,honor):
+        super().__init__(name,health,attack,defense,mana,exp,money)
         self.honor = honor
     def __str__(self):
         return super().__str__() + f'''Honor: {self.honor}'''
 class Berserker(Player):
-    def __init__(self,name,health,attack,defense,money,rage):
-        super().__init__(name,health,attack,defense,money)
+    def __init__(self,name,health,attack,defense,mana,exp,money,rage):
+        super().__init__(name,health,attack,defense,mana,exp,money)
         self.rage = rage
     def __str__(self):
         return super().__str__() + f'''Rage: {self.rage}'''
 class Fighter(Player):
-    def __init__(self,name,health,attack,defense,money,fighting_skills):
-        super().__init__(name,health,attack,defense,money)
+    def __init__(self,name,health,attack,defense,mana,exp,money,fighting_skills):
+        super().__init__(name,health,attack,defense,mana,exp,money)
         self.fighting_skills = fighting_skills
     def __str__(self):
         return super().__str__() + f'''Fighting Skill: {self.fighting_skills}'''
 class Wizard(Player):
-    def __init__(self,name,health,attack,defense,money,magic):
-        super().__init__(name,health,attack,defense,money)
+    def __init__(self,name,health,attack,defense,mana,exp,money,magic):
+        super().__init__(name,health,attack,defense,mana,exp,money)
         self.magic=magic
     def __str__(self):
         return super().__str__() + f'''Mastery of Magic: {self.magic}'''
 
 Player.classes_choice=[
-        Archer("Archer",95,100,100,0,"infinite"),
-        Assasin("Assasin", 115,100,100,0,"infinite"),
-        Warrior("Warrior",150,100,100,0,"infinite"),
-        Berserker("Berserker",100,100,100,1000,"infinite"),
-        Fighter("Fighter",150,100,100,0,"infinite"),
-        Wizard("Wizard",150,100,100,0,"infinite")
+    Archer("Archer", 95, 1.15, 1.05,150, 0, 30, "infinite"),
+    Assasin("Assasin", 115, 1.2, 1.1, 100, 0, 35, "infinite"),
+    Warrior("Warrior",140,1.25,1.15,120,0,40,"infinite"),
+    Berserker("Berserker",160,1.4,0.8,175,0,10,"infinite"),
+    Fighter("Fighter",130,1.2,1.2,100,0,10,"infinite"),
+    Wizard("Wizard",100,1.5,1.4,200,0,10,"infinite")
+
+
+
+    
 ]
-archer = Archer("Archer",95,100,100,0,"infinite")
-assasin = Assasin("Assasin", 115,100,100,0,"infinite")
-warrior = Warrior("Warrior",150,100,100,0,"infinite")
-b = Berserker("Berserker",100,100,100,0,"infinite")
-fighter = Fighter("Fighter",150,100,100,0,"infinite")
-wizard = Wizard("Wizard",150,100,100,0,"infinite")
+Player.print_classes()
+archer = Archer("Archer", 95, 1.15, 1.05,150, 0, 30, "infinite")
+assasin = Assasin("Assasin", 115, 1.2, 1.1, 100, 0, 35, "infinite")
+warrior = Warrior("Warrior",140,1.25,1.15,120,0,40,"infinite")
+b = Berserker("Berserker",160,1.4,0.8,175,0,10,"infinite")
+fighter = Fighter("Fighter",130,1.2,1.2,100,0,10,"infinite")
+wizard =Wizard("Wizard",100,1.5,1.4,200,0,10,"infinite")
 
 
 
@@ -368,6 +377,8 @@ class Enemies():
     def test_print_enemy():
         for i,enemy in enumerate(Enemies.enemies_list):
             print(f'{i+1}. {enemy.__dict__}')
+    def calculate_damage(player,enemy,damage):
+        return enemy.attack*player.defense*damage
 
 
 
@@ -408,7 +419,8 @@ class Floors():
                     Player.print_skills()
                     enemy.health-=Player.choice()
                     print(enemy.__dict__)
-                    player.health-=random.randint(15,20)
+                    enemy_attack = random.randint(15,20)
+                    player.health-=enemy_attack.calculate
                     print(player.__dict__)
                 elif enemy.health <=0:
                     print("youve defeated the enemy,move on")
