@@ -72,7 +72,7 @@ class Player():
         return player.attack*enemy.defense*damage
     def level(player):
         if player.exp>=100:
-            player.mana_+=35
+            player.mana+=35
     def reset(player):
         if player == archer:
             player.health = 95
@@ -92,21 +92,34 @@ class Player():
         elif player == wizard:
             player.health = 100
             player.mana = 200
+    def choice():
+        while True:
+            try:
+                a=int(input("What skill do you want to use (check the corresponding number):"))
+                if 1<=a <=len(displayed_skills):
+                    print(f'You chose the skill \n{displayed_skills[a-1]}')
+                    return chosen_skills[a-1]
+                else:
+                    print(":(")
+            except ValueError:
+                print("uh oh")
+
  
     def encounter(enemy,player,coins_recieved):
-            x=random.randint(20,30)
-            print(x)
+            x = random.randint(20,40)
             while player.health >0 and player.mana >0:
                 if enemy.health > 0:
                     print(f'youve encountered a {enemy.name}. Defeat it to win!')
-                    print(enemy.__dict__)
                     print()
                     Player.print_skills()
-                    enemy.health-=Player.calculate_damage(player,enemy,Player.choice())
+                    choosing_skill = Player.choice()
+                    enemy.health-=Player.calculate_damage(player,enemy,choosing_skill)
+                    round(enemy.health,2)
                     player.mana-=random.randint(1,2)
                     print(enemy.__dict__)
                     enemy_attack = random.randint(1,2)
                     player.health-=Enemies.calculate_damage(player,enemy,enemy_attack)
+                    round(player.health,2)
                     print(player.__dict__)
                 elif enemy.health <=0:
                     print("youve defeated the enemy,move on")
@@ -117,11 +130,12 @@ class Player():
                     player.exp+=x
                     Player.level(player)
                     Player.reset(player)
-                    Enemies.reset_enemy(enemy)
+                    Enemies.reset_enemy_pro(enemy)
                     print(enemy.health)
                     break
             if player.health <=0 or player.mana <=0:
                 print("youve died. Now you have to restart the game all over again because code is difficult.")   
+
 
 
 
@@ -215,69 +229,56 @@ b = Berserker("Berserker",160,1.4,0.8,175,0,10,"infinite")
 fighter = Fighter("Fighter",130,1.2,1.2,100,0,10,"infinite")
 wizard =Wizard("Wizard",100,1.5,1.4,200,0,10,"infinite")
 
-
+enemy_health=[100,150,250,75,210,10,250]
 
 class Enemies():
-    def __init__(self,name,descripton,health,attack,defense):
+    def __init__(self,name,descripton,health,attack,defense,value):
         self.name = name
         self.description = descripton
         self.health = health
         self.attack = attack
         self.defense = defense
+        self.value = value
 
     
     def __str__(self):
         return f'Name:{self.name},Description:{self.description},Health:{self.health},Attack:{self.attack},Defense:{self.defense},'
-
-    def adapting(player,enemy):
-        for enemy in Enemies.enemies_list: 
-            if player == archer:
-                enemy.attack *= 1.5
-                enemy.attack = round(enemy.attack,2)
-            elif player == assasin:
-                enemy.health *= 1.5
-                enemy.health = round(enemy.health,2)
-            elif player == warrior:
-                enemy.defense *= 2
-                enemy.defense =  round(enemy.defense,1)
-            elif player == b:
-                enemy.defense *= 2
-                enemy.defense = round(enemy.defense,2)
-            elif player == fighter:
-                enemy.defense *=1.4
-                enemy.defense=round(enemy.defense,2)
-                enemy.attack*=1.8
-                enemy.attack=round(enemy.attack,2)
-            else:
-                enemy.attack *=1.5
-                enemy.attack=round(enemy.attack,2)
-                enemy.defense*=1.1
-                enemy.defense=round(enemy.defense,2)
-    def donig_adapting(chosen):
-        for i in range(1):
-                Enemies.adapting(chosen,Enemies.enemies_list[i])
     def calculate_damage(player,enemy,damage):
         return enemy.attack*player.defense*damage
     def reset_enemy(enemy):
         if enemy == goblin:
-            enemy.initial_health = 100
+            enemy.health = 100
         elif enemy == troll:
-            enemy.initial_health = 150
-        
+            enemy.health = 150
+        elif enemy == slime:
+            enemy.health = 10
+        elif enemy == giant:
+            enemy.health = 250
+        elif enemy == wolf:
+            enemy.health = 75
+        elif enemy== ogre:
+            enemy.health = 210
+        elif enemy == Dragon:
+            enemy.health = 250
+    def reset_enemy_pro(enemy):
+        if isinstance(enemy,Enemies):
+            enemy.health = enemy_health[enemy.value]
+            
 
 
 
 
-goblin = Enemies("goblin","ewf",100,0.8,0.6)
 
-troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 150,1.2,1 )
-giant = Enemies("Giant", "very tanky, high attack, low defense",250,2,0.5)
-wolf = Enemies("Wolf","...its a wolf",75,0.5,0.5)
-ogre = Enemies("ogre","this is a very very very big thing",210,1.4,1)
+goblin = Enemies("goblin","ewf",100,0.8,0.6,0)
+troll = Enemies("Troll","a slightly bigger thing;would be less embarrisiing", 150,1.2,1,1 )
+giant = Enemies("Giant", "very tanky, high attack, low defense",250,2,0.5,2)
+wolf = Enemies("Wolf","...its a wolf",75,0.5,0.5,3)
+ogre = Enemies("ogre","this is a very very very big thing",210,1.4,1,4)
+slime = Enemies("slime","sliiiiime",10,1,0.1,5)
+Dragon = Enemies("dragon","breathes fire and stuff",250,1.2,0.8,6)
 
-slime = Enemies("slime","sliiiiime",10,1,0.1)
-Dragon = Enemies("dragon","breathes fire and stuff",250,1.2,0.8)
-Enemies.enemies_list=[goblin,troll,giant,wolf,ogre,slime,Dragon]
+
+
 
 
                                          

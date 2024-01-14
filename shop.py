@@ -2,9 +2,10 @@
 
 
 class Shop():
-    inventory=[]
-    displayed_shop_inventory = []
-    player_inventory=[]
+    inventory=["put variables here;eg actual values"]
+    displayed_shop_inventory = ["Healht potion"]
+    player_inventory=["put players' values here"]
+    display_player = ["put player "]
     prices=[]
 
     def __init__(self,price):
@@ -20,10 +21,11 @@ class Shop():
                      break
                 chosen_item=int(x)    
                 if 1<=chosen_item<=len(Shop.displayed_shop_inventory):
-                    item = Shop.prices[x-1]
+                    item = Shop.prices[chosen_item-1]
                     if player.money>= item:
-                        print(f'You have purchased {Shop.displayed_shop_inventory[x-1]}')
-                        Shop.displayed_shop_inventory.pop(x-1)
+                        print(f'You have purchased {Shop.displayed_shop_inventory[chosen_item-1]}')
+                        Shop.displayed_shop_inventory.pop(chosen_item-1)
+                        Shop.player_inventory()
                     else: 
                         print(f"You don't have enough money for this.")
                 
@@ -31,15 +33,11 @@ class Shop():
                 print("no")
         else:
              print(f'There are no more items in the shop at htis time. Come back next floor!')
+    def if_buy(player):
+        Shop.buying(player)
+        
 
             
 
 
-class TestPlayer():
-    def __init__(self,money):
-         self.money = money
-test=TestPlayer(0)
-def testing():
-    Shop.displayed_shop_inventory=['Health Potion']
-    Shop.buying(test)
-testing()
+
