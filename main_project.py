@@ -8,7 +8,7 @@ tutorial_tiny()
 Player.print_classes()
 chosen = Player.better_choose_class()
 
-
+Shop.buying(chosen)
 
 def actual():
     print(f"""Great! You've sucessfullay chosen a class ! Here aare your stats \n {chosen.__dict__} """)

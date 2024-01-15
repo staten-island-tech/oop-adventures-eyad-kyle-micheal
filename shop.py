@@ -10,9 +10,6 @@ class Shop():
     def __init__(self,description,price):
         self.description = description
         self.price = price
-<<<<<<< Updated upstream
-    def buying():
-=======
         
         
 
@@ -25,7 +22,6 @@ class Shop():
 
     
     def buying(player):
->>>>>>> Stashed changes
         while Shop.displayed_shop_inventory: 
             global equiped_weapon
             global equiped_armor
