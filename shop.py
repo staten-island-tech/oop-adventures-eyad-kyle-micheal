@@ -63,11 +63,6 @@ class Shop():
             else:
                 break
         else:
-<<<<<<< Updated upstream
-             print(f'There are no more items in the shop at htis time. Come back next floor!')
-Shop.buying()
-
-=======
             print(f'There are no more items in the shop at htis time. Come back next floor!')
     def recoil_check(player):
         global equiped_weapon
@@ -146,7 +141,6 @@ Shop.displayed_shop_inventory=[flimsy_sword.description,reinforced_sword.descrip
 
          
         
->>>>>>> Stashed changes
         
 
             
