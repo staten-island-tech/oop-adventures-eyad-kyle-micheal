@@ -1,7 +1,7 @@
 from player import *
 from SBox import *
-from shop import Shop
-
+from shop import *
+Game_over=False
 def tutorial_tiny():
     print("Helo adventurer! You have made it to the tower of chellenges Before doing anything else, you will have to learn the basics. First, you'll have to choose your class")
 tutorial_tiny()
@@ -14,20 +14,65 @@ def actual():
     print(f"""Great! You've sucessfullay chosen a class ! Here aare your stats \n {chosen.__dict__} """)
     print(f'''The "attack" stat is a multiplier as to how much damage you will do. For example, since you have an attak stat of {chosen.attack} you will deal {chosen.attack} times damage on you attacks. 
           That being said, these attacks will also go through the enemies defense stat,meaning that if you do an attack of 10 damage, you will actually do an attack of 10*{chosen.attack} * enenmy defense.
-          You also have a "mana" which is similar to you health. You consume mana when attacking. If your mana reaches 0, you will die; similarly to if your health reaches 0. ''')
+          You also have a "mana" which is similar to you health. You consume mana when attacking. The more damage you do, the more mana you consume. If your mana reaches 0, you will die; similarly to if your health reaches 0. ''')
     print(f"\nNow that you've chosen a class, you should learn how to fight. Here's a goblin to start with. Be carful, you only have one life so if you die you'll have to restart.")
     Player.encounter(goblin,chosen,15)
-    print(f"Good job! If you noticed, you gained some exp and coins there. Coins can be used in the shop to buy better items. Be careful what you buy however, because you cna only buy one item perfloor. In regards to exp, you recieve exp after killing an enemy. If you get 100 exp, you'll level up and get extra stats.")
-    print(f"Before we go to the shop, lets fight another enemy; this time a slime")
     Player.encounter(slime,chosen,10)
-    Player.encounter(slime,chosen,5)
-    print(f"Nice! Lets go to the shop now")
 actual()
-def shop_tutorial():
-    Shop.prices=[25]
-    Shop.displayed_shop_inventory=["Health potion: Heals 20 hp"]
-    Shop.buying(chosen)
+c=Shop.buying(chosen)
 
-shop_tutorial()
+def floor1():
+    print(f"Great! Now that we've finished the tutorial, we can now move on to floor 1. Good luck!")
+    Player.encounter(goblin,chosen,30)
+    Player.encounter(goblin,chosen,10)
+    Player.encounter(wolf,chosen,10)
+    Player.encounter(troll,chosen,20)
+
+Shop.buying(chosen)
+
+
+def floor2():
+    print(f"Congrats! You've sucessfully cleared floor one. Now time for floor 2")
+    Player.encounter(troll,chosen,15)
+    Player.encounter(ogre,chosen,25)
+    Player.encounter(Dragon,chosen,20)
+    c
+    
+floor2()
+
+def floor3():
+    print(f'Floor 3 start:\n')
+    Player.encounter(giant,chosen,30)
+    Player.encounter(Dragon,chosen,25)
+    Player.encounter(troll,chosen,10)
+    Player.encounter(giant,chosen,50)
+    c
+floor3()
+def floor4():
+    print(f'floor 4 starts\n')
+    Player.encounter(Dragon,chosen,20)
+    Player.encounter(Dragon,chosen,20)
+    Player.encounter(troll,chosen,20)
+    Player.encounter(Dragon,chosen,40)
+    Player.encounter(Dragon,chosen,10)
+    Player.encounter(slime,chosen,2)
+    c
+def floor5():
+    Player.encounetr(giant,chosen,30)
+    Player.encounter(Dragon,chosen,20)
+    Player.encounter(troll,chosen,15)
+    Player.encounter(troll,chosen,20)
+    Player.encounter(giant,chosen,10)
+    Player.encounter(goblin,chosen,5)
+    c
+def final_floor():
+    Player.encounter(super_giant,chosen,30)
+    Player.encounter(super_giant, chosen,30)
+    Player.encounter(super_giant,chosen,30)
+final_floor()
+
+
+
+
 
 
