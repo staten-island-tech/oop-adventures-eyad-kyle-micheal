@@ -10,7 +10,7 @@ class Shop():
 
     def __init__(self,price):
         self.price = price
-    def buying(player):
+    def buying():
         while Shop.displayed_shop_inventory: 
             for i, items in enumerate(Shop.displayed_shop_inventory):
                         print(f'{i+1}.{items}\n')
@@ -33,8 +33,8 @@ class Shop():
                 print("no")
         else:
              print(f'There are no more items in the shop at htis time. Come back next floor!')
-    def if_buy(player):
-        Shop.buying(player)
+Shop.buying()
+
         
 
             
