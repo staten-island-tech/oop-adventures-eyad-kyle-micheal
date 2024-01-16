@@ -111,9 +111,6 @@ bow_throw = Active.BaseActive('Bow Throw', 4) + Active.archerchain()
 
 
 
-lists=[Rain]
-print(lists[0])
-
 
 #used literally once
 Burn = PasCommon.c('Burning', 0.4)
@@ -161,13 +158,13 @@ attacks = {
     
         'Fighter':{
 
-            'Uppercut: Deals 11 damage to target | 1/18 Bleed chance',
+            'Uppercut: Deals 11 damage to target | 1/18 Bleed chance, can chain',
             'Right Hook: Deals 12 damage to target | 1/10 Bleed Chance',
             'Brass Punch: Deals 9 damage to target + Bleed'},
             
         'Assassin':{
 
-            'Shadow Step: Deals 4 damage to target. 1/2 Poison chance',
+            'Shadow Step: Deals 4 damage to target. 1/2 Poison chance | Can chain',
             'Slash: Deals 3 damage to target, with High Bleed & Poison chance',
             'Poison Stab: Deals 4 damage to target. 1/3 Bleed chance, Always Poisons',
             'Dagger Throw: Deals 12 damage to target. Always Bleed, 1/3 Poison'},
@@ -180,7 +177,7 @@ attacks = {
 
         'Archerattacks' :{
 
-            'Bow Throw: Deals 4 damage to target',
+            'Bow Throw: Deals 4 damage to target | Can chain',
             'Arrow Rain: Deals 3 damage to target',
             'Arrow Kick: Deals 7 damage to target. 1/2 Bleed chance',
             'Gun: Deals 2 damage to target (Random) times'}}
