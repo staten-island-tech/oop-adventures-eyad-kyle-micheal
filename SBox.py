@@ -57,7 +57,7 @@ class Active():
         hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) + Statis.calc(4, Bled) + Statis.calc(7, Poison)
         if chance(4) == 4:
             if chance(10) == 10:
-                return hells_arrow
+                return hells_arrow + bow_chain
             else: 
                 return bow_chain
         else:
