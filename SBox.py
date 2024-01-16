@@ -35,8 +35,8 @@ class Active():
         kick = Active.BaseActive('Kick', 14) + Statis.calc(20, Bled)
         slammer = Active.BaseActive('Slammer', 7) + Statis.calc(8, Bled)
         repeated = Active.NumberedActive('Repeated Kicks', 5, jcount)
-        if third == 3:
-            if seventh == 7:
+        if chance(3) == 3:
+            if chance(7) == 7:
                 return repeated + slammer + kick
             else:
                 return slammer + kick
@@ -45,8 +45,8 @@ class Active():
     def assassinchain():
         blow_dart = Active.NumberedActive('Blow Darts', 2, count) + Poison # Final chain 1/15
         silencer = Active.adhominum('Silencer', 7, PasDam, count, jcount)
-        if third == 3:
-            if twth == 20:
+        if chance(3) == 3:
+            if chance(20) == 20:
                 return silencer + blow_dart
             else:
                 return blow_dart
@@ -55,8 +55,8 @@ class Active():
     def archerchain():
         bow_chain = Active.NumberedActive('Bow Chain', 4, count)
         hells_arrow = Active.NumberedActive("Hell's arrow", 8, count) + Statis.calc(4, Bled) + Statis.calc(7, Poison)
-        if quarter == 4:
-            if tenth == 10:
+        if chance(4) == 4:
+            if chance(10) == 10:
                 return hells_arrow
             else: 
                 return bow_chain
