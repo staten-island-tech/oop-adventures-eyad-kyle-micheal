@@ -189,7 +189,7 @@ attacks = {
         'Archerattacks' :{
 
             'Bow Throw:Deals 4 damage to target',
-            'Arrow Rain:Deals 3 damage to target'
+            'Arrow Rain:Deals 3 damage to target',
             'Arrow Kick:Deals 7 damage to target. 1/2 Bleed chance',
             'Gun:Deals 2 damage to target (Random) times'}}
 
