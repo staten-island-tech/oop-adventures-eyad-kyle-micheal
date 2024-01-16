@@ -64,10 +64,10 @@ class Player():
                 print("Please enter an integer")
     def print_skills():
         for i, skills in enumerate (displayed_skills):
-            print(f'{i+1}. {skills}  ')
-        length=len(displayed_skills)+1
-        length2=len(displayed_skills)+2
-        print(f'{length}.Recover:recovers 30 mana')
+            print(f'{i+1}.{skills}\n  ')
+            length=len(displayed_skills)+1
+            length2=len(displayed_skills)+2
+        print(f'{length}.Recover:recovers 30 mana\n')
         print(f'{length2}.Recover Helath: recover health')
 
     def calculate_damage(player,enemy,damage):
@@ -147,9 +147,9 @@ class Player():
                             abc=Player.calculate_damage(player,enemy,choosing_skill)
                             enemy.health-=abc
                             enemy.health = round(enemy.health,2)
-                            player.mana-=random.randint(20,30)
+                            player.mana-=abc*0.8
                             print(enemy.__dict__)
-                            enemy_attack = random.randint(1,2)
+                            enemy_attack = random.randint(10,20)
                             player.health-=Enemies.calculate_damage(player,enemy,enemy_attack)
                             player.health = round(player.health,2)
                             print(player.__dict__)

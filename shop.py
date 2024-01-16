@@ -18,7 +18,7 @@ class Shop():
          return f'Description:{self.description},Price:{self.price}'
     def print_inventory():
         for i,inevntory in enumerate(Shop.displayed_shop_inventory):
-             print(f'{i+1}.{inevntory}\n')
+             print(f'{i+1}.{inevntory}\n\n')
 
     
     def buying(player):

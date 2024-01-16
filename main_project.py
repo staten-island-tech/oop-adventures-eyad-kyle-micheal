@@ -8,7 +8,6 @@ tutorial_tiny()
 Player.print_classes()
 chosen = Player.better_choose_class()
 
-Shop.buying(chosen)
 
 def actual():
     print(f"""Great! You've sucessfullay chosen a class ! Here aare your stats \n {chosen.__dict__} """)
@@ -19,7 +18,8 @@ def actual():
     Player.encounter(goblin,chosen,15)
     Player.encounter(slime,chosen,10)
 actual()
-c=Shop.buying(chosen)
+Shop.buying(chosen)
+
 
 def floor1():
     print(f"Great! Now that we've finished the tutorial, we can now move on to floor 1. Good luck!")
@@ -27,8 +27,8 @@ def floor1():
     Player.encounter(goblin,chosen,10)
     Player.encounter(wolf,chosen,10)
     Player.encounter(troll,chosen,20)
-
-Shop.buying(chosen)
+floor1()
+c=Shop.buying(chosen)
 
 
 def floor2():
@@ -57,7 +57,9 @@ def floor4():
     Player.encounter(Dragon,chosen,10)
     Player.encounter(slime,chosen,2)
     c
+floor4()
 def floor5():
+    print(f'Floor five start:')
     Player.encounetr(giant,chosen,30)
     Player.encounter(Dragon,chosen,20)
     Player.encounter(troll,chosen,15)
@@ -65,7 +67,9 @@ def floor5():
     Player.encounter(giant,chosen,10)
     Player.encounter(goblin,chosen,5)
     c
+floor5()
 def final_floor():
+    print("Final floor:")
     Player.encounter(super_giant,chosen,30)
     Player.encounter(super_giant, chosen,30)
     Player.encounter(super_giant,chosen,30)
