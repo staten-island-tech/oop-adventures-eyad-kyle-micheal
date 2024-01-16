@@ -145,44 +145,44 @@ whalen_skill =[Hands, Fault, slap, Fail]
 attacks = {
         'Warrior':{
 
-                'Pierce:Deals 12 damage to target | 1/7 Bleed Chance',
+                'Pierce: Deals 12 damage to target | 1/7 Bleed Chance',
 
-                'Impale:Deals 8 damage to target + Bleed Damage',
+                'Impale: Deals 8 damage to target + Bleed Damage',
 
-                'Divide:Deals 17 damage to target | 1/7 Bleed Chance',
+                'Divide: Deals 17 damage to target | 1/7 Bleed Chance',
 
-                'Slash:Deals 13 damage to target | 1/2 Bleed Chance'},
+                'Slash: Deals 13 damage to target | 1/2 Bleed Chance'},
 
         'Wizard':{
 
-                'Fireball:Deals 7 damage + burn damage to target',
+                'Fireball: Deals 7 damage + burn damage to target',
                 'Poison Mist: Surrounds the enemy in a poison fog, dealing 7 damage + Poison to target',
-                'Staff Yeet:Throws staff at target at Mach 7, dealing 7 damage'},
+                'Staff Yeet: Throws staff at target at Mach 7, dealing 7 damage'},
     
         'Fighter':{
 
-            'Uppercut:Deals 11 damage to target | 1/18 Bleed chance',
-            'Right Hook:Deals 12 damage to target | 1/10 Bleed Chance',
-            'Brass Punch:Deals 9 damage to target + Bleed'},
+            'Uppercut: Deals 11 damage to target | 1/18 Bleed chance',
+            'Right Hook: Deals 12 damage to target | 1/10 Bleed Chance',
+            'Brass Punch: Deals 9 damage to target + Bleed'},
             
         'Assassin':{
 
-            'Shadow Step:Deals 4 damage to target. 1/2 Poison chance',
-            'Slash:Deals 3 damage to target, with High Bleed & Poison chance',
-            'Poison Stab 4 damage to target. 1/3 Bleed chance, Always Poisons',
-            'Dagger Throw:Deals 12 damage to target. Always Bleed, 1/3 Poison'},
+            'Shadow Step: Deals 4 damage to target. 1/2 Poison chance',
+            'Slash: Deals 3 damage to target, with High Bleed & Poison chance',
+            'Poison Stab: Deals 4 damage to target. 1/3 Bleed chance, Always Poisons',
+            'Dagger Throw: Deals 12 damage to target. Always Bleed, 1/3 Poison'},
 
         'Berserker':{
-            'Rage Pound:Deals 13 damage to target. 1/2 Bleed chance',
-            'Baby Rage:Deals 23 damage to target. High Bleed chance',
-            'Slam:Deals 17 damage to target',
-            'Jabs:Deals 4 damage to target 3-6 times'},
+            'Rage Pound: Deals 13 damage to target. 1/2 Bleed chance',
+            'Baby Rage: Deals 23 damage to target. High Bleed chance',
+            'Slam: Deals 17 damage to target',
+            'Jabs: Deals 4 damage to target 3-6 times'},
 
         'Archerattacks' :{
 
-            'Bow Throw:Deals 4 damage to target',
-            'Arrow Rain:Deals 3 damage to target',
-            'Arrow Kick:Deals 7 damage to target. 1/2 Bleed chance',
-            'Gun:Deals 2 damage to target (Random) times'}}
+            'Bow Throw: Deals 4 damage to target',
+            'Arrow Rain: Deals 3 damage to target',
+            'Arrow Kick: Deals 7 damage to target. 1/2 Bleed chance',
+            'Gun: Deals 2 damage to target (Random) times'}}
 
 
