@@ -3,7 +3,7 @@ from SBox import *
 from shop import *
 Game_over=False
 def tutorial_tiny():
-    print("Helo adventurer! You have made it to the tower of chellenges Before doing anything else, you will have to learn the basics. First, you'll have to choose your class")
+    print("Hello adventurer! You have made it to the tower of challenges Before doing anything else, you will have to learn the basics. First, you'll have to choose your class")
 tutorial_tiny()
 Player.print_classes()
 chosen = Player.better_choose_class()

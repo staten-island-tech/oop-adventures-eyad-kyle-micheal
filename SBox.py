@@ -180,6 +180,13 @@ attacks = {
             'Bow Throw: Deals 4 damage to target | Can chain',
             'Arrow Rain: Deals 3 damage to target',
             'Arrow Kick: Deals 7 damage to target. 1/2 Bleed chance',
-            'Gun: Deals 2 damage to target (Random) times'}}
+            'Gun: Deals 2 damage to target (Random) times'},
+            
+        'Whalenattacks':{
+            'Hands: Classic punch to the face',
+            'Fault: error.definition: Definition not found'
+            'Slap: Beatdown'
+            'Fail: Lose 17800 health minimum | Death'
+        }}
 
 
